@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarrant County Voter Guide</title>
+<meta name="description" content="A static voter guide for Tarrant County, Texas: races, candidates, endorsements, and donations, each with a source link.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1>Tarrant County Voter Guide</h1>
+    <p class="tagline">Races, candidates, endorsements, and donations &mdash; every claim linked to its source.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="banner" role="note">
+    <strong>Placeholder data.</strong> Everything on this page comes from
+    <code>candidates.json</code>, which currently contains invented sample entries
+    (names like &ldquo;PLACEHOLDER Candidate A&rdquo;, source links to <code>example.com</code>).
+    None of it is real. Replace the file before using this as a real guide.
+  </div>
+
+  <section class="controls" aria-label="Filters">
+    <div class="control">
+      <label for="filter-type">Jurisdiction type</label>
+      <select id="filter-type">
+        <option value="all">All</option>
+        <option value="city">Cities</option>
+        <option value="school-district">School districts</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="filter-jurisdiction">Jurisdiction</label>
+      <select id="filter-jurisdiction">
+        <option value="all">All jurisdictions</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="filter-search">Search</label>
+      <input type="search" id="filter-search" placeholder="Candidate, race, donor, endorser&hellip;" autocomplete="off">
+    </div>
+
+    <div class="control control-reset">
+      <button type="button" id="filter-reset">Reset filters</button>
+    </div>
+  </section>
+
+  <p class="result-count" id="result-count" aria-live="polite"></p>
+
+  <main id="results" aria-label="Races by jurisdiction"></main>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Static site &mdash; plain HTML, CSS, and vanilla JavaScript. All data lives in
+      <a href="candidates.json">candidates.json</a>.</p>
+    <p id="last-updated"></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

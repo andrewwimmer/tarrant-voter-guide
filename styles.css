@@ -1,0 +1,308 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1b1f24;
+  --muted: #5c6570;
+  --line: #dfe3e8;
+  --accent: #1f5fa8;
+  --accent-soft: #eaf1fa;
+  --warn-bg: #fff6e0;
+  --warn-line: #e7c66a;
+  --warn-text: #6b4e00;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 22px;
+}
+
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- Placeholder banner ---------- */
+
+.banner {
+  margin: 22px 0 0;
+  padding: 12px 14px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  border-radius: var(--radius);
+  color: var(--warn-text);
+  font-size: 0.9rem;
+}
+
+.banner code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* ---------- Controls ---------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 22px 0 6px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.control-reset {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.control label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.control select,
+.control input,
+.control button {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  max-width: 100%;
+}
+
+.control button {
+  cursor: pointer;
+  background: var(--accent-soft);
+  border-color: #c5d8ee;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.control button:hover { background: #dfeaf7; }
+
+.result-count {
+  margin: 12px 2px 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Jurisdiction groups ---------- */
+
+.jurisdiction {
+  margin: 0 0 30px;
+}
+
+.jurisdiction-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.jurisdiction-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.badge-school { background: #eef5ec; color: #37672c; }
+
+/* ---------- Races ---------- */
+
+.race {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.race-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.race-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.election-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ---------- Candidates ---------- */
+
+.candidate {
+  border-top: 1px solid var(--line);
+  padding: 14px 0 2px;
+}
+
+.candidate:first-of-type { border-top: 0; padding-top: 0; }
+
+.candidate h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.detail {
+  margin: 0 0 10px;
+}
+
+.detail-label {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-list li {
+  padding: 6px 0 6px 12px;
+  border-left: 3px solid var(--line);
+  margin-bottom: 5px;
+  font-size: 0.93rem;
+}
+
+.item-list li:last-child { margin-bottom: 0; }
+
+.item-name { font-weight: 600; }
+
+.item-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.item-note {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.source-link {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+}
+
+.amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.empty-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ---------- States ---------- */
+
+.status {
+  padding: 28px 18px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.status-error {
+  color: #8a2320;
+  border-color: #e2b3b1;
+  background: #fdf2f1;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0 34px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.site-footer p { margin: 0 0 4px; }
+
+@media (max-width: 560px) {
+  .controls { flex-direction: column; }
+  .control-reset { align-items: stretch; }
+  .control button { width: 100%; }
+}

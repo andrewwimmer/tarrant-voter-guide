@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "title": "PLACEHOLDER Tarrant County Voter Guide",
+    "note": "ALL DATA IN THIS FILE IS FAKE PLACEHOLDER DATA. Names, jurisdictions, dates, endorsements, donations, and source URLs are invented for layout/testing purposes only. Replace every entry before publishing anything real.",
+    "lastUpdated": "PLACEHOLDER 0000-00-00"
+  },
+  "candidates": [
+    {
+      "id": "plc-001",
+      "race": "PLACEHOLDER City Council, Place 1",
+      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate A",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Firefighters Association",
+          "date": "2026-02-10",
+          "note": "PLACEHOLDER sole endorsement in this race.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/firefighters-candidate-a",
+          "sourceLabel": "PLACEHOLDER press release"
+        },
+        {
+          "organization": "PLACEHOLDER Neighborhood Alliance PAC",
+          "date": "2026-02-18",
+          "note": "PLACEHOLDER co-endorsed with two other candidates.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/neighborhood-alliance-slate",
+          "sourceLabel": "PLACEHOLDER slate card"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor One LLC",
+          "amount": 5000,
+          "date": "2026-01-15",
+          "note": "PLACEHOLDER in-kind contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-001",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        },
+        {
+          "donor": "PLACEHOLDER Donor Two",
+          "amount": 1250,
+          "date": "2026-01-30",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-002",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-002",
+      "race": "PLACEHOLDER City Council, Place 1",
+      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate B",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Chamber of Commerce PAC",
+          "date": "2026-02-12",
+          "note": "PLACEHOLDER endorsement after questionnaire.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/chamber-candidate-b",
+          "sourceLabel": "PLACEHOLDER endorsement page"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Three",
+          "amount": 2500,
+          "date": "2026-02-01",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-003",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-003",
+      "race": "PLACEHOLDER City Council, Place 1",
+      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate C",
+      "endorsements": [],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Four",
+          "amount": 300,
+          "date": "2026-02-20",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-004",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-004",
+      "race": "PLACEHOLDER Mayor",
+      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate D",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Police Officers Association",
+          "date": "2026-01-28",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/police-candidate-d",
+          "sourceLabel": "PLACEHOLDER announcement"
+        },
+        {
+          "organization": "PLACEHOLDER Environmental Voters Fund",
+          "date": "2026-02-05",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/environment-candidate-d",
+          "sourceLabel": "PLACEHOLDER endorsement list"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Development Partners LP",
+          "amount": 10000,
+          "date": "2026-01-10",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-005",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-005",
+      "race": "PLACEHOLDER Mayor",
+      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate E",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Teachers Union Local 000",
+          "date": "2026-02-14",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/teachers-candidate-e",
+          "sourceLabel": "PLACEHOLDER endorsement page"
+        }
+      ],
+      "donations": []
+    },
+    {
+      "id": "plc-006",
+      "race": "PLACEHOLDER City Council, District 3",
+      "jurisdiction": { "name": "PLACEHOLDER City of Southbrook", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate F",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Homeowners Coalition",
+          "date": "2026-02-22",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/homeowners-candidate-f",
+          "sourceLabel": "PLACEHOLDER newsletter"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Five",
+          "amount": 750,
+          "date": "2026-02-03",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-006",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        },
+        {
+          "donor": "PLACEHOLDER Small Business PAC",
+          "amount": 1500,
+          "date": "2026-02-11",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-007",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-007",
+      "race": "PLACEHOLDER City Council, District 3",
+      "jurisdiction": { "name": "PLACEHOLDER City of Southbrook", "type": "city" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate G",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "plc-008",
+      "race": "PLACEHOLDER Board of Trustees, Place 4",
+      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate H",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Parents for Schools PAC",
+          "date": "2026-02-08",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/parents-candidate-h",
+          "sourceLabel": "PLACEHOLDER endorsement page"
+        },
+        {
+          "organization": "PLACEHOLDER Educators Association",
+          "date": "2026-02-19",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/educators-candidate-h",
+          "sourceLabel": "PLACEHOLDER press release"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Six",
+          "amount": 4000,
+          "date": "2026-01-22",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-008",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-009",
+      "race": "PLACEHOLDER Board of Trustees, Place 4",
+      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
+      "electionDate": "2026-05-02",
+      "candidate": "PLACEHOLDER Candidate I",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Taxpayers Association",
+          "date": "2026-02-16",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/taxpayers-candidate-i",
+          "sourceLabel": "PLACEHOLDER slate card"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Seven",
+          "amount": 9000,
+          "date": "2026-02-06",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-009",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        },
+        {
+          "donor": "PLACEHOLDER Donor Eight",
+          "amount": 600,
+          "date": "2026-02-21",
+          "note": "PLACEHOLDER in-kind contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-010",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-010",
+      "race": "PLACEHOLDER Board of Trustees, Place 7",
+      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
+      "electionDate": "2026-11-03",
+      "candidate": "PLACEHOLDER Candidate J",
+      "endorsements": [],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Nine",
+          "amount": 200,
+          "date": "2026-08-14",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-011",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-011",
+      "race": "PLACEHOLDER Board of Trustees, District 2",
+      "jurisdiction": { "name": "PLACEHOLDER Eastgate ISD", "type": "school-district" },
+      "electionDate": "2026-11-03",
+      "candidate": "PLACEHOLDER Candidate K",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Community Voters League",
+          "date": "2026-09-30",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/community-candidate-k",
+          "sourceLabel": "PLACEHOLDER endorsement page"
+        }
+      ],
+      "donations": [
+        {
+          "donor": "PLACEHOLDER Donor Ten",
+          "amount": 3200,
+          "date": "2026-09-05",
+          "note": "PLACEHOLDER cash contribution.",
+          "sourceUrl": "https://example.com/placeholder/finance/report-012",
+          "sourceLabel": "PLACEHOLDER campaign finance report"
+        }
+      ]
+    },
+    {
+      "id": "plc-012",
+      "race": "PLACEHOLDER Board of Trustees, District 2",
+      "jurisdiction": { "name": "PLACEHOLDER Eastgate ISD", "type": "school-district" },
+      "electionDate": "2026-11-03",
+      "candidate": "PLACEHOLDER Candidate L",
+      "endorsements": [
+        {
+          "organization": "PLACEHOLDER Faith Leaders Network",
+          "date": "2026-10-02",
+          "note": "PLACEHOLDER endorsement.",
+          "sourceUrl": "https://example.com/placeholder/endorsement/faith-candidate-l",
+          "sourceLabel": "PLACEHOLDER statement"
+        }
+      ],
+      "donations": []
+    }
+  ]
+}
