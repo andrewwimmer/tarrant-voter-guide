@@ -17,7 +17,11 @@
     candidates: [],
     type: 'all',
     jurisdiction: 'all',
-    search: ''
+    search: '',
+    // Set once an address resolves to a precinct; ballotActive is the
+    // "show only my races" / "show all races" switch over the same result.
+    ballot: null,
+    ballotActive: false
   };
 
   var els = {
@@ -27,7 +31,12 @@
     jurisdiction: document.getElementById('filter-jurisdiction'),
     search: document.getElementById('filter-search'),
     reset: document.getElementById('filter-reset'),
-    lastUpdated: document.getElementById('last-updated')
+    lastUpdated: document.getElementById('last-updated'),
+    lookupForm: document.getElementById('lookup-form'),
+    lookupAddress: document.getElementById('lookup-address'),
+    lookupSubmit: document.getElementById('lookup-submit'),
+    lookupStatus: document.getElementById('lookup-status'),
+    lookupResult: document.getElementById('lookup-result')
   };
 
   /* ---------- helpers ---------- */
@@ -91,9 +100,19 @@
     return haystack.indexOf(needle) !== -1;
   }
 
+  // True when this race is on the looked-up voter's ballot: countywide and
+  // statewide races always are, district races only when the number matches.
+  function matchesBallot(c) {
+    if (!state.ballotActive || !state.ballot) return true;
+    var rule = raceRule(c.race);
+    if (!rule.field) return true;
+    return rule.value !== null && rule.value === state.ballot.districts[rule.field];
+  }
+
   function applyFilters() {
     var needle = state.search.trim().toLowerCase();
     return state.candidates.filter(function (c) {
+      if (!matchesBallot(c)) return false;
       if (state.type !== 'all' && jurisdictionType(c) !== state.type) return false;
       if (state.jurisdiction !== 'all' && jurisdictionName(c) !== state.jurisdiction) return false;
       return matchesSearch(c, needle);
@@ -249,12 +268,17 @@
     var groups = groupByJurisdiction(filtered);
 
     var raceCount = groups.reduce(function (n, g) { return n + g.races.length; }, 0);
-    els.count.textContent = filtered.length + ' candidate' + (filtered.length === 1 ? '' : 's') +
+    els.count.textContent = (state.ballotActive && state.ballot
+        ? 'Your ballot — precinct ' + state.ballot.precinct + ' · '
+        : '') +
+      filtered.length + ' candidate' + (filtered.length === 1 ? '' : 's') +
       ' · ' + raceCount + ' race' + (raceCount === 1 ? '' : 's') +
       ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's');
 
     if (!filtered.length) {
-      setStatus('No candidates match the current filters.');
+      setStatus(state.ballotActive
+        ? 'No races on your ballot match the current filters.'
+        : 'No candidates match the current filters.');
       return;
     }
 
@@ -271,6 +295,7 @@
   function populateJurisdictions() {
     var names = [];
     state.candidates.forEach(function (c) {
+      if (!matchesBallot(c)) return;
       if (state.type !== 'all' && jurisdictionType(c) !== state.type) return;
       var name = jurisdictionName(c);
       if (names.indexOf(name) === -1) names.push(name);
@@ -293,6 +318,449 @@
     els.jurisdiction.value = state.jurisdiction;
   }
 
+
+  /* ============================================================
+     Address lookup → precinct → personal ballot
+
+     Three steps, all driven from the form at the top of the page:
+       1. The typed address goes to the U.S. Census Bureau geocoder,
+          which returns a lat/lon. That is the only network call that
+          ever sees the address.
+       2. data/precincts.geojson (4.7 MB) is fetched lazily and tested
+          point-in-polygon, on this device, to find the precinct.
+       3. The precinct's district numbers filter candidates.json down
+          to the races this voter is actually eligible to vote in.
+     ============================================================ */
+
+  var GEOCODER_URL = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress';
+  var PRECINCTS_URL = 'data/precincts.geojson';
+  var GEOCODE_TIMEOUT_MS = 15000;
+
+  // Each district race in candidates.json is tied to exactly one property on
+  // the precinct feature. Anything that matches none of these is a countywide
+  // or statewide race that every Tarrant County voter votes in.
+  var DISTRICT_FIELDS = [
+    { key: 'Congress',  label: 'U.S. House',                  describe: function (v) { return 'Congressional District ' + v; } },
+    { key: 'Senate',    label: 'Texas Senate',                describe: function (v) { return 'State Senate District ' + v; } },
+    { key: 'House',     label: 'Texas House',                 describe: function (v) { return 'State House District ' + v; } },
+    { key: 'Education', label: 'State Board of Education',    describe: function (v) { return 'SBOE District ' + v; } },
+    { key: 'Commish',   label: 'County Commissioner',         describe: function (v) { return 'Commissioner Precinct ' + v; } },
+    { key: 'JP',        label: 'Justice of the Peace',        describe: function (v) { return 'JP Precinct ' + v; } }
+  ];
+
+  // Race title -> which precinct property gates it. Order matters only in that
+  // each pattern is specific enough not to catch another race's title; the
+  // "DISTRICT JUDGE, 141ST JUDICIAL DISTRICT" and "JUSTICE, 2ND COURT OF
+  // APPEALS DISTRICT" families deliberately fall through to universal.
+  var RACE_PATTERNS = [
+    { field: 'Congress',  re: /^U\.\s*S\.\s*REPRESENTATIVE DISTRICT (\d+)$/ },
+    { field: 'Senate',    re: /^STATE SENATOR,\s*DISTRICT (\d+)$/ },
+    { field: 'House',     re: /^STATE REPRESENTATIVE DISTRICT (\d+)$/ },
+    { field: 'Education', re: /^MEMBER,\s*STATE BOARD OF EDUCATION,\s*DISTRICT (\d+)$/ },
+    { field: 'Commish',   re: /^COUNTY COMMISSIONER PRECINCT (\d+)$/ },
+    { field: 'JP',        re: /^JUSTICE OF THE PEACE PRECINCT (\d+)$/ }
+  ];
+
+  var raceRuleCache = Object.create(null);
+
+  // -> { field: 'Congress', value: '12' } for district races,
+  //    { field: null } for countywide / statewide races.
+  function raceRule(raceName) {
+    var name = String(raceName === undefined || raceName === null ? '' : raceName)
+      .replace(/\s+/g, ' ').trim().toUpperCase();
+    if (raceRuleCache[name]) return raceRuleCache[name];
+
+    var rule = { field: null, value: null };
+    for (var i = 0; i < RACE_PATTERNS.length; i++) {
+      var m = name.match(RACE_PATTERNS[i].re);
+      if (m) {
+        rule = { field: RACE_PATTERNS[i].field, value: normalizeDistrict(m[1]) };
+        break;
+      }
+    }
+    raceRuleCache[name] = rule;
+    return rule;
+  }
+
+  // "09" and "9" are the same district; compare on a canonical form.
+  function normalizeDistrict(value) {
+    if (value === undefined || value === null) return null;
+    var n = String(value).trim();
+    if (!/^\d+$/.test(n)) return null;
+    return String(parseInt(n, 10));
+  }
+
+  // Districts that have a race on this ballot at all. Texas staggers its
+  // senate, SBOE, and commissioner terms, so a voter can legitimately live in
+  // a district with nothing to vote on this cycle — that is worth saying out
+  // loud rather than silently showing them one fewer race.
+  function districtsOnBallot(field) {
+    var found = Object.create(null);
+    state.candidates.forEach(function (c) {
+      var rule = raceRule(c.race);
+      if (rule.field === field && rule.value) found[rule.value] = true;
+    });
+    return found;
+  }
+
+  /* ---------- point in polygon ---------- */
+
+  // Ray casting / crossing number against one linear ring. Counts how often a
+  // ray heading in -x from the point crosses an edge; odd means inside. Edges
+  // are treated as half-open in y ((yi > y) !== (yj > y)) so a vertex shared by
+  // two edges is not counted twice.
+  function ringContains(lon, lat, ring) {
+    var inside = false;
+    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      var xi = ring[i][0], yi = ring[i][1];
+      var xj = ring[j][0], yj = ring[j][1];
+      if ((yi > lat) !== (yj > lat)) {
+        if (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) inside = !inside;
+      }
+    }
+    return inside;
+  }
+
+  // GeoJSON polygon: ring 0 is the outer boundary, any further rings are holes.
+  function polygonContains(lon, lat, rings) {
+    if (!rings.length || !ringContains(lon, lat, rings[0])) return false;
+    for (var i = 1; i < rings.length; i++) {
+      if (ringContains(lon, lat, rings[i])) return false;
+    }
+    return true;
+  }
+
+  /* ---------- lazy precinct index ---------- */
+
+  var precinctsPromise = null;
+
+  // Precompute each feature's bounding box once so a lookup rejects ~706 of
+  // the 707 precincts with four numeric comparisons instead of walking their
+  // rings. Only outer rings contribute to the box; a hole is inside its own.
+  function indexPrecincts(geo) {
+    var features = (geo && geo.features) || [];
+    var index = [];
+
+    for (var i = 0; i < features.length; i++) {
+      var geom = features[i].geometry;
+      if (!geom) continue;
+
+      var polys;
+      if (geom.type === 'Polygon') polys = [geom.coordinates];
+      else if (geom.type === 'MultiPolygon') polys = geom.coordinates;
+      else continue;
+
+      var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      for (var p = 0; p < polys.length; p++) {
+        var outer = polys[p][0] || [];
+        for (var k = 0; k < outer.length; k++) {
+          var x = outer[k][0], y = outer[k][1];
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+      if (minX === Infinity) continue;
+
+      index.push({
+        minX: minX, minY: minY, maxX: maxX, maxY: maxY,
+        polys: polys,
+        props: features[i].properties || {}
+      });
+    }
+
+    if (!index.length) throw new Error('precinct file contained no usable polygons');
+    return index;
+  }
+
+  // Fetched on first use only — the file is 4.7 MB and most visitors never
+  // touch the lookup. A failure clears the cached promise so a retry re-fetches
+  // instead of replaying the same rejection forever.
+  function loadPrecincts() {
+    if (!precinctsPromise) {
+      precinctsPromise = fetch(PRECINCTS_URL, { cache: 'force-cache' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(indexPrecincts)
+        .catch(function (err) {
+          precinctsPromise = null;
+          throw err;
+        });
+    }
+    return precinctsPromise;
+  }
+
+  function findPrecinct(index, lon, lat) {
+    for (var i = 0; i < index.length; i++) {
+      var f = index[i];
+      if (lon < f.minX || lon > f.maxX || lat < f.minY || lat > f.maxY) continue;
+      for (var p = 0; p < f.polys.length; p++) {
+        if (polygonContains(lon, lat, f.polys[p])) return f.props;
+      }
+    }
+    return null;
+  }
+
+  /* ---------- geocoding ---------- */
+
+  var jsonpSeq = 0;
+
+  // The Census geocoder does not send an Access-Control-Allow-Origin header,
+  // so a normal fetch() is blocked by CORS from a static site with no backend.
+  // Its documented JSONP mode is the supported way in. The response is executed
+  // as script, so: https only, a single-use callback name, a hard timeout, the
+  // tag torn down either way, and the payload shape checked before it is read.
+  function geocode(address, onSuccess, onError) {
+    var callbackName = '__tcvgGeocode' + (++jsonpSeq) + '_' + Date.now().toString(36);
+    var script = document.createElement('script');
+    var settled = false;
+    var timer;
+
+    function cleanup() {
+      clearTimeout(timer);
+      try { delete window[callbackName]; } catch (e) { window[callbackName] = undefined; }
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    function settle(fn, arg) {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      fn(arg);
+    }
+
+    window[callbackName] = function (payload) { settle(onSuccess, payload); };
+    script.onerror = function () { settle(onError, new Error('unreachable')); };
+    timer = setTimeout(function () { settle(onError, new Error('timeout')); }, GEOCODE_TIMEOUT_MS);
+
+    script.src = GEOCODER_URL +
+      '?address=' + encodeURIComponent(address) +
+      '&benchmark=Public_AR_Current' +
+      '&format=jsonp' +
+      '&callback=' + callbackName;
+    document.head.appendChild(script);
+  }
+
+  // Pulls the first match out of the geocoder payload without trusting any of
+  // its shape. Returns null when the response is well-formed but empty.
+  function firstMatch(payload) {
+    var matches = payload && payload.result && payload.result.addressMatches;
+    if (!Array.isArray(matches) || !matches.length) return null;
+
+    var m = matches[0];
+    var coords = m && m.coordinates;
+    if (!coords) return null;
+
+    var lon = Number(coords.x);
+    var lat = Number(coords.y);
+    if (!isFinite(lon) || !isFinite(lat)) return null;
+
+    return {
+      lon: lon,
+      lat: lat,
+      matchedAddress: typeof m.matchedAddress === 'string' ? m.matchedAddress : ''
+    };
+  }
+
+  /* ---------- lookup UI ---------- */
+
+  function setLookupStatus(message, kind) {
+    if (!message) {
+      els.lookupStatus.hidden = true;
+      els.lookupStatus.textContent = '';
+      return;
+    }
+    els.lookupStatus.hidden = false;
+    els.lookupStatus.className = 'lookup-status' + (kind ? ' lookup-status-' + kind : '');
+    els.lookupStatus.textContent = message;
+  }
+
+  function setBusy(busy) {
+    els.lookupSubmit.disabled = busy;
+    els.lookupSubmit.textContent = busy ? 'Looking up…' : 'Find my races';
+  }
+
+  // The "why these races" panel: the precinct that matched, every district it
+  // puts the voter in, and — for districts with nothing on this ballot — the
+  // reason a race is missing.
+  function renderBallotPanel() {
+    var ballot = state.ballot;
+    els.lookupResult.innerHTML = '';
+
+    if (!ballot) {
+      els.lookupResult.hidden = true;
+      return;
+    }
+    els.lookupResult.hidden = false;
+
+    var head = el('div', 'ballot-head');
+    head.appendChild(el('p', 'ballot-precinct-label', 'Voting precinct'));
+    head.appendChild(el('p', 'ballot-precinct', ballot.precinct));
+    if (ballot.matchedAddress) {
+      head.appendChild(el('p', 'ballot-address', 'Matched to ' + ballot.matchedAddress));
+    }
+    els.lookupResult.appendChild(head);
+
+    els.lookupResult.appendChild(el('p', 'ballot-why',
+      'You vote in every countywide and statewide race, plus the district races below.'));
+
+    var list = el('ul', 'district-list');
+    DISTRICT_FIELDS.forEach(function (field) {
+      var value = ballot.districts[field.key];
+      var li = el('li');
+      li.appendChild(el('span', 'district-label', field.label));
+
+      if (!value) {
+        li.appendChild(el('span', 'district-value district-unknown', 'not recorded for this precinct'));
+      } else {
+        li.appendChild(el('span', 'district-value', field.describe(value)));
+        if (!ballot.onBallot[field.key][value]) {
+          li.appendChild(el('span', 'district-note', 'not on the 2026 ballot — this seat is not up for election this cycle'));
+        }
+      }
+      list.appendChild(li);
+    });
+    els.lookupResult.appendChild(list);
+
+    var actions = el('div', 'ballot-actions');
+    var toggle = el('button', 'ballot-toggle',
+      state.ballotActive ? 'Show all races' : 'Show only my races');
+    toggle.type = 'button';
+    toggle.addEventListener('click', function () {
+      state.ballotActive = !state.ballotActive;
+      renderBallotPanel();
+      populateJurisdictions();
+      render();
+    });
+    actions.appendChild(toggle);
+
+    var clear = el('button', 'ballot-clear', 'Clear address');
+    clear.type = 'button';
+    clear.addEventListener('click', function () {
+      state.ballot = null;
+      state.ballotActive = false;
+      els.lookupAddress.value = '';
+      setLookupStatus('');
+      renderBallotPanel();
+      populateJurisdictions();
+      render();
+      els.lookupAddress.focus();
+    });
+    actions.appendChild(clear);
+
+    els.lookupResult.appendChild(actions);
+  }
+
+  function applyPrecinct(props, matchedAddress) {
+    var districts = {};
+    var onBallot = {};
+    DISTRICT_FIELDS.forEach(function (field) {
+      districts[field.key] = normalizeDistrict(props[field.key]);
+      onBallot[field.key] = districtsOnBallot(field.key);
+    });
+
+    state.ballot = {
+      precinct: String(props.Precinct || props.Pct_Char || 'unknown'),
+      matchedAddress: matchedAddress,
+      districts: districts,
+      onBallot: onBallot
+    };
+    state.ballotActive = true;
+
+    setLookupStatus('');
+    renderBallotPanel();
+    populateJurisdictions();
+    render();
+    els.lookupResult.scrollIntoView({ block: 'nearest' });
+  }
+
+  function runLookup(address) {
+    setBusy(true);
+    setLookupStatus('Sending your address to the Census geocoder…');
+
+    // Kick the precinct download off in parallel with the geocode — the two do
+    // not depend on each other and the file is the slower of the two.
+    var precincts = loadPrecincts();
+    // Claim the rejection now: if the geocode fails below, nothing else ever
+    // consumes this promise, and an unhandled rejection would hit the console.
+    precincts.catch(function () {});
+
+    geocode(address, function (payload) {
+      var match;
+      try {
+        match = firstMatch(payload);
+      } catch (e) {
+        match = null;
+      }
+
+      if (!match) {
+        setBusy(false);
+        setLookupStatus(
+          'The Census geocoder could not find that address. Check the spelling, and try ' +
+          'including the city and ZIP — for example "100 Main St, Fort Worth, TX 76102".',
+          'warn');
+        return;
+      }
+
+      setLookupStatus('Address found. Loading the precinct map (4.7 MB) …');
+
+      precincts.then(function (index) {
+        setBusy(false);
+        var props = findPrecinct(index, match.lon, match.lat);
+        if (!props) {
+          setLookupStatus(
+            (match.matchedAddress || 'That address') + ' is outside Tarrant County, so none of ' +
+            'these races are on its ballot. This guide only covers Tarrant County.',
+            'warn');
+          return;
+        }
+        applyPrecinct(props, match.matchedAddress);
+      }, function (err) {
+        setBusy(false);
+        setLookupStatus(
+          'Your address was found, but the precinct map could not be loaded (' + err.message +
+          '). Check your connection and try again, or browse all races below.',
+          'error');
+      });
+
+    }, function (err) {
+      setBusy(false);
+      setLookupStatus(
+        err.message === 'timeout'
+          ? 'The Census geocoder did not respond within 15 seconds. It may be down or blocked ' +
+            'by your network — try again in a moment, or browse all races below.'
+          : 'Could not reach the Census geocoder. It may be down or blocked by your network — ' +
+            'try again in a moment, or browse all races below.',
+        'error');
+    });
+  }
+
+  function wireLookup() {
+    // Warm the 4.7 MB precinct file the moment someone engages the field, so
+    // it is usually cached by the time the geocode returns. Still never on page
+    // load — a visitor who ignores the lookup never downloads it.
+    var warmed = false;
+    els.lookupAddress.addEventListener('focus', function () {
+      if (warmed) return;
+      warmed = true;
+      loadPrecincts().catch(function () { /* surfaced on submit instead */ });
+    });
+
+    els.lookupForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var address = els.lookupAddress.value.trim();
+      if (!address) {
+        setLookupStatus('Type a street address first.', 'warn');
+        els.lookupAddress.focus();
+        return;
+      }
+      runLookup(address);
+    });
+  }
+
   /* ---------- events ---------- */
 
   function wireEvents() {
@@ -312,12 +780,16 @@
       render();
     });
 
+    // Resets the dropdowns and returns to the full race list, but keeps any
+    // matched precinct on screen so it can be re-applied with one click.
     els.reset.addEventListener('click', function () {
       state.type = 'all';
       state.jurisdiction = 'all';
       state.search = '';
+      state.ballotActive = false;
       els.type.value = 'all';
       els.search.value = '';
+      renderBallotPanel();
       populateJurisdictions();
       render();
     });
@@ -342,6 +814,7 @@
 
     populateJurisdictions();
     wireEvents();
+    wireLookup();
     render();
   }
 

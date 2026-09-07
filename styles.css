@@ -176,6 +176,244 @@ a:hover { color: var(--red-dark); }
   font-size: 0.88em;
 }
 
+/* ---------- Address lookup ---------- */
+
+.lookup {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--red);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  margin: 22px 0;
+}
+
+.lookup h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.lookup-intro {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.lookup-form label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.lookup-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lookup-row input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: 11px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.lookup-row input::placeholder { color: #9b938a; }
+
+.lookup-row button {
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 20px;
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  background: var(--red);
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lookup-row button:hover:not(:disabled) {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.lookup-row button:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.lookup-privacy {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.lookup-privacy code {
+  font-size: 0.86em;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 5px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+/* ---------- Lookup status messages ---------- */
+
+.lookup-status {
+  margin-top: 14px;
+  padding: 11px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  font-size: 0.94rem;
+}
+
+.lookup-status-warn {
+  background: var(--warn-bg);
+  border-color: var(--warn-line);
+  color: var(--warn-text);
+}
+
+.lookup-status-error {
+  background: var(--red-soft);
+  border-color: var(--red-line);
+  color: var(--red-dark);
+  font-weight: 500;
+}
+
+/* ---------- Matched precinct panel ---------- */
+
+.lookup-result {
+  margin-top: 16px;
+  border: 1px solid var(--red-line);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  background: var(--red-soft);
+  padding: 16px 16px 14px;
+}
+
+.ballot-head {
+  margin-bottom: 2px;
+}
+
+.ballot-precinct-label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.ballot-precinct {
+  margin: 2px 0 0;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--red);
+}
+
+.ballot-address {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.ballot-why {
+  margin: 14px 0 10px;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.district-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--red-line);
+}
+
+.district-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--red-line);
+}
+
+.district-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.district-value {
+  font-weight: 600;
+}
+
+.district-unknown {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.district-note {
+  font-size: 0.86rem;
+  color: var(--warn-text);
+  background: var(--warn-bg);
+  border-left: 3px solid var(--warn-line);
+  padding: 3px 8px;
+  margin-top: 4px;
+  border-radius: 0 4px 4px 0;
+}
+
+.ballot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ballot-actions button {
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.ballot-toggle {
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.ballot-toggle:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.ballot-clear {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.ballot-clear:hover { border-color: var(--red); color: var(--red); }
+
 /* ---------- Controls ---------- */
 
 .controls {
@@ -495,4 +733,29 @@ a:hover { color: var(--red-dark); }
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #6b6b6b;
+}
+
+@media (min-width: 620px) {
+  .lookup { padding: 24px 26px; }
+
+  .lookup-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .district-list li {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .district-label {
+    flex: 0 0 13rem;
+  }
+
+  .district-note {
+    flex-basis: 100%;
+    margin-left: 13rem;
+  }
 }

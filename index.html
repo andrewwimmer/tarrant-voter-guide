@@ -46,10 +46,39 @@
     endorsement and donation sections are empty for every candidate: that data has not been
     collected yet.</p>
     <p>This page lists every race certified for the county. <strong>Your ballot will show only a
-    subset of them</strong> &mdash; congressional, state legislative, county commissioner, and
-    justice of the peace races are drawn by district, so which ones you vote in depends on your
-    address.</p>
+    subset of them</strong> &mdash; congressional, state legislative, State Board of Education,
+    county commissioner, and justice of the peace races are drawn by district, so which ones you
+    vote in depends on your address. Use the address lookup below to narrow this page to your
+    own ballot.</p>
   </div>
+
+
+  <section class="lookup" aria-labelledby="lookup-title">
+    <h2 id="lookup-title">Find the races on your ballot</h2>
+    <p class="lookup-intro">Enter your street address and this page will work out which of the
+      707 Tarrant County voting precincts you live in, then show only the races you are actually
+      eligible to vote in.</p>
+
+    <form id="lookup-form" class="lookup-form" novalidate>
+      <label for="lookup-address">Your street address</label>
+      <div class="lookup-row">
+        <input type="text" id="lookup-address" name="address" autocomplete="street-address"
+          placeholder="100 Main St, Fort Worth, TX 76102" spellcheck="false">
+        <button type="submit" id="lookup-submit">Find my races</button>
+      </div>
+
+      <p class="lookup-privacy">
+        <strong>Your address stays in your browser.</strong> It is sent to exactly one place &mdash;
+        the U.S. Census Bureau&rsquo;s free public geocoder at <code>geocoding.geo.census.gov</code>
+        &mdash; which turns it into a map coordinate and returns it. It is never sent to this site,
+        never stored, and never logged: this site is static files with no server and no database.
+        Matching that coordinate to your precinct happens entirely on your own device.
+      </p>
+    </form>
+
+    <div id="lookup-status" class="lookup-status" role="status" aria-live="polite" hidden></div>
+    <div id="lookup-result" class="lookup-result" hidden></div>
+  </section>
 
   <section class="controls" aria-label="Filters">
     <div class="control">
