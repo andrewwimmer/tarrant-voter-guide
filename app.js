@@ -13,10 +13,22 @@
     'county': 'County & precinct'
   };
 
+  // Keys are the party strings as they appear in candidates.json (upper case,
+  // as transcribed from the certification report); values are for display.
+  var PARTY_LABELS = {
+    'REPUBLICAN': 'Republican',
+    'DEMOCRATIC': 'Democratic',
+    'LIBERTARIAN': 'Libertarian',
+    'GREEN': 'Green'
+  };
+
   var state = {
     candidates: [],
     type: 'all',
     jurisdiction: 'all',
+    // Party never removes anything: it highlights one party and dims the rest,
+    // so a race always shows its full field of candidates.
+    party: 'all',
     search: '',
     // Set once an address resolves to a precinct; ballotActive is the
     // "show only my races" / "show all races" switch over the same result.
@@ -29,6 +41,8 @@
     count: document.getElementById('result-count'),
     type: document.getElementById('filter-type'),
     jurisdiction: document.getElementById('filter-jurisdiction'),
+    party: document.getElementById('filter-party'),
+    partyNote: document.getElementById('party-note'),
     search: document.getElementById('filter-search'),
     reset: document.getElementById('filter-reset'),
     lastUpdated: document.getElementById('last-updated'),
@@ -107,6 +121,24 @@
     var rule = raceRule(c.race);
     if (!rule.field) return true;
     return rule.value !== null && rule.value === state.ballot.districts[rule.field];
+  }
+
+  // candidates.json carries the party exactly as the certification report
+  // prints it; compare on a canonical upper-case form so a stray "Republican"
+  // still matches the "REPUBLICAN" the dropdown sends.
+  function partyKey(c) {
+    return String(c.party === undefined || c.party === null ? '' : c.party)
+      .replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function partyLabel(key) {
+    return PARTY_LABELS[key] || key;
+  }
+
+  // Deliberately NOT part of applyFilters: a party selection dims candidates,
+  // it never drops them, so every race keeps its whole field on screen.
+  function matchesParty(c) {
+    return state.party === 'all' || partyKey(c) === state.party;
   }
 
   function applyFilters() {
@@ -225,7 +257,10 @@
   }
 
   function renderCandidate(c) {
-    var box = el('div', 'candidate');
+    var selecting = state.party !== 'all';
+    var hit = selecting && matchesParty(c);
+    var box = el('div', 'candidate' +
+      (selecting ? (hit ? ' candidate-match' : ' candidate-dim') : ''));
     var name = el('h4', null, c.candidate || 'Unnamed candidate');
     if (c.party) name.appendChild(el('span', 'party', c.party));
     box.appendChild(name);
@@ -237,7 +272,14 @@
   }
 
   function renderRace(race) {
-    var box = el('article', 'race');
+    // A race with nobody from the selected party still belongs on the page —
+    // that absence is itself something the reader needs to see — so it stays,
+    // flagged, rather than disappearing.
+    var partyMatches = state.party === 'all'
+      ? null
+      : race.candidates.filter(matchesParty).length;
+
+    var box = el('article', 'race' + (partyMatches === 0 ? ' race-unmatched' : ''));
     var head = el('div', 'race-head');
     head.appendChild(el('h3', null, race.race));
     if (race.electionDate) {
@@ -245,6 +287,10 @@
     }
     if (race.candidates.length === 1 && race.candidates[0].unopposed) {
       head.appendChild(el('span', 'election-date', 'Unopposed'));
+    }
+    if (partyMatches === 0) {
+      head.appendChild(el('span', 'race-note',
+        'No ' + partyLabel(state.party) + ' candidate in this race'));
     }
     box.appendChild(head);
     race.candidates.forEach(function (c) { box.appendChild(renderCandidate(c)); });
@@ -263,15 +309,50 @@
     return section;
   }
 
+  // Sits under the filter bar whenever a party is selected, so the dimming is
+  // read as a highlight rather than as a page that failed to load.
+  function renderPartyNote(matched, unmatchedRaces) {
+    if (state.party === 'all') {
+      els.partyNote.hidden = true;
+      els.partyNote.textContent = '';
+      return;
+    }
+    var label = partyLabel(state.party);
+    var text = 'Highlighting ' + label + ' candidates. Every race still lists its full field — ' +
+      'candidates from other parties are dimmed, not removed.';
+    if (unmatchedRaces) {
+      text += ' ' + unmatchedRaces + ' race' + (unmatchedRaces === 1 ? ' has' : 's have') +
+        ' no ' + label + ' candidate at all.';
+    }
+    els.partyNote.hidden = false;
+    els.partyNote.textContent = text;
+  }
+
   function render() {
     var filtered = applyFilters();
     var groups = groupByJurisdiction(filtered);
 
     var raceCount = groups.reduce(function (n, g) { return n + g.races.length; }, 0);
+
+    var partyMatched = 0;
+    var partyEmptyRaces = 0;
+    if (state.party !== 'all') {
+      groups.forEach(function (g) {
+        g.races.forEach(function (r) {
+          var n = r.candidates.filter(matchesParty).length;
+          partyMatched += n;
+          if (!n) partyEmptyRaces++;
+        });
+      });
+    }
+    renderPartyNote(partyMatched, partyEmptyRaces);
+
     els.count.textContent = (state.ballotActive && state.ballot
         ? 'Your ballot — precinct ' + state.ballot.precinct + ' · '
         : '') +
       filtered.length + ' candidate' + (filtered.length === 1 ? '' : 's') +
+      (state.party === 'all' ? '' :
+        ' (' + partyMatched + ' ' + partyLabel(state.party) + ')') +
       ' · ' + raceCount + ' race' + (raceCount === 1 ? '' : 's') +
       ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's');
 
@@ -775,6 +856,13 @@
       render();
     });
 
+    // Party only changes how the list is drawn, so no dropdown needs
+    // repopulating — the set of visible races is identical either way.
+    els.party.addEventListener('change', function () {
+      state.party = els.party.value;
+      render();
+    });
+
     els.search.addEventListener('input', function () {
       state.search = els.search.value;
       render();
@@ -785,9 +873,11 @@
     els.reset.addEventListener('click', function () {
       state.type = 'all';
       state.jurisdiction = 'all';
+      state.party = 'all';
       state.search = '';
       state.ballotActive = false;
       els.type.value = 'all';
+      els.party.value = 'all';
       els.search.value = '';
       renderBallotPanel();
       populateJurisdictions();

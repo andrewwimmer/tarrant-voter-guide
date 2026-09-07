@@ -476,6 +476,19 @@ a:hover { color: var(--red-dark); }
   border-color: var(--red-dark);
 }
 
+/* Party filter dims instead of removing, which needs saying once out loud —
+   otherwise a page of greyed-out cards reads as broken rather than filtered. */
+.filter-note {
+  margin: 14px 2px 0;
+  padding: 10px 14px;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  border-radius: 8px;
+  color: var(--red-dark);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
 .result-count {
   margin: 14px 2px 20px;
   color: var(--muted);
@@ -562,6 +575,23 @@ a:hover { color: var(--red-dark); }
   white-space: nowrap;
 }
 
+/* No candidate from the selected party: the race stays on the page — the
+   absence is information — but drops the red spine and says why. */
+.race-unmatched {
+  border-left-color: var(--line-strong);
+  background: #fdfcfa;
+}
+
+.race-note {
+  flex: 0 0 100%;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* ---------- Candidates ---------- */
 
 .candidate {
@@ -570,6 +600,16 @@ a:hover { color: var(--red-dark); }
 }
 
 .candidate:first-of-type { border-top: 0; padding-top: 0; }
+
+/* Off-party candidates: pushed back, never hidden. Held at 0.45 rather than
+   lower so the names stay legible to anyone reading past the highlight. */
+.candidate-dim {
+  opacity: 0.45;
+}
+
+.candidate-dim h4 {
+  font-weight: 600;
+}
 
 .candidate h4 {
   margin: 0 0 10px;
@@ -733,6 +773,16 @@ a:hover { color: var(--red-dark); }
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #6b6b6b;
+}
+
+/* Dimming alone is a weak signal on a long page, so the party tag on the
+   candidates that do match is promoted to a filled chip as well. */
+.candidate-match h4 .party {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  color: var(--red);
 }
 
 @media (min-width: 620px) {

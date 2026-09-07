@@ -99,6 +99,17 @@
     </div>
 
     <div class="control">
+      <label for="filter-party">Party</label>
+      <select id="filter-party">
+        <option value="all">All parties</option>
+        <option value="REPUBLICAN">Republican</option>
+        <option value="DEMOCRATIC">Democratic</option>
+        <option value="LIBERTARIAN">Libertarian</option>
+        <option value="GREEN">Green</option>
+      </select>
+    </div>
+
+    <div class="control">
       <label for="filter-search">Search</label>
       <input type="search" id="filter-search" placeholder="Candidate, race, donor, endorser&hellip;" autocomplete="off">
     </div>
@@ -107,6 +118,8 @@
       <button type="button" id="filter-reset">Reset filters</button>
     </div>
   </section>
+
+  <p class="filter-note" id="party-note" hidden></p>
 
   <p class="result-count" id="result-count" aria-live="polite"></p>
 
