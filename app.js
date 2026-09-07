@@ -245,29 +245,62 @@
     return ul;
   }
 
-  function renderDetail(title, items, kind, emptyText) {
+  // A section with nothing in it is not rendered at all — an empty heading
+  // over a "none recorded" line is noise on every one of 153 candidates.
+  function renderDetail(title, items, kind) {
+    if (!items || !items.length) return null;
     var wrap = el('div', 'detail');
     wrap.appendChild(el('p', 'detail-label', title));
-    if (items && items.length) {
-      wrap.appendChild(renderItemList(items, kind));
-    } else {
-      wrap.appendChild(el('p', 'empty-note', emptyText));
-    }
+    wrap.appendChild(renderItemList(items, kind));
     return wrap;
   }
 
+  // Party chips state the party three ways at once: spelled out, as a letter,
+  // and as a distinctly shaped glyph. Color is never the only signal.
+  function renderPartyChip(party) {
+    var key = String(party).toUpperCase();
+    var known = PARTY_LABELS[key];
+    var label = known || party;
+    var chip = el('span', 'party party-' + (known ? key.toLowerCase() : 'other'));
+    var glyph = el('span', 'party-glyph', String(label).charAt(0).toUpperCase());
+    glyph.setAttribute('aria-hidden', 'true');
+    chip.appendChild(glyph);
+    chip.appendChild(document.createTextNode(label));
+    return chip;
+  }
+
+  // Collapsed to one line by default: name, party, unopposed. The row only
+  // becomes expandable where there is sourced detail behind it — a disclosure
+  // arrow that opens onto nothing is worse than no arrow.
   function renderCandidate(c) {
     var selecting = state.party !== 'all';
     var hit = selecting && matchesParty(c);
-    var box = el('div', 'candidate' +
-      (selecting ? (hit ? ' candidate-match' : ' candidate-dim') : ''));
-    var name = el('h4', null, c.candidate || 'Unnamed candidate');
-    if (c.party) name.appendChild(el('span', 'party', c.party));
-    box.appendChild(name);
-    box.appendChild(renderDetail('Endorsements', c.endorsements, 'endorsement',
-      'No endorsements recorded.'));
-    box.appendChild(renderDetail('Donations', c.donations, 'donation',
-      'No donations recorded.'));
+    var classes = 'candidate' +
+      (selecting ? (hit ? ' candidate-match' : ' candidate-dim') : '');
+
+    var sections = [
+      renderDetail('Endorsements', c.endorsements, 'endorsement'),
+      renderDetail('Donations', c.donations, 'donation')
+    ].filter(Boolean);
+
+    var box = el(sections.length ? 'details' : 'div', classes);
+    var row = el(sections.length ? 'summary' : 'div', 'candidate-row');
+
+    row.appendChild(el('span', 'candidate-name', c.candidate || 'Unnamed candidate'));
+    if (c.party) row.appendChild(renderPartyChip(c.party));
+    if (c.unopposed) row.appendChild(el('span', 'marker-unopposed', 'Unopposed'));
+    box.appendChild(row);
+
+    if (sections.length) {
+      var body = el('div', 'candidate-detail');
+      sections.forEach(function (section) { body.appendChild(section); });
+      box.appendChild(body);
+      // A search can match a donor or endorser that lives behind the fold, so
+      // while one is active the detail opens rather than leaving the hit
+      // looking unexplained.
+      if (state.search.trim()) box.open = true;
+    }
+
     return box;
   }
 
@@ -284,9 +317,6 @@
     head.appendChild(el('h3', null, race.race));
     if (race.electionDate) {
       head.appendChild(el('span', 'election-date', 'Election: ' + formatDate(race.electionDate)));
-    }
-    if (race.candidates.length === 1 && race.candidates[0].unopposed) {
-      head.appendChild(el('span', 'election-date', 'Unopposed'));
     }
     if (partyMatches === 0) {
       head.appendChild(el('span', 'race-note',

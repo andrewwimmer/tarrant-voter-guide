@@ -22,8 +22,27 @@
     <p class="coverage"><strong>Tarrant County is the only county covered so far.</strong> It is the
       one county with a ballot loaded today, and more Texas counties are being added. Until then,
       nothing on this page describes a ballot outside Tarrant County.</p>
+  </div>
+</header>
 
-    <ol class="steps" aria-label="How this guide works">
+<div class="wrap page">
+
+  <section class="panel signup" aria-labelledby="signup-title">
+    <h2 id="signup-title">Get an email before early voting starts</h2>
+    <p class="signup-intro">One email before early voting opens, with a link to the races on your
+      ballot. No fundraising, and the list is never shared with anyone.</p>
+
+    <form action="https://buttondown.com/api/emails/embed-subscribe/redvoterguides" method="post" class="embeddable-buttondown-form">
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" />
+      <input type="submit" value="Subscribe" />
+      <p><a href="https://buttondown.com/refer/redvoterguides" target="_blank">Powered by Buttondown.</a></p>
+    </form>
+  </section>
+
+  <section class="panel" aria-labelledby="how-title">
+    <p class="eyebrow" id="how-title">How this guide works</p>
+    <ol class="steps">
       <li>
         <span class="step-title">Find your ballot</span>
         <span class="step-body">Filter by federal, state, or county races &mdash; then check which districts you live in.</span>
@@ -37,25 +56,9 @@
         <span class="step-body">Candidate names come from the state&rsquo;s certified ballot report, linked below.</span>
       </li>
     </ol>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <section class="signup" aria-labelledby="signup-title">
-    <h2 id="signup-title">Get an email before early voting starts</h2>
-    <p class="signup-intro">One email before early voting opens, with a link to the races on your
-      ballot. No fundraising, and the list is never shared with anyone.</p>
-
-    <form action="https://buttondown.com/api/emails/embed-subscribe/redvoterguides" method="post" class="embeddable-buttondown-form">
-      <label for="bd-email">Enter your email</label>
-      <input type="email" name="email" id="bd-email" />
-      <input type="submit" value="Subscribe" />
-      <p><a href="https://buttondown.com/refer/redvoterguides" target="_blank">Powered by Buttondown.</a></p>
-    </form>
   </section>
 
-  <div class="banner" role="note">
+  <div class="panel banner" role="note">
     <p class="banner-title">Candidates are real &mdash; endorsements and donations are not loaded yet</p>
     <p>Every race name, candidate name, and party label below is transcribed from the
     <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s Ballot
@@ -69,8 +72,7 @@
     own ballot.</p>
   </div>
 
-
-  <section class="lookup" aria-labelledby="lookup-title">
+  <section class="panel lookup" aria-labelledby="lookup-title">
     <h2 id="lookup-title">Find the races on your ballot</h2>
     <p class="lookup-intro">Enter your street address and this page will work out which of the
       707 Tarrant County voting precincts you live in, then show only the races you are actually
@@ -98,21 +100,14 @@
     <div id="lookup-result" class="lookup-result" hidden></div>
   </section>
 
-  <section class="controls" aria-label="Filters">
+  <section class="controls" id="controls" aria-label="Filters">
     <div class="control">
-      <label for="filter-type">Jurisdiction type</label>
+      <label for="filter-type">Level</label>
       <select id="filter-type">
-        <option value="all">All</option>
+        <option value="all">All levels</option>
         <option value="federal">Federal</option>
         <option value="state">State</option>
         <option value="county">County &amp; precinct</option>
-      </select>
-    </div>
-
-    <div class="control">
-      <label for="filter-jurisdiction">Jurisdiction</label>
-      <select id="filter-jurisdiction">
-        <option value="all">All jurisdictions</option>
       </select>
     </div>
 
@@ -127,12 +122,20 @@
       </select>
     </div>
 
-    <div class="control">
+    <div class="control control-wide">
+      <label for="filter-jurisdiction">Jurisdiction</label>
+      <select id="filter-jurisdiction">
+        <option value="all">All jurisdictions</option>
+      </select>
+    </div>
+
+    <div class="control control-wide control-search">
       <label for="filter-search">Search</label>
       <input type="search" id="filter-search" placeholder="Candidate, race, donor, endorser&hellip;" autocomplete="off">
     </div>
 
-    <div class="control control-reset">
+    <div class="control control-wide control-reset">
+      <label for="filter-reset">Filters</label>
       <button type="button" id="filter-reset">Reset filters</button>
     </div>
   </section>
