@@ -22,15 +22,15 @@
     <ol class="steps" aria-label="How this guide works">
       <li>
         <span class="step-title">Find your ballot</span>
-        <span class="step-body">Filter by city or school district to see only the races you vote in.</span>
+        <span class="step-body">Filter by federal, state, or county races &mdash; then check which districts you live in.</span>
       </li>
       <li>
         <span class="step-title">Compare the candidates</span>
-        <span class="step-body">Each race card lists its candidates with their endorsements and reported donations.</span>
+        <span class="step-body">Each race card lists its certified candidates and their party.</span>
       </li>
       <li>
         <span class="step-title">Check the source</span>
-        <span class="step-body">Follow the source link on any line to the filing, press release, or article it came from.</span>
+        <span class="step-body">Candidate names come from the state&rsquo;s certified ballot report, linked above.</span>
       </li>
     </ol>
   </div>
@@ -39,10 +39,16 @@
 <div class="wrap">
 
   <div class="banner" role="note">
-    <p class="banner-title">Placeholder data &mdash; not a real guide yet</p>
-    <p>Everything on this page comes from <code>candidates.json</code>, which currently contains
-    invented sample entries (names like &ldquo;PLACEHOLDER Candidate A&rdquo;, source links to
-    <code>example.com</code>). None of it is real. Replace the file before using this to vote.</p>
+    <p class="banner-title">Candidates are real &mdash; endorsements and donations are not loaded yet</p>
+    <p>Every race name, candidate name, and party label below is transcribed from the
+    <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s Ballot
+    Certification Report</a> for the November 3, 2026 general election in Tarrant County. The
+    endorsement and donation sections are empty for every candidate: that data has not been
+    collected yet.</p>
+    <p>This page lists every race certified for the county. <strong>Your ballot will show only a
+    subset of them</strong> &mdash; congressional, state legislative, county commissioner, and
+    justice of the peace races are drawn by district, so which ones you vote in depends on your
+    address.</p>
   </div>
 
   <section class="controls" aria-label="Filters">
@@ -50,8 +56,9 @@
       <label for="filter-type">Jurisdiction type</label>
       <select id="filter-type">
         <option value="all">All</option>
-        <option value="city">Cities</option>
-        <option value="school-district">School districts</option>
+        <option value="federal">Federal</option>
+        <option value="state">State</option>
+        <option value="county">County &amp; precinct</option>
       </select>
     </div>
 

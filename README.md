@@ -1,13 +1,16 @@
 # Tarrant County Voter Guide
 
 A static voter guide for Tarrant County, Texas. Races are grouped by jurisdiction
-(city or school district) and can be filtered; every endorsement and donation
+(federal, state, or county) and can be filtered; every endorsement and donation
 shows a clickable link to its source.
 
-> **⚠️ The data in this repo is fake.** `candidates.json` ships with obvious
-> placeholder entries — names like `PLACEHOLDER Candidate A`, jurisdictions like
-> `PLACEHOLDER Westfield ISD`, and source links pointing at `example.com`.
-> Replace the whole file before treating this as a real guide.
+Candidate data is extracted from `sources/ballot-certification-2026-11-03.pdf`,
+the Texas Secretary of State's certified ballot report for the November 3, 2026
+general election in Tarrant County, retrieved September 7, 2026.
+
+> **⚠️ Endorsement and donation data is not populated yet.** Race names,
+> candidate names, and party labels in `candidates.json` are real, but the
+> `endorsements` and `donations` arrays are empty for every candidate.
 
 ## Stack
 
@@ -38,37 +41,27 @@ candidate entry is one candidate in one race:
 
 ```json
 {
-  "id": "plc-001",
-  "race": "PLACEHOLDER City Council, Place 1",
-  "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-  "electionDate": "2026-05-02",
-  "candidate": "PLACEHOLDER Candidate A",
-  "endorsements": [
-    {
-      "organization": "PLACEHOLDER Firefighters Association",
-      "date": "2026-02-10",
-      "note": "PLACEHOLDER sole endorsement in this race.",
-      "sourceUrl": "https://example.com/placeholder/endorsement/...",
-      "sourceLabel": "PLACEHOLDER press release"
-    }
-  ],
-  "donations": [
-    {
-      "donor": "PLACEHOLDER Donor One LLC",
-      "amount": 5000,
-      "date": "2026-01-15",
-      "note": "PLACEHOLDER in-kind contribution.",
-      "sourceUrl": "https://example.com/placeholder/finance/report-001",
-      "sourceLabel": "PLACEHOLDER campaign finance report"
-    }
-  ]
+  "id": "tc-2026-11-001",
+  "race": "U. S. SENATOR",
+  "jurisdiction": { "name": "United States", "type": "federal" },
+  "electionDate": "2026-11-03",
+  "candidate": "KEN PAXTON",
+  "party": "REPUBLICAN",
+  "unopposed": false,
+  "source": "sources/ballot-certification-2026-11-03.pdf",
+  "endorsements": [],
+  "donations": []
 }
 ```
 
 Field notes:
 
-- `jurisdiction.type` must be `"city"` or `"school-district"` — the type filter
-  and the jurisdiction badge both key off it.
+- `jurisdiction.type` must be `"federal"`, `"state"`, or `"county"` — the type
+  filter and the jurisdiction badge both key off it.
+- `party` is the party name exactly as printed on the certification report:
+  `REPUBLICAN`, `DEMOCRATIC`, `LIBERTARIAN`, or `GREEN`.
+- `unopposed` is `true` when the race has only one certified candidate.
+- `source` is the record the candidate entry was extracted from.
 - Candidates are grouped into a race by `race` + `electionDate`, so those two
   values must match exactly across every candidate in the same contest.
 - Dates are `YYYY-MM-DD` and are formatted for display; anything else is printed

@@ -487,3 +487,12 @@ a:hover { color: var(--red-dark); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.candidate h4 .party {
+  margin-left: 0.6rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #6b6b6b;
+}

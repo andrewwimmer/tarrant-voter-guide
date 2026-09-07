@@ -8,8 +8,9 @@
   var DATA_URL = 'candidates.json';
 
   var TYPE_LABELS = {
-    'city': 'City',
-    'school-district': 'School district'
+    'federal': 'Federal',
+    'state': 'State',
+    'county': 'County & precinct'
   };
 
   var state = {
@@ -82,6 +83,7 @@
     var haystack = [
       c.candidate,
       c.race,
+      c.party,
       jurisdictionName(c),
       (c.endorsements || []).map(function (e) { return e.organization; }).join(' '),
       (c.donations || []).map(function (d) { return d.donor; }).join(' ')
@@ -205,7 +207,9 @@
 
   function renderCandidate(c) {
     var box = el('div', 'candidate');
-    box.appendChild(el('h4', null, c.candidate || 'Unnamed candidate'));
+    var name = el('h4', null, c.candidate || 'Unnamed candidate');
+    if (c.party) name.appendChild(el('span', 'party', c.party));
+    box.appendChild(name);
     box.appendChild(renderDetail('Endorsements', c.endorsements, 'endorsement',
       'No endorsements recorded.'));
     box.appendChild(renderDetail('Donations', c.donations, 'donation',
@@ -220,6 +224,9 @@
     if (race.electionDate) {
       head.appendChild(el('span', 'election-date', 'Election: ' + formatDate(race.electionDate)));
     }
+    if (race.candidates.length === 1 && race.candidates[0].unopposed) {
+      head.appendChild(el('span', 'election-date', 'Unopposed'));
+    }
     box.appendChild(head);
     race.candidates.forEach(function (c) { box.appendChild(renderCandidate(c)); });
     return box;
@@ -230,7 +237,7 @@
     var head = el('div', 'jurisdiction-head');
     head.appendChild(el('h2', null, group.name));
     head.appendChild(el('span',
-      'badge' + (group.type === 'school-district' ? ' badge-school' : ''),
+      'badge' + (group.type === 'county' ? ' badge-school' : ''),
       TYPE_LABELS[group.type] || 'Other'));
     section.appendChild(head);
     group.races.forEach(function (race) { section.appendChild(renderRace(race)); });

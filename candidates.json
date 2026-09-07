@@ -1,314 +1,2304 @@
 {
   "meta": {
-    "title": "PLACEHOLDER Tarrant County Voter Guide",
-    "note": "ALL DATA IN THIS FILE IS FAKE PLACEHOLDER DATA. Names, jurisdictions, dates, endorsements, donations, and source URLs are invented for layout/testing purposes only. Replace every entry before publishing anything real.",
-    "lastUpdated": "PLACEHOLDER 0000-00-00"
+    "title": "Tarrant County Voter Guide",
+    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Report for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate.",
+    "source": "sources/ballot-certification-2026-11-03.pdf",
+    "lastUpdated": "2026-09-07"
   },
   "candidates": [
     {
-      "id": "plc-001",
-      "race": "PLACEHOLDER City Council, Place 1",
-      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate A",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Firefighters Association",
-          "date": "2026-02-10",
-          "note": "PLACEHOLDER sole endorsement in this race.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/firefighters-candidate-a",
-          "sourceLabel": "PLACEHOLDER press release"
-        },
-        {
-          "organization": "PLACEHOLDER Neighborhood Alliance PAC",
-          "date": "2026-02-18",
-          "note": "PLACEHOLDER co-endorsed with two other candidates.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/neighborhood-alliance-slate",
-          "sourceLabel": "PLACEHOLDER slate card"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor One LLC",
-          "amount": 5000,
-          "date": "2026-01-15",
-          "note": "PLACEHOLDER in-kind contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-001",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        },
-        {
-          "donor": "PLACEHOLDER Donor Two",
-          "amount": 1250,
-          "date": "2026-01-30",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-002",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-002",
-      "race": "PLACEHOLDER City Council, Place 1",
-      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate B",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Chamber of Commerce PAC",
-          "date": "2026-02-12",
-          "note": "PLACEHOLDER endorsement after questionnaire.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/chamber-candidate-b",
-          "sourceLabel": "PLACEHOLDER endorsement page"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Three",
-          "amount": 2500,
-          "date": "2026-02-01",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-003",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-003",
-      "race": "PLACEHOLDER City Council, Place 1",
-      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate C",
-      "endorsements": [],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Four",
-          "amount": 300,
-          "date": "2026-02-20",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-004",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-004",
-      "race": "PLACEHOLDER Mayor",
-      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate D",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Police Officers Association",
-          "date": "2026-01-28",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/police-candidate-d",
-          "sourceLabel": "PLACEHOLDER announcement"
-        },
-        {
-          "organization": "PLACEHOLDER Environmental Voters Fund",
-          "date": "2026-02-05",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/environment-candidate-d",
-          "sourceLabel": "PLACEHOLDER endorsement list"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Development Partners LP",
-          "amount": 10000,
-          "date": "2026-01-10",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-005",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-005",
-      "race": "PLACEHOLDER Mayor",
-      "jurisdiction": { "name": "PLACEHOLDER City of Northaven", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate E",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Teachers Union Local 000",
-          "date": "2026-02-14",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/teachers-candidate-e",
-          "sourceLabel": "PLACEHOLDER endorsement page"
-        }
-      ],
-      "donations": []
-    },
-    {
-      "id": "plc-006",
-      "race": "PLACEHOLDER City Council, District 3",
-      "jurisdiction": { "name": "PLACEHOLDER City of Southbrook", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate F",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Homeowners Coalition",
-          "date": "2026-02-22",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/homeowners-candidate-f",
-          "sourceLabel": "PLACEHOLDER newsletter"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Five",
-          "amount": 750,
-          "date": "2026-02-03",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-006",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        },
-        {
-          "donor": "PLACEHOLDER Small Business PAC",
-          "amount": 1500,
-          "date": "2026-02-11",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-007",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-007",
-      "race": "PLACEHOLDER City Council, District 3",
-      "jurisdiction": { "name": "PLACEHOLDER City of Southbrook", "type": "city" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate G",
+      "id": "tc-2026-11-001",
+      "race": "U. S. SENATOR",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEN PAXTON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
       "endorsements": [],
       "donations": []
     },
     {
-      "id": "plc-008",
-      "race": "PLACEHOLDER Board of Trustees, Place 4",
-      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate H",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Parents for Schools PAC",
-          "date": "2026-02-08",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/parents-candidate-h",
-          "sourceLabel": "PLACEHOLDER endorsement page"
-        },
-        {
-          "organization": "PLACEHOLDER Educators Association",
-          "date": "2026-02-19",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/educators-candidate-h",
-          "sourceLabel": "PLACEHOLDER press release"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Six",
-          "amount": 4000,
-          "date": "2026-01-22",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-008",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-009",
-      "race": "PLACEHOLDER Board of Trustees, Place 4",
-      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
-      "electionDate": "2026-05-02",
-      "candidate": "PLACEHOLDER Candidate I",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Taxpayers Association",
-          "date": "2026-02-16",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/taxpayers-candidate-i",
-          "sourceLabel": "PLACEHOLDER slate card"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Seven",
-          "amount": 9000,
-          "date": "2026-02-06",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-009",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        },
-        {
-          "donor": "PLACEHOLDER Donor Eight",
-          "amount": 600,
-          "date": "2026-02-21",
-          "note": "PLACEHOLDER in-kind contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-010",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
-    },
-    {
-      "id": "plc-010",
-      "race": "PLACEHOLDER Board of Trustees, Place 7",
-      "jurisdiction": { "name": "PLACEHOLDER Westfield ISD", "type": "school-district" },
+      "id": "tc-2026-11-002",
+      "race": "U. S. SENATOR",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
       "electionDate": "2026-11-03",
-      "candidate": "PLACEHOLDER Candidate J",
+      "candidate": "JAMES TALARICO",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
       "endorsements": [],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Nine",
-          "amount": 200,
-          "date": "2026-08-14",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-011",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
+      "donations": []
     },
     {
-      "id": "plc-011",
-      "race": "PLACEHOLDER Board of Trustees, District 2",
-      "jurisdiction": { "name": "PLACEHOLDER Eastgate ISD", "type": "school-district" },
+      "id": "tc-2026-11-003",
+      "race": "U. S. SENATOR",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
       "electionDate": "2026-11-03",
-      "candidate": "PLACEHOLDER Candidate K",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Community Voters League",
-          "date": "2026-09-30",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/community-candidate-k",
-          "sourceLabel": "PLACEHOLDER endorsement page"
-        }
-      ],
-      "donations": [
-        {
-          "donor": "PLACEHOLDER Donor Ten",
-          "amount": 3200,
-          "date": "2026-09-05",
-          "note": "PLACEHOLDER cash contribution.",
-          "sourceUrl": "https://example.com/placeholder/finance/report-012",
-          "sourceLabel": "PLACEHOLDER campaign finance report"
-        }
-      ]
+      "candidate": "TED BROWN",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
     },
     {
-      "id": "plc-012",
-      "race": "PLACEHOLDER Board of Trustees, District 2",
-      "jurisdiction": { "name": "PLACEHOLDER Eastgate ISD", "type": "school-district" },
+      "id": "tc-2026-11-004",
+      "race": "U. S. REPRESENTATIVE DISTRICT 6",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
       "electionDate": "2026-11-03",
-      "candidate": "PLACEHOLDER Candidate L",
-      "endorsements": [
-        {
-          "organization": "PLACEHOLDER Faith Leaders Network",
-          "date": "2026-10-02",
-          "note": "PLACEHOLDER endorsement.",
-          "sourceUrl": "https://example.com/placeholder/endorsement/faith-candidate-l",
-          "sourceLabel": "PLACEHOLDER statement"
-        }
-      ],
+      "candidate": "JAKE ELLZEY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-005",
+      "race": "U. S. REPRESENTATIVE DISTRICT 6",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DANNY MINTON",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-006",
+      "race": "U. S. REPRESENTATIVE DISTRICT 12",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CRAIG GOLDMAN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-007",
+      "race": "U. S. REPRESENTATIVE DISTRICT 12",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANGELA \"HELI\" RODRIGUEZ PRILLIMAN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-008",
+      "race": "U. S. REPRESENTATIVE DISTRICT 24",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BETH VAN DUYNE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-009",
+      "race": "U. S. REPRESENTATIVE DISTRICT 24",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEVIN BURGE",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-010",
+      "race": "U. S. REPRESENTATIVE DISTRICT 25",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ROGER WILLIAMS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-011",
+      "race": "U. S. REPRESENTATIVE DISTRICT 25",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DIONE SIMS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-012",
+      "race": "U. S. REPRESENTATIVE DISTRICT 30",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "EVERETT JACKSON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-013",
+      "race": "U. S. REPRESENTATIVE DISTRICT 30",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "FREDERICK D. HAYNES III",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-014",
+      "race": "GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "GREG ABBOTT",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-015",
+      "race": "GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "GINA HINOJOSA",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-016",
+      "race": "GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PAT DIXON",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-017",
+      "race": "LIEUTENANT GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAN PATRICK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-018",
+      "race": "LIEUTENANT GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "VIKKI GOODWIN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-019",
+      "race": "LIEUTENANT GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANTHONY CRISTO",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-020",
+      "race": "LIEUTENANT GOVERNOR",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEVIN MCCORMICK",
+      "party": "GREEN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-021",
+      "race": "ATTORNEY GENERAL",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MAYES MIDDLETON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-022",
+      "race": "ATTORNEY GENERAL",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NATHAN JOHNSON",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-023",
+      "race": "ATTORNEY GENERAL",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TOM OXFORD",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-024",
+      "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DON HUFFINES",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-025",
+      "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SARAH ECKHARDT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-026",
+      "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "V. ALONZO ECHAVARRIA-GARZA",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-027",
+      "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SHEHLA FAIZI",
+      "party": "GREEN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-028",
+      "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAWN BUCKINGHAM",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-029",
+      "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BENJAMIN FLORES",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-030",
+      "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NEILL SNIDER",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-031",
+      "race": "COMMISSIONER OF AGRICULTURE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NATE SHEETS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-032",
+      "race": "COMMISSIONER OF AGRICULTURE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CLAYTON TUCKER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-033",
+      "race": "COMMISSIONER OF AGRICULTURE",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AUSTIN R. KELLY",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-034",
+      "race": "RAILROAD COMMISSIONER",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BO FRENCH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-035",
+      "race": "RAILROAD COMMISSIONER",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JON ROSENTHAL",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-036",
+      "race": "RAILROAD COMMISSIONER",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ARTHUR DIBIANCA",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-037",
+      "race": "CHIEF JUSTICE, SUPREME COURT",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JIMMY BLACKLOCK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-038",
+      "race": "CHIEF JUSTICE, SUPREME COURT",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MAGGIE ELLIS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-039",
+      "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JAMES P. SULLIVAN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-040",
+      "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHARI KELLY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-041",
+      "race": "JUSTICE, SUPREME COURT, PLACE 7",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KYLE HAWKINS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-042",
+      "race": "JUSTICE, SUPREME COURT, PLACE 7",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KRISTEN HAWKINS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-043",
+      "race": "JUSTICE, SUPREME COURT, PLACE 8",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRETT BUSBY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-044",
+      "race": "JUSTICE, SUPREME COURT, PLACE 8",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "GISELA D. TRIANA",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-045",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "THOMAS SMITH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-046",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "OKEY ANYIAM",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-047",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARK ASH",
+      "party": "LIBERTARIAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-048",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEVIN PATRICK YEARY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-049",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AUDRA RILEY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-050",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN MESSINGER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-051",
+      "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "HOLLY TAYLOR",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-052",
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CARLOS (CHARLIE) GARZA",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-053",
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TIFFANY CLARK",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-054",
+      "race": "STATE SENATOR, DISTRICT 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LEIGH WAMBSGANSS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-055",
+      "race": "STATE SENATOR, DISTRICT 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TAYLOR REHMET",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-056",
+      "race": "STATE SENATOR, DISTRICT 22",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAVID COOK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-057",
+      "race": "STATE SENATOR, DISTRICT 22",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AMY MARTINEZ-SALAS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-058",
+      "race": "STATE REPRESENTATIVE DISTRICT 90",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RAMON ROMERO, JR",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-059",
+      "race": "STATE REPRESENTATIVE DISTRICT 91",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAVID LOWE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-060",
+      "race": "STATE REPRESENTATIVE DISTRICT 91",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "YISAK WORKU",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-061",
+      "race": "STATE REPRESENTATIVE DISTRICT 92",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JP WOODRUFF",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-062",
+      "race": "STATE REPRESENTATIVE DISTRICT 92",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SALMAN BHOJANI",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-063",
+      "race": "STATE REPRESENTATIVE DISTRICT 93",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ALAN BLAYLOCK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-064",
+      "race": "STATE REPRESENTATIVE DISTRICT 93",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ERICKA LOMICK",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-065",
+      "race": "STATE REPRESENTATIVE DISTRICT 94",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHERYL BEAN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-066",
+      "race": "STATE REPRESENTATIVE DISTRICT 94",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KATIE O'BRIEN DUZAN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-067",
+      "race": "STATE REPRESENTATIVE DISTRICT 95",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NICOLE COLLIER",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-068",
+      "race": "STATE REPRESENTATIVE DISTRICT 96",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ELLEN FLEISCHMANN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-069",
+      "race": "STATE REPRESENTATIVE DISTRICT 96",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "EBONY M. TURNER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-070",
+      "race": "STATE REPRESENTATIVE DISTRICT 97",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN W. MCQUEENEY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-071",
+      "race": "STATE REPRESENTATIVE DISTRICT 97",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BETH LLEWELLYN MCLAUGHLIN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-072",
+      "race": "STATE REPRESENTATIVE DISTRICT 98",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ARMIN MIZANI",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-073",
+      "race": "STATE REPRESENTATIVE DISTRICT 98",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CATE BRENNAN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-074",
+      "race": "STATE REPRESENTATIVE DISTRICT 99",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHARLIE GEREN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-075",
+      "race": "STATE REPRESENTATIVE DISTRICT 99",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MICHELLE WINDER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-076",
+      "race": "STATE REPRESENTATIVE DISTRICT 101",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JUNIOR EZEONU",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-077",
+      "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SCOTT BRISTER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-078",
+      "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JERRY ZIMMERER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-079",
+      "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SCOTT K. FIELD",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-080",
+      "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TOM BAKER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-081",
+      "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "APRIL FARRIS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-082",
+      "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARC M. MEYER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-083",
+      "race": "JUSTICE, 2ND COURT OF APPEALS DISTRICT, PLACE 2",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHRIS TAYLOR",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-084",
+      "race": "JUSTICE, 2ND COURT OF APPEALS DISTRICT, PLACE 7",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRIAN WALKER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-085",
+      "race": "DISTRICT JUDGE, 141ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN P. CHUPP",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-086",
+      "race": "DISTRICT JUDGE, 213TH JUDICIAL DISTRICT - UNEXPIRED TERM",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MICHAEL FERRY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-087",
+      "race": "DISTRICT JUDGE, 213TH JUDICIAL DISTRICT - UNEXPIRED TERM",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ARTHURINE \"ANHTHU\" KAMPHAUS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-088",
+      "race": "DISTRICT JUDGE, 231ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LESLIE BARROWS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-089",
+      "race": "DISTRICT JUDGE, 231ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LYNDSAY NEWELL",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-090",
+      "race": "DISTRICT JUDGE, 233RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KENNETH E. NEWELL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-091",
+      "race": "DISTRICT JUDGE, 236TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DUSTY FILLMORE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-092",
+      "race": "DISTRICT JUDGE, 236TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KATHERINE \"KATE\" KIM",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-093",
+      "race": "DISTRICT JUDGE, 297TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AMY ALLIN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-094",
+      "race": "DISTRICT JUDGE, 297TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "FRED HOWEY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-095",
+      "race": "DISTRICT JUDGE, 322ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JAMES B. MUNFORD",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-096",
+      "race": "DISTRICT JUDGE, 323RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ALEX KIM",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-097",
+      "race": "DISTRICT JUDGE, 323RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRIAN WILLETT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-098",
+      "race": "DISTRICT JUDGE, 324TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANDY HSU",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-099",
+      "race": "DISTRICT JUDGE, 324TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CRYSTAL GAYDEN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-100",
+      "race": "DISTRICT JUDGE, 325TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CYNTHIA TERRY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-101",
+      "race": "DISTRICT JUDGE, 325TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANDY GRIFFIN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-102",
+      "race": "DISTRICT JUDGE, 371ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RYAN HILL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-103",
+      "race": "DISTRICT JUDGE, 371ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARQUETTA \"MARQ\" CLAYTON",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-104",
+      "race": "DISTRICT JUDGE, 372ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JULIE LUGO",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-105",
+      "race": "DISTRICT JUDGE, 432ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LEE SORRELLS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-106",
+      "race": "DISTRICT JUDGE, 432ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "COURTNEY MILLER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-107",
+      "race": "DISTRICT JUDGE, 485TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "STEVEN JUMES",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-108",
+      "race": "CRIMINAL DISTRICT JUDGE #1 TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SHERRI WAGNER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-109",
+      "race": "CRIMINAL DISTRICT JUDGE #1 TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CINDY STORMER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-110",
+      "race": "CRIMINAL DISTRICT JUDGE #3 TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DOUGLAS ALLEN",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-111",
+      "race": "CRIMINAL DISTRICT JUDGE #4 TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANDY PORTER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-112",
+      "race": "CRIMINAL DISTRICT JUDGE #4 TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN BRENDER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-113",
+      "race": "CRIMINAL DISTRICT ATTORNEY TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PHIL SORRELLS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-114",
+      "race": "CRIMINAL DISTRICT ATTORNEY TARRANT COUNTY",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TIFFANY BURKS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-115",
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TIM O'HARE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-116",
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ALISA SIMMONS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-117",
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRYAN KIDD",
+      "party": "GREEN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-118",
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 1",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DON PIERSON",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-119",
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JENNIFER RYMELL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-120",
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 3",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MIKE HRABAL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-121",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 1",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAVID COOK",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-122",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CAREY WALKER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-123",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 3",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BOB MCCOY",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-124",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 4",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DEBORAH NEKHOM",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-125",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 5",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRAD CLARK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-126",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 5",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JULYA \"JUJUBILL\" BILLHYMER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-127",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 6",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RANDI HARTIN",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-128",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 7",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ERIC STARNES",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-129",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 8",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHARLES L. \"CHUCK\" VANOVER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-130",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 9",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRIAN BOLTON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-131",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 9",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LESA PAMPLIN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-132",
+      "race": "JUDGE, COUNTY CRIMINAL COURT NO. 10",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TRENT LOFTIN",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-133",
+      "race": "JUDGE, PROBATE COURT NO. 1",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PATRICIA BURNS",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-134",
+      "race": "JUDGE, PROBATE COURT NO. 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BROOK BELL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-135",
+      "race": "DISTRICT CLERK",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TOM WILDER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-136",
+      "race": "DISTRICT CLERK",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NATHAN SMITH",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-137",
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARY LOUISE NICHOLSON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-138",
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LYDIA BEAN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-139",
+      "race": "COUNTY COMMISSIONER PRECINCT 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TONY TINDERHOLT",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-140",
+      "race": "COUNTY COMMISSIONER PRECINCT 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JARED WILLIAMS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-141",
+      "race": "COUNTY COMMISSIONER PRECINCT 4",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MANNY RAMIREZ",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-142",
+      "race": "COUNTY COMMISSIONER PRECINCT 4",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "NYDIA CARDENAS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-143",
+      "race": "JUSTICE OF THE PEACE PRECINCT 1",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RICKY RODRIGUEZ",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-144",
+      "race": "JUSTICE OF THE PEACE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARY TOM CRAVENS CURNUTT",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-145",
+      "race": "JUSTICE OF THE PEACE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CELINA VASQUEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-146",
+      "race": "JUSTICE OF THE PEACE PRECINCT 3",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "WILLIAM P. \"BILL\" BRANDT",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-147",
+      "race": "JUSTICE OF THE PEACE PRECINCT 4",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHRISTOPHER \"CHRIS\" GREGORY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-148",
+      "race": "JUSTICE OF THE PEACE PRECINCT 4",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RODNEY LEE",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-149",
+      "race": "JUSTICE OF THE PEACE PRECINCT 5",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SERGIO L. DE LEON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-150",
+      "race": "JUSTICE OF THE PEACE PRECINCT 6",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JASON M. CHARBONNET",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-151",
+      "race": "JUSTICE OF THE PEACE PRECINCT 7",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PAIGE PAYNE - NEAL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-152",
+      "race": "JUSTICE OF THE PEACE PRECINCT 7",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KENNETH D. SANDERS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "tc-2026-11-153",
+      "race": "JUSTICE OF THE PEACE PRECINCT 8",
+      "jurisdiction": {
+        "name": "Tarrant County",
+        "type": "county"
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LISA WOODARD",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "source": "sources/ballot-certification-2026-11-03.pdf",
+      "endorsements": [],
       "donations": []
     }
   ]
