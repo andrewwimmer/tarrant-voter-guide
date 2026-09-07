@@ -1,4 +1,4 @@
-/* Tarrant County Voter Guide — presentation only.
+/* Texas Voter Guide — presentation only.
    Mobile first: base rules target a phone; min-width queries add width. */
 
 :root {
@@ -96,6 +96,19 @@ a:hover { color: var(--red-dark); }
   color: var(--text);
   font-size: 1.02rem;
 }
+
+.coverage {
+  margin: 16px 0 0;
+  max-width: 62ch;
+  padding: 11px 14px;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  border-left: 6px solid var(--red);
+  border-radius: var(--radius);
+  font-size: 0.97rem;
+}
+
+.coverage strong { color: var(--red-dark); }
 
 .steps {
   list-style: none;
@@ -196,6 +209,8 @@ a:hover { color: var(--red-dark); }
   margin: 0 0 16px;
   color: var(--muted);
 }
+
+.lookup-intro strong { color: var(--text); }
 
 .lookup-form label {
   display: block;
@@ -698,6 +713,105 @@ a:hover { color: var(--red-dark); }
   background: var(--red-soft);
 }
 
+/* ---------- Email signup ----------
+   Deliberately unlike the address lookup: a tinted panel rather than a white
+   card with a red rule, so the two forms never read as the same control. */
+
+.signup {
+  margin: 22px 0 0;
+  padding: 20px 18px;
+  background: var(--red-soft);
+  border: 1px solid var(--red-line);
+  border-radius: var(--radius);
+}
+
+.signup h2 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+}
+
+.signup-intro {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  max-width: 60ch;
+}
+
+/* Buttondown's markup is kept verbatim, so the layout comes from the form
+   itself: column on a phone, one wrapping row once there is width. */
+.signup .embeddable-buttondown-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup .embeddable-buttondown-form label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.signup .embeddable-buttondown-form input[type="email"] {
+  font: inherit;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.signup .embeddable-buttondown-form input[type="submit"] {
+  font: inherit;
+  font-weight: 600;
+  min-height: 46px;
+  padding: 11px 20px;
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  background: var(--red);
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.signup .embeddable-buttondown-form input[type="submit"]:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.signup .embeddable-buttondown-form p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.signup .embeddable-buttondown-form p a {
+  color: var(--muted);
+}
+
+.signup .embeddable-buttondown-form p a:hover {
+  color: var(--red);
+}
+
+@media (min-width: 620px) {
+  .signup { padding: 24px 26px; }
+
+  .signup .embeddable-buttondown-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .signup .embeddable-buttondown-form label { flex: 0 0 100%; }
+  .signup .embeddable-buttondown-form input[type="email"] { flex: 1 1 14rem; }
+  .signup .embeddable-buttondown-form input[type="submit"] { flex: 0 0 auto; }
+  .signup .embeddable-buttondown-form p { flex: 0 0 100%; }
+}
+
 /* ---------- Sourcing note ---------- */
 
 .sourcing {
@@ -740,6 +854,7 @@ a:hover { color: var(--red-dark); }
   .site-header { padding: 40px 0 34px; }
   .site-header h1 { font-size: 2.5rem; }
   .mission { font-size: 1.12rem; }
+  .coverage { margin-top: 20px; padding: 13px 18px; font-size: 1rem; }
 
   .steps {
     grid-template-columns: repeat(3, 1fr);
