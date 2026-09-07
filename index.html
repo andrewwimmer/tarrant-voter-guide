@@ -5,24 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tarrant County Voter Guide</title>
 <meta name="description" content="A static voter guide for Tarrant County, Texas: races, candidates, endorsements, and donations, each with a source link.">
+<meta name="theme-color" content="#8a1518">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
+    <p class="eyebrow">Tarrant County, Texas</p>
     <h1>Tarrant County Voter Guide</h1>
-    <p class="tagline">Races, candidates, endorsements, and donations &mdash; every claim linked to its source.</p>
+    <p class="mission">Every candidate, endorsement, and donation on this page is tied to a public record you can open and read yourself.</p>
+
+    <ol class="steps" aria-label="How this guide works">
+      <li>
+        <span class="step-title">Find your ballot</span>
+        <span class="step-body">Filter by city or school district to see only the races you vote in.</span>
+      </li>
+      <li>
+        <span class="step-title">Compare the candidates</span>
+        <span class="step-body">Each race card lists its candidates with their endorsements and reported donations.</span>
+      </li>
+      <li>
+        <span class="step-title">Check the source</span>
+        <span class="step-body">Follow the source link on any line to the filing, press release, or article it came from.</span>
+      </li>
+    </ol>
   </div>
 </header>
 
 <div class="wrap">
 
   <div class="banner" role="note">
-    <strong>Placeholder data.</strong> Everything on this page comes from
-    <code>candidates.json</code>, which currently contains invented sample entries
-    (names like &ldquo;PLACEHOLDER Candidate A&rdquo;, source links to <code>example.com</code>).
-    None of it is real. Replace the file before using this as a real guide.
+    <p class="banner-title">Placeholder data &mdash; not a real guide yet</p>
+    <p>Everything on this page comes from <code>candidates.json</code>, which currently contains
+    invented sample entries (names like &ldquo;PLACEHOLDER Candidate A&rdquo;, source links to
+    <code>example.com</code>). None of it is real. Replace the file before using this to vote.</p>
   </div>
 
   <section class="controls" aria-label="Filters">
@@ -55,6 +75,15 @@
   <p class="result-count" id="result-count" aria-live="polite"></p>
 
   <main id="results" aria-label="Races by jurisdiction"></main>
+
+  <section class="sourcing" aria-labelledby="sourcing-title">
+    <h2 id="sourcing-title">How we source this</h2>
+    <p>Every claim in this guide links to a public record. Endorsements point to the endorsing
+      organization&rsquo;s own announcement or to published news coverage. Donations point to the
+      campaign finance report they were filed in. Nothing is included unless a link can be
+      attached to it, and nothing here is inferred, summarized, or ranked &mdash; if a line looks
+      wrong, open its source and judge it yourself.</p>
+  </section>
 
 </div>
 
