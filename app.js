@@ -1,6 +1,7 @@
 /* Tarrant County Voter Guide — vanilla JS, no dependencies.
-   Reads candidates.json, groups races by jurisdiction, and renders every
-   endorsement and donation with a clickable source link. */
+   Reads candidates.json, lists races in certified ballot order (or grouped by
+   jurisdiction), and renders every endorsement and donation with a clickable
+   source link. */
 
 (function () {
   'use strict';
@@ -30,6 +31,9 @@
     // so a race always shows its full field of candidates.
     party: 'all',
     search: '',
+    // 'ballot' renders one continuous list in certified ballot order;
+    // 'jurisdiction' groups the same races under their level of government.
+    sort: 'ballot',
     // Set once an address resolves to a precinct; ballotActive is the
     // "show only my races" / "show all races" switch over the same result.
     ballot: null,
@@ -42,6 +46,7 @@
     type: document.getElementById('filter-type'),
     jurisdiction: document.getElementById('filter-jurisdiction'),
     party: document.getElementById('filter-party'),
+    sort: document.getElementById('filter-sort'),
     partyNote: document.getElementById('party-note'),
     search: document.getElementById('filter-search'),
     reset: document.getElementById('filter-reset'),
@@ -153,6 +158,48 @@
 
   /* ---------- grouping ---------- */
 
+  // ballotOrder is the entry's 1-based position in the certification report,
+  // so it orders races against each other and candidates within a race in the
+  // one sequence a voter actually meets at the polls. Candidates are never
+  // sorted by name: on a ballot, name order is not the order.
+  function byBallotOrder(a, b) {
+    return ballotOrder(a) - ballotOrder(b);
+  }
+
+  function ballotOrder(c) {
+    return typeof c.ballotOrder === 'number' ? c.ballotOrder : Infinity;
+  }
+
+  function raceKey(c) {
+    return (c.race || 'Unspecified race') + '||' + (c.electionDate || '');
+  }
+
+  function newRace(c) {
+    return {
+      race: c.race || 'Unspecified race',
+      electionDate: c.electionDate || '',
+      candidates: []
+    };
+  }
+
+  // -> [{ race, electionDate, candidates: [...] }] in certified ballot order,
+  // with no jurisdiction grouping: the flat list the ballot itself is.
+  function racesInBallotOrder(list) {
+    var order = [];
+    var byKey = {};
+
+    list.slice().sort(byBallotOrder).forEach(function (c) {
+      var key = raceKey(c);
+      if (!byKey[key]) {
+        byKey[key] = newRace(c);
+        order.push(key);
+      }
+      byKey[key].candidates.push(c);
+    });
+
+    return order.map(function (key) { return byKey[key]; });
+  }
+
   // -> [{ name, type, races: [{ race, electionDate, candidates: [...] }] }]
   function groupByJurisdiction(list) {
     var order = [];
@@ -165,16 +212,12 @@
         order.push(name);
       }
       var group = byName[name];
-      var raceKey = (c.race || 'Unspecified race') + '||' + (c.electionDate || '');
-      if (!group.races[raceKey]) {
-        group.races[raceKey] = {
-          race: c.race || 'Unspecified race',
-          electionDate: c.electionDate || '',
-          candidates: []
-        };
-        group.raceOrder.push(raceKey);
+      var key = raceKey(c);
+      if (!group.races[key]) {
+        group.races[key] = newRace(c);
+        group.raceOrder.push(key);
       }
-      group.races[raceKey].candidates.push(c);
+      group.races[key].candidates.push(c);
     });
 
     return order
@@ -188,11 +231,7 @@
           }
           return a.race.localeCompare(b.race);
         });
-        races.forEach(function (r) {
-          r.candidates.sort(function (a, b) {
-            return String(a.candidate).localeCompare(String(b.candidate));
-          });
-        });
+        races.forEach(function (r) { r.candidates.sort(byBallotOrder); });
         return { name: group.name, type: group.type, races: races };
       });
   }
@@ -360,19 +399,22 @@
 
   function render() {
     var filtered = applyFilters();
-    var groups = groupByJurisdiction(filtered);
-
-    var raceCount = groups.reduce(function (n, g) { return n + g.races.length; }, 0);
+    // Ballot order is one continuous list of races; grouped mode nests the
+    // same races under a jurisdiction heading. Either way the races, and the
+    // candidates inside them, are the same objects in the same sequence.
+    var byBallot = state.sort === 'ballot';
+    var groups = byBallot ? null : groupByJurisdiction(filtered);
+    var races = byBallot
+      ? racesInBallotOrder(filtered)
+      : groups.reduce(function (all, g) { return all.concat(g.races); }, []);
 
     var partyMatched = 0;
     var partyEmptyRaces = 0;
     if (state.party !== 'all') {
-      groups.forEach(function (g) {
-        g.races.forEach(function (r) {
-          var n = r.candidates.filter(matchesParty).length;
-          partyMatched += n;
-          if (!n) partyEmptyRaces++;
-        });
+      races.forEach(function (r) {
+        var n = r.candidates.filter(matchesParty).length;
+        partyMatched += n;
+        if (!n) partyEmptyRaces++;
       });
     }
     renderPartyNote(partyMatched, partyEmptyRaces);
@@ -383,8 +425,10 @@
       filtered.length + ' candidate' + (filtered.length === 1 ? '' : 's') +
       (state.party === 'all' ? '' :
         ' (' + partyMatched + ' ' + partyLabel(state.party) + ')') +
-      ' · ' + raceCount + ' race' + (raceCount === 1 ? '' : 's') +
-      ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's');
+      ' · ' + races.length + ' race' + (races.length === 1 ? '' : 's') +
+      // Only worth counting jurisdictions when they are actually on screen.
+      (byBallot ? '' :
+        ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's'));
 
     if (!filtered.length) {
       setStatus(state.ballotActive
@@ -394,7 +438,12 @@
     }
 
     var frag = document.createDocumentFragment();
-    groups.forEach(function (g) { frag.appendChild(renderJurisdiction(g)); });
+    if (byBallot) {
+      // No headings at all — the run of race cards is the ballot.
+      races.forEach(function (r) { frag.appendChild(renderRace(r)); });
+    } else {
+      groups.forEach(function (g) { frag.appendChild(renderJurisdiction(g)); });
+    }
     els.results.innerHTML = '';
     els.results.appendChild(frag);
   }
@@ -898,6 +947,13 @@
       render();
     });
 
+    // Sort only re-shapes the list that is already on screen: same races,
+    // same candidates, same filters.
+    els.sort.addEventListener('change', function () {
+      state.sort = els.sort.value;
+      render();
+    });
+
     // Resets the dropdowns and returns to the full race list, but keeps any
     // matched precinct on screen so it can be re-applied with one click.
     els.reset.addEventListener('click', function () {
@@ -905,10 +961,12 @@
       state.jurisdiction = 'all';
       state.party = 'all';
       state.search = '';
+      state.sort = 'ballot';
       state.ballotActive = false;
       els.type.value = 'all';
       els.party.value = 'all';
       els.search.value = '';
+      els.sort.value = 'ballot';
       renderBallotPanel();
       populateJurisdictions();
       render();
@@ -932,6 +990,7 @@
       els.lastUpdated.textContent = 'Data last updated: ' + data.meta.lastUpdated;
     }
 
+    els.sort.value = state.sort;
     populateJurisdictions();
     wireEvents();
     wireLookup();

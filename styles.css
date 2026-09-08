@@ -1088,7 +1088,9 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   }
 
   .controls {
-    grid-template-columns: repeat(4, 1fr);
+    /* The last column sizes to its content so the Order select can show
+       "Grouped by jurisdiction" in full rather than clipping it. */
+    grid-template-columns: repeat(3, 1fr) auto;
     align-items: end;
     padding: 18px 20px;
   }

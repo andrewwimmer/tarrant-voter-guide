@@ -1,13 +1,14 @@
 {
   "meta": {
     "title": "Tarrant County Voter Guide",
-    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Report for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate.",
+    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Report for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate. Each entry carries a ballotOrder: its 1-based position in the certification report, which is the order the races and the candidates within each race appear on the printed ballot.",
     "source": "sources/ballot-certification-2026-11-03.pdf",
     "lastUpdated": "2026-09-07"
   },
   "candidates": [
     {
       "id": "tc-2026-11-001",
+      "ballotOrder": 1,
       "race": "U. S. SENATOR",
       "jurisdiction": {
         "name": "United States",
@@ -23,6 +24,7 @@
     },
     {
       "id": "tc-2026-11-002",
+      "ballotOrder": 2,
       "race": "U. S. SENATOR",
       "jurisdiction": {
         "name": "United States",
@@ -38,6 +40,7 @@
     },
     {
       "id": "tc-2026-11-003",
+      "ballotOrder": 3,
       "race": "U. S. SENATOR",
       "jurisdiction": {
         "name": "United States",
@@ -53,6 +56,7 @@
     },
     {
       "id": "tc-2026-11-004",
+      "ballotOrder": 4,
       "race": "U. S. REPRESENTATIVE DISTRICT 6",
       "jurisdiction": {
         "name": "United States",
@@ -68,6 +72,7 @@
     },
     {
       "id": "tc-2026-11-005",
+      "ballotOrder": 5,
       "race": "U. S. REPRESENTATIVE DISTRICT 6",
       "jurisdiction": {
         "name": "United States",
@@ -83,6 +88,7 @@
     },
     {
       "id": "tc-2026-11-006",
+      "ballotOrder": 6,
       "race": "U. S. REPRESENTATIVE DISTRICT 12",
       "jurisdiction": {
         "name": "United States",
@@ -98,6 +104,7 @@
     },
     {
       "id": "tc-2026-11-007",
+      "ballotOrder": 7,
       "race": "U. S. REPRESENTATIVE DISTRICT 12",
       "jurisdiction": {
         "name": "United States",
@@ -113,6 +120,7 @@
     },
     {
       "id": "tc-2026-11-008",
+      "ballotOrder": 8,
       "race": "U. S. REPRESENTATIVE DISTRICT 24",
       "jurisdiction": {
         "name": "United States",
@@ -128,6 +136,7 @@
     },
     {
       "id": "tc-2026-11-009",
+      "ballotOrder": 9,
       "race": "U. S. REPRESENTATIVE DISTRICT 24",
       "jurisdiction": {
         "name": "United States",
@@ -143,6 +152,7 @@
     },
     {
       "id": "tc-2026-11-010",
+      "ballotOrder": 10,
       "race": "U. S. REPRESENTATIVE DISTRICT 25",
       "jurisdiction": {
         "name": "United States",
@@ -158,6 +168,7 @@
     },
     {
       "id": "tc-2026-11-011",
+      "ballotOrder": 11,
       "race": "U. S. REPRESENTATIVE DISTRICT 25",
       "jurisdiction": {
         "name": "United States",
@@ -173,6 +184,7 @@
     },
     {
       "id": "tc-2026-11-012",
+      "ballotOrder": 12,
       "race": "U. S. REPRESENTATIVE DISTRICT 30",
       "jurisdiction": {
         "name": "United States",
@@ -188,6 +200,7 @@
     },
     {
       "id": "tc-2026-11-013",
+      "ballotOrder": 13,
       "race": "U. S. REPRESENTATIVE DISTRICT 30",
       "jurisdiction": {
         "name": "United States",
@@ -203,6 +216,7 @@
     },
     {
       "id": "tc-2026-11-014",
+      "ballotOrder": 14,
       "race": "GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -218,6 +232,7 @@
     },
     {
       "id": "tc-2026-11-015",
+      "ballotOrder": 15,
       "race": "GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -233,6 +248,7 @@
     },
     {
       "id": "tc-2026-11-016",
+      "ballotOrder": 16,
       "race": "GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -248,6 +264,7 @@
     },
     {
       "id": "tc-2026-11-017",
+      "ballotOrder": 17,
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -263,6 +280,7 @@
     },
     {
       "id": "tc-2026-11-018",
+      "ballotOrder": 18,
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -278,6 +296,7 @@
     },
     {
       "id": "tc-2026-11-019",
+      "ballotOrder": 19,
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -293,6 +312,7 @@
     },
     {
       "id": "tc-2026-11-020",
+      "ballotOrder": 20,
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
         "name": "Texas",
@@ -308,6 +328,7 @@
     },
     {
       "id": "tc-2026-11-021",
+      "ballotOrder": 21,
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
         "name": "Texas",
@@ -323,6 +344,7 @@
     },
     {
       "id": "tc-2026-11-022",
+      "ballotOrder": 22,
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
         "name": "Texas",
@@ -338,6 +360,7 @@
     },
     {
       "id": "tc-2026-11-023",
+      "ballotOrder": 23,
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
         "name": "Texas",
@@ -353,6 +376,7 @@
     },
     {
       "id": "tc-2026-11-024",
+      "ballotOrder": 24,
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
         "name": "Texas",
@@ -368,6 +392,7 @@
     },
     {
       "id": "tc-2026-11-025",
+      "ballotOrder": 25,
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
         "name": "Texas",
@@ -383,6 +408,7 @@
     },
     {
       "id": "tc-2026-11-026",
+      "ballotOrder": 26,
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
         "name": "Texas",
@@ -398,6 +424,7 @@
     },
     {
       "id": "tc-2026-11-027",
+      "ballotOrder": 27,
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
         "name": "Texas",
@@ -413,6 +440,7 @@
     },
     {
       "id": "tc-2026-11-028",
+      "ballotOrder": 28,
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
         "name": "Texas",
@@ -428,6 +456,7 @@
     },
     {
       "id": "tc-2026-11-029",
+      "ballotOrder": 29,
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
         "name": "Texas",
@@ -443,6 +472,7 @@
     },
     {
       "id": "tc-2026-11-030",
+      "ballotOrder": 30,
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
         "name": "Texas",
@@ -458,6 +488,7 @@
     },
     {
       "id": "tc-2026-11-031",
+      "ballotOrder": 31,
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
         "name": "Texas",
@@ -473,6 +504,7 @@
     },
     {
       "id": "tc-2026-11-032",
+      "ballotOrder": 32,
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
         "name": "Texas",
@@ -488,6 +520,7 @@
     },
     {
       "id": "tc-2026-11-033",
+      "ballotOrder": 33,
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
         "name": "Texas",
@@ -503,6 +536,7 @@
     },
     {
       "id": "tc-2026-11-034",
+      "ballotOrder": 34,
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
         "name": "Texas",
@@ -518,6 +552,7 @@
     },
     {
       "id": "tc-2026-11-035",
+      "ballotOrder": 35,
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
         "name": "Texas",
@@ -533,6 +568,7 @@
     },
     {
       "id": "tc-2026-11-036",
+      "ballotOrder": 36,
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
         "name": "Texas",
@@ -548,6 +584,7 @@
     },
     {
       "id": "tc-2026-11-037",
+      "ballotOrder": 37,
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
         "name": "Texas",
@@ -563,6 +600,7 @@
     },
     {
       "id": "tc-2026-11-038",
+      "ballotOrder": 38,
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
         "name": "Texas",
@@ -578,6 +616,7 @@
     },
     {
       "id": "tc-2026-11-039",
+      "ballotOrder": 39,
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
         "name": "Texas",
@@ -593,6 +632,7 @@
     },
     {
       "id": "tc-2026-11-040",
+      "ballotOrder": 40,
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
         "name": "Texas",
@@ -608,6 +648,7 @@
     },
     {
       "id": "tc-2026-11-041",
+      "ballotOrder": 41,
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
         "name": "Texas",
@@ -623,6 +664,7 @@
     },
     {
       "id": "tc-2026-11-042",
+      "ballotOrder": 42,
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
         "name": "Texas",
@@ -638,6 +680,7 @@
     },
     {
       "id": "tc-2026-11-043",
+      "ballotOrder": 43,
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
         "name": "Texas",
@@ -653,6 +696,7 @@
     },
     {
       "id": "tc-2026-11-044",
+      "ballotOrder": 44,
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
         "name": "Texas",
@@ -668,6 +712,7 @@
     },
     {
       "id": "tc-2026-11-045",
+      "ballotOrder": 45,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
         "name": "Texas",
@@ -683,6 +728,7 @@
     },
     {
       "id": "tc-2026-11-046",
+      "ballotOrder": 46,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
         "name": "Texas",
@@ -698,6 +744,7 @@
     },
     {
       "id": "tc-2026-11-047",
+      "ballotOrder": 47,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
         "name": "Texas",
@@ -713,6 +760,7 @@
     },
     {
       "id": "tc-2026-11-048",
+      "ballotOrder": 48,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
         "name": "Texas",
@@ -728,6 +776,7 @@
     },
     {
       "id": "tc-2026-11-049",
+      "ballotOrder": 49,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
         "name": "Texas",
@@ -743,6 +792,7 @@
     },
     {
       "id": "tc-2026-11-050",
+      "ballotOrder": 50,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
         "name": "Texas",
@@ -758,6 +808,7 @@
     },
     {
       "id": "tc-2026-11-051",
+      "ballotOrder": 51,
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
         "name": "Texas",
@@ -773,6 +824,7 @@
     },
     {
       "id": "tc-2026-11-052",
+      "ballotOrder": 52,
       "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
       "jurisdiction": {
         "name": "Texas",
@@ -788,6 +840,7 @@
     },
     {
       "id": "tc-2026-11-053",
+      "ballotOrder": 53,
       "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
       "jurisdiction": {
         "name": "Texas",
@@ -803,6 +856,7 @@
     },
     {
       "id": "tc-2026-11-054",
+      "ballotOrder": 54,
       "race": "STATE SENATOR, DISTRICT 9",
       "jurisdiction": {
         "name": "Texas",
@@ -818,6 +872,7 @@
     },
     {
       "id": "tc-2026-11-055",
+      "ballotOrder": 55,
       "race": "STATE SENATOR, DISTRICT 9",
       "jurisdiction": {
         "name": "Texas",
@@ -833,6 +888,7 @@
     },
     {
       "id": "tc-2026-11-056",
+      "ballotOrder": 56,
       "race": "STATE SENATOR, DISTRICT 22",
       "jurisdiction": {
         "name": "Texas",
@@ -848,6 +904,7 @@
     },
     {
       "id": "tc-2026-11-057",
+      "ballotOrder": 57,
       "race": "STATE SENATOR, DISTRICT 22",
       "jurisdiction": {
         "name": "Texas",
@@ -863,6 +920,7 @@
     },
     {
       "id": "tc-2026-11-058",
+      "ballotOrder": 58,
       "race": "STATE REPRESENTATIVE DISTRICT 90",
       "jurisdiction": {
         "name": "Texas",
@@ -878,6 +936,7 @@
     },
     {
       "id": "tc-2026-11-059",
+      "ballotOrder": 59,
       "race": "STATE REPRESENTATIVE DISTRICT 91",
       "jurisdiction": {
         "name": "Texas",
@@ -893,6 +952,7 @@
     },
     {
       "id": "tc-2026-11-060",
+      "ballotOrder": 60,
       "race": "STATE REPRESENTATIVE DISTRICT 91",
       "jurisdiction": {
         "name": "Texas",
@@ -908,6 +968,7 @@
     },
     {
       "id": "tc-2026-11-061",
+      "ballotOrder": 61,
       "race": "STATE REPRESENTATIVE DISTRICT 92",
       "jurisdiction": {
         "name": "Texas",
@@ -923,6 +984,7 @@
     },
     {
       "id": "tc-2026-11-062",
+      "ballotOrder": 62,
       "race": "STATE REPRESENTATIVE DISTRICT 92",
       "jurisdiction": {
         "name": "Texas",
@@ -938,6 +1000,7 @@
     },
     {
       "id": "tc-2026-11-063",
+      "ballotOrder": 63,
       "race": "STATE REPRESENTATIVE DISTRICT 93",
       "jurisdiction": {
         "name": "Texas",
@@ -953,6 +1016,7 @@
     },
     {
       "id": "tc-2026-11-064",
+      "ballotOrder": 64,
       "race": "STATE REPRESENTATIVE DISTRICT 93",
       "jurisdiction": {
         "name": "Texas",
@@ -968,6 +1032,7 @@
     },
     {
       "id": "tc-2026-11-065",
+      "ballotOrder": 65,
       "race": "STATE REPRESENTATIVE DISTRICT 94",
       "jurisdiction": {
         "name": "Texas",
@@ -983,6 +1048,7 @@
     },
     {
       "id": "tc-2026-11-066",
+      "ballotOrder": 66,
       "race": "STATE REPRESENTATIVE DISTRICT 94",
       "jurisdiction": {
         "name": "Texas",
@@ -998,6 +1064,7 @@
     },
     {
       "id": "tc-2026-11-067",
+      "ballotOrder": 67,
       "race": "STATE REPRESENTATIVE DISTRICT 95",
       "jurisdiction": {
         "name": "Texas",
@@ -1013,6 +1080,7 @@
     },
     {
       "id": "tc-2026-11-068",
+      "ballotOrder": 68,
       "race": "STATE REPRESENTATIVE DISTRICT 96",
       "jurisdiction": {
         "name": "Texas",
@@ -1028,6 +1096,7 @@
     },
     {
       "id": "tc-2026-11-069",
+      "ballotOrder": 69,
       "race": "STATE REPRESENTATIVE DISTRICT 96",
       "jurisdiction": {
         "name": "Texas",
@@ -1043,6 +1112,7 @@
     },
     {
       "id": "tc-2026-11-070",
+      "ballotOrder": 70,
       "race": "STATE REPRESENTATIVE DISTRICT 97",
       "jurisdiction": {
         "name": "Texas",
@@ -1058,6 +1128,7 @@
     },
     {
       "id": "tc-2026-11-071",
+      "ballotOrder": 71,
       "race": "STATE REPRESENTATIVE DISTRICT 97",
       "jurisdiction": {
         "name": "Texas",
@@ -1073,6 +1144,7 @@
     },
     {
       "id": "tc-2026-11-072",
+      "ballotOrder": 72,
       "race": "STATE REPRESENTATIVE DISTRICT 98",
       "jurisdiction": {
         "name": "Texas",
@@ -1088,6 +1160,7 @@
     },
     {
       "id": "tc-2026-11-073",
+      "ballotOrder": 73,
       "race": "STATE REPRESENTATIVE DISTRICT 98",
       "jurisdiction": {
         "name": "Texas",
@@ -1103,6 +1176,7 @@
     },
     {
       "id": "tc-2026-11-074",
+      "ballotOrder": 74,
       "race": "STATE REPRESENTATIVE DISTRICT 99",
       "jurisdiction": {
         "name": "Texas",
@@ -1118,6 +1192,7 @@
     },
     {
       "id": "tc-2026-11-075",
+      "ballotOrder": 75,
       "race": "STATE REPRESENTATIVE DISTRICT 99",
       "jurisdiction": {
         "name": "Texas",
@@ -1133,6 +1208,7 @@
     },
     {
       "id": "tc-2026-11-076",
+      "ballotOrder": 76,
       "race": "STATE REPRESENTATIVE DISTRICT 101",
       "jurisdiction": {
         "name": "Texas",
@@ -1148,6 +1224,7 @@
     },
     {
       "id": "tc-2026-11-077",
+      "ballotOrder": 77,
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
         "name": "Texas",
@@ -1163,6 +1240,7 @@
     },
     {
       "id": "tc-2026-11-078",
+      "ballotOrder": 78,
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
         "name": "Texas",
@@ -1178,6 +1256,7 @@
     },
     {
       "id": "tc-2026-11-079",
+      "ballotOrder": 79,
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
         "name": "Texas",
@@ -1193,6 +1272,7 @@
     },
     {
       "id": "tc-2026-11-080",
+      "ballotOrder": 80,
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
         "name": "Texas",
@@ -1208,6 +1288,7 @@
     },
     {
       "id": "tc-2026-11-081",
+      "ballotOrder": 81,
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
         "name": "Texas",
@@ -1223,6 +1304,7 @@
     },
     {
       "id": "tc-2026-11-082",
+      "ballotOrder": 82,
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
         "name": "Texas",
@@ -1238,6 +1320,7 @@
     },
     {
       "id": "tc-2026-11-083",
+      "ballotOrder": 83,
       "race": "JUSTICE, 2ND COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
         "name": "Texas",
@@ -1253,6 +1336,7 @@
     },
     {
       "id": "tc-2026-11-084",
+      "ballotOrder": 84,
       "race": "JUSTICE, 2ND COURT OF APPEALS DISTRICT, PLACE 7",
       "jurisdiction": {
         "name": "Texas",
@@ -1268,6 +1352,7 @@
     },
     {
       "id": "tc-2026-11-085",
+      "ballotOrder": 85,
       "race": "DISTRICT JUDGE, 141ST JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1283,6 +1368,7 @@
     },
     {
       "id": "tc-2026-11-086",
+      "ballotOrder": 86,
       "race": "DISTRICT JUDGE, 213TH JUDICIAL DISTRICT - UNEXPIRED TERM",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1298,6 +1384,7 @@
     },
     {
       "id": "tc-2026-11-087",
+      "ballotOrder": 87,
       "race": "DISTRICT JUDGE, 213TH JUDICIAL DISTRICT - UNEXPIRED TERM",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1313,6 +1400,7 @@
     },
     {
       "id": "tc-2026-11-088",
+      "ballotOrder": 88,
       "race": "DISTRICT JUDGE, 231ST JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1328,6 +1416,7 @@
     },
     {
       "id": "tc-2026-11-089",
+      "ballotOrder": 89,
       "race": "DISTRICT JUDGE, 231ST JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1343,6 +1432,7 @@
     },
     {
       "id": "tc-2026-11-090",
+      "ballotOrder": 90,
       "race": "DISTRICT JUDGE, 233RD JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1358,6 +1448,7 @@
     },
     {
       "id": "tc-2026-11-091",
+      "ballotOrder": 91,
       "race": "DISTRICT JUDGE, 236TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1373,6 +1464,7 @@
     },
     {
       "id": "tc-2026-11-092",
+      "ballotOrder": 92,
       "race": "DISTRICT JUDGE, 236TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1388,6 +1480,7 @@
     },
     {
       "id": "tc-2026-11-093",
+      "ballotOrder": 93,
       "race": "DISTRICT JUDGE, 297TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1403,6 +1496,7 @@
     },
     {
       "id": "tc-2026-11-094",
+      "ballotOrder": 94,
       "race": "DISTRICT JUDGE, 297TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1418,6 +1512,7 @@
     },
     {
       "id": "tc-2026-11-095",
+      "ballotOrder": 95,
       "race": "DISTRICT JUDGE, 322ND JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1433,6 +1528,7 @@
     },
     {
       "id": "tc-2026-11-096",
+      "ballotOrder": 96,
       "race": "DISTRICT JUDGE, 323RD JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1448,6 +1544,7 @@
     },
     {
       "id": "tc-2026-11-097",
+      "ballotOrder": 97,
       "race": "DISTRICT JUDGE, 323RD JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1463,6 +1560,7 @@
     },
     {
       "id": "tc-2026-11-098",
+      "ballotOrder": 98,
       "race": "DISTRICT JUDGE, 324TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1478,6 +1576,7 @@
     },
     {
       "id": "tc-2026-11-099",
+      "ballotOrder": 99,
       "race": "DISTRICT JUDGE, 324TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1493,6 +1592,7 @@
     },
     {
       "id": "tc-2026-11-100",
+      "ballotOrder": 100,
       "race": "DISTRICT JUDGE, 325TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1508,6 +1608,7 @@
     },
     {
       "id": "tc-2026-11-101",
+      "ballotOrder": 101,
       "race": "DISTRICT JUDGE, 325TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1523,6 +1624,7 @@
     },
     {
       "id": "tc-2026-11-102",
+      "ballotOrder": 102,
       "race": "DISTRICT JUDGE, 371ST JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1538,6 +1640,7 @@
     },
     {
       "id": "tc-2026-11-103",
+      "ballotOrder": 103,
       "race": "DISTRICT JUDGE, 371ST JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1553,6 +1656,7 @@
     },
     {
       "id": "tc-2026-11-104",
+      "ballotOrder": 104,
       "race": "DISTRICT JUDGE, 372ND JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1568,6 +1672,7 @@
     },
     {
       "id": "tc-2026-11-105",
+      "ballotOrder": 105,
       "race": "DISTRICT JUDGE, 432ND JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1583,6 +1688,7 @@
     },
     {
       "id": "tc-2026-11-106",
+      "ballotOrder": 106,
       "race": "DISTRICT JUDGE, 432ND JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1598,6 +1704,7 @@
     },
     {
       "id": "tc-2026-11-107",
+      "ballotOrder": 107,
       "race": "DISTRICT JUDGE, 485TH JUDICIAL DISTRICT",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1613,6 +1720,7 @@
     },
     {
       "id": "tc-2026-11-108",
+      "ballotOrder": 108,
       "race": "CRIMINAL DISTRICT JUDGE #1 TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1628,6 +1736,7 @@
     },
     {
       "id": "tc-2026-11-109",
+      "ballotOrder": 109,
       "race": "CRIMINAL DISTRICT JUDGE #1 TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1643,6 +1752,7 @@
     },
     {
       "id": "tc-2026-11-110",
+      "ballotOrder": 110,
       "race": "CRIMINAL DISTRICT JUDGE #3 TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1658,6 +1768,7 @@
     },
     {
       "id": "tc-2026-11-111",
+      "ballotOrder": 111,
       "race": "CRIMINAL DISTRICT JUDGE #4 TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1673,6 +1784,7 @@
     },
     {
       "id": "tc-2026-11-112",
+      "ballotOrder": 112,
       "race": "CRIMINAL DISTRICT JUDGE #4 TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1688,6 +1800,7 @@
     },
     {
       "id": "tc-2026-11-113",
+      "ballotOrder": 113,
       "race": "CRIMINAL DISTRICT ATTORNEY TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1703,6 +1816,7 @@
     },
     {
       "id": "tc-2026-11-114",
+      "ballotOrder": 114,
       "race": "CRIMINAL DISTRICT ATTORNEY TARRANT COUNTY",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1718,6 +1832,7 @@
     },
     {
       "id": "tc-2026-11-115",
+      "ballotOrder": 115,
       "race": "COUNTY JUDGE",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1733,6 +1848,7 @@
     },
     {
       "id": "tc-2026-11-116",
+      "ballotOrder": 116,
       "race": "COUNTY JUDGE",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1748,6 +1864,7 @@
     },
     {
       "id": "tc-2026-11-117",
+      "ballotOrder": 117,
       "race": "COUNTY JUDGE",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1763,6 +1880,7 @@
     },
     {
       "id": "tc-2026-11-118",
+      "ballotOrder": 118,
       "race": "JUDGE, COUNTY COURT AT LAW NO. 1",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1778,6 +1896,7 @@
     },
     {
       "id": "tc-2026-11-119",
+      "ballotOrder": 119,
       "race": "JUDGE, COUNTY COURT AT LAW NO. 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1793,6 +1912,7 @@
     },
     {
       "id": "tc-2026-11-120",
+      "ballotOrder": 120,
       "race": "JUDGE, COUNTY COURT AT LAW NO. 3",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1808,6 +1928,7 @@
     },
     {
       "id": "tc-2026-11-121",
+      "ballotOrder": 121,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 1",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1823,6 +1944,7 @@
     },
     {
       "id": "tc-2026-11-122",
+      "ballotOrder": 122,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1838,6 +1960,7 @@
     },
     {
       "id": "tc-2026-11-123",
+      "ballotOrder": 123,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 3",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1853,6 +1976,7 @@
     },
     {
       "id": "tc-2026-11-124",
+      "ballotOrder": 124,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 4",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1868,6 +1992,7 @@
     },
     {
       "id": "tc-2026-11-125",
+      "ballotOrder": 125,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 5",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1883,6 +2008,7 @@
     },
     {
       "id": "tc-2026-11-126",
+      "ballotOrder": 126,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 5",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1898,6 +2024,7 @@
     },
     {
       "id": "tc-2026-11-127",
+      "ballotOrder": 127,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 6",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1913,6 +2040,7 @@
     },
     {
       "id": "tc-2026-11-128",
+      "ballotOrder": 128,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 7",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1928,6 +2056,7 @@
     },
     {
       "id": "tc-2026-11-129",
+      "ballotOrder": 129,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 8",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1943,6 +2072,7 @@
     },
     {
       "id": "tc-2026-11-130",
+      "ballotOrder": 130,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 9",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1958,6 +2088,7 @@
     },
     {
       "id": "tc-2026-11-131",
+      "ballotOrder": 131,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 9",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1973,6 +2104,7 @@
     },
     {
       "id": "tc-2026-11-132",
+      "ballotOrder": 132,
       "race": "JUDGE, COUNTY CRIMINAL COURT NO. 10",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -1988,6 +2120,7 @@
     },
     {
       "id": "tc-2026-11-133",
+      "ballotOrder": 133,
       "race": "JUDGE, PROBATE COURT NO. 1",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2003,6 +2136,7 @@
     },
     {
       "id": "tc-2026-11-134",
+      "ballotOrder": 134,
       "race": "JUDGE, PROBATE COURT NO. 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2018,6 +2152,7 @@
     },
     {
       "id": "tc-2026-11-135",
+      "ballotOrder": 135,
       "race": "DISTRICT CLERK",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2033,6 +2168,7 @@
     },
     {
       "id": "tc-2026-11-136",
+      "ballotOrder": 136,
       "race": "DISTRICT CLERK",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2048,6 +2184,7 @@
     },
     {
       "id": "tc-2026-11-137",
+      "ballotOrder": 137,
       "race": "COUNTY CLERK",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2063,6 +2200,7 @@
     },
     {
       "id": "tc-2026-11-138",
+      "ballotOrder": 138,
       "race": "COUNTY CLERK",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2078,6 +2216,7 @@
     },
     {
       "id": "tc-2026-11-139",
+      "ballotOrder": 139,
       "race": "COUNTY COMMISSIONER PRECINCT 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2093,6 +2232,7 @@
     },
     {
       "id": "tc-2026-11-140",
+      "ballotOrder": 140,
       "race": "COUNTY COMMISSIONER PRECINCT 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2108,6 +2248,7 @@
     },
     {
       "id": "tc-2026-11-141",
+      "ballotOrder": 141,
       "race": "COUNTY COMMISSIONER PRECINCT 4",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2123,6 +2264,7 @@
     },
     {
       "id": "tc-2026-11-142",
+      "ballotOrder": 142,
       "race": "COUNTY COMMISSIONER PRECINCT 4",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2138,6 +2280,7 @@
     },
     {
       "id": "tc-2026-11-143",
+      "ballotOrder": 143,
       "race": "JUSTICE OF THE PEACE PRECINCT 1",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2153,6 +2296,7 @@
     },
     {
       "id": "tc-2026-11-144",
+      "ballotOrder": 144,
       "race": "JUSTICE OF THE PEACE PRECINCT 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2168,6 +2312,7 @@
     },
     {
       "id": "tc-2026-11-145",
+      "ballotOrder": 145,
       "race": "JUSTICE OF THE PEACE PRECINCT 2",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2183,6 +2328,7 @@
     },
     {
       "id": "tc-2026-11-146",
+      "ballotOrder": 146,
       "race": "JUSTICE OF THE PEACE PRECINCT 3",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2198,6 +2344,7 @@
     },
     {
       "id": "tc-2026-11-147",
+      "ballotOrder": 147,
       "race": "JUSTICE OF THE PEACE PRECINCT 4",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2213,6 +2360,7 @@
     },
     {
       "id": "tc-2026-11-148",
+      "ballotOrder": 148,
       "race": "JUSTICE OF THE PEACE PRECINCT 4",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2228,6 +2376,7 @@
     },
     {
       "id": "tc-2026-11-149",
+      "ballotOrder": 149,
       "race": "JUSTICE OF THE PEACE PRECINCT 5",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2243,6 +2392,7 @@
     },
     {
       "id": "tc-2026-11-150",
+      "ballotOrder": 150,
       "race": "JUSTICE OF THE PEACE PRECINCT 6",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2258,6 +2408,7 @@
     },
     {
       "id": "tc-2026-11-151",
+      "ballotOrder": 151,
       "race": "JUSTICE OF THE PEACE PRECINCT 7",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2273,6 +2424,7 @@
     },
     {
       "id": "tc-2026-11-152",
+      "ballotOrder": 152,
       "race": "JUSTICE OF THE PEACE PRECINCT 7",
       "jurisdiction": {
         "name": "Tarrant County",
@@ -2288,6 +2440,7 @@
     },
     {
       "id": "tc-2026-11-153",
+      "ballotOrder": 153,
       "race": "JUSTICE OF THE PEACE PRECINCT 8",
       "jurisdiction": {
         "name": "Tarrant County",
