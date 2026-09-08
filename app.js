@@ -52,6 +52,7 @@
     reset: document.getElementById('filter-reset'),
     print: document.getElementById('print-ballot'),
     printHeader: document.getElementById('print-header'),
+    printFooter: document.getElementById('print-footer'),
     lastUpdated: document.getElementById('last-updated'),
     lookupForm: document.getElementById('lookup-form'),
     lookupAddress: document.getElementById('lookup-address'),
@@ -407,6 +408,13 @@
     header.innerHTML = '';
     header.appendChild(el('p', 'print-title', 'Texas Voter Guide \u2014 Tarrant County'));
 
+    // A slate sheet carries one name per race, so it has to say out loud whose
+    // slate it is. Without this line the paper reads as the whole field.
+    if (state.party !== 'all') {
+      header.appendChild(el('p', 'print-meta print-filter',
+        partyLabel(state.party) + ' candidates only.'));
+    }
+
     if (state.ballotActive && state.ballot) {
       header.appendChild(el('p', 'print-meta',
         'Voting precinct ' + state.ballot.precinct));
@@ -418,6 +426,15 @@
 
     header.appendChild(el('p', 'print-meta',
       raceCount + ' race' + (raceCount === 1 ? '' : 's')));
+  }
+
+  // Closes the slate sheet. A voter holding a one-name-per-race card has no way
+  // to tell a race we left blank from a race that has no such candidate at all,
+  // so the sheet says which it is and where the whole field lives.
+  function renderPrintFooter() {
+    els.printFooter.textContent = state.party === 'all' ? '' :
+      'Not every race has a candidate from your selected party. ' +
+      'Check the full guide at redvoterguides.org.';
   }
 
   function render() {
@@ -454,6 +471,7 @@
         ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's'));
 
     renderPrintHeader(races.length);
+    renderPrintFooter();
 
     if (!filtered.length) {
       setStatus(state.ballotActive

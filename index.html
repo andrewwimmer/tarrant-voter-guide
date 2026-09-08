@@ -162,6 +162,11 @@
 
   <main id="results" aria-label="Races by jurisdiction"></main>
 
+  <!-- Screen-hidden, print-only: filled in only for a slate print, where races
+       with no candidate from the selected party are the reason the sheet has
+       gaps in it. -->
+  <div class="print-only print-footer" id="print-footer"></div>
+
   <section class="sourcing" aria-labelledby="sourcing-title">
     <h2 id="sourcing-title">How we source this</h2>
     <p>Every claim in this guide links to a public record. Endorsements point to the endorsing

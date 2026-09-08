@@ -1240,6 +1240,13 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
     line-height: 1.25;
   }
 
+  /* The one line that says the sheet is a slate and not the full field. It
+     outranks the precinct and the race count, so it is sized above them. */
+  .print-filter {
+    font-size: 9pt;
+    font-weight: 700;
+  }
+
   /* ---------- Races ---------- */
 
   /* Two columns: at 10pt a single full-width measure would run to four or five
@@ -1295,20 +1302,34 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
     line-height: 1.15;
   }
 
-  /* One election, printed once in the header — and the party-filter note is
-     about the screen's dimming, which does not exist here. */
-  .election-date,
+  /* One election, printed once in the header. */
+  .election-date { display: none !important; }
+
+  /* The absence of a pick is the whole reason this race is still on the sheet,
+     so the note takes the slot the candidate's name would have occupied:
+     same indent, same size, italic so it does not read as a person's name. */
   .race-note {
-    display: none !important;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 9pt;
+    font-size: 10pt;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
   }
 
   /* ---------- Candidate lines ---------- */
 
-  /* Every candidate prints at full strength: the screen dims the ones outside
-     the selected party, but a dimmed name on paper just looks like a bad
-     printer. */
-  .candidate,
-  .candidate-dim {
+  /* Slate print: with a party selected the sheet is a card to carry into the
+     booth, so it drops the other parties' candidates outright and leaves one
+     name per race. The screen dims them; a dimmed name on paper just looks
+     like a bad printer, and a voter reading down a column does not want to
+     re-apply the filter by eye. */
+  .candidate-dim { display: none !important; }
+
+  .candidate {
     display: block;
     opacity: 1 !important;
     border: 0;
@@ -1359,5 +1380,21 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .status {
     padding: 0;
     font-size: 9pt;
+  }
+
+  /* Sits below both columns, full width, and only has content on a slate
+     print. Empty on an unfiltered sheet, where it collapses to nothing. */
+  .print-footer {
+    margin: 8pt 0 0;
+    padding: 3pt 0 0;
+    border-top: 0.75pt solid #000;
+    font-size: 8pt;
+    line-height: 1.3;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-footer:empty {
+    display: none !important;
   }
 }
