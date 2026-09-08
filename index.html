@@ -150,7 +150,15 @@
 
   <p class="filter-note" id="party-note" hidden></p>
 
-  <p class="result-count" id="result-count" aria-live="polite"></p>
+  <div class="result-bar">
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+    <button type="button" id="print-ballot" class="print-button">Print my ballot</button>
+  </div>
+
+  <!-- Screen-hidden, print-only: the printed sheet has no hero to identify it,
+       so it carries its own heading and, when an address has resolved, the
+       precinct and matched address the list was narrowed to. -->
+  <div class="print-only print-header" id="print-header"></div>
 
   <main id="results" aria-label="Races by jurisdiction"></main>
 

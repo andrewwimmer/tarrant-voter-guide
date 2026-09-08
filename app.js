@@ -50,6 +50,8 @@
     partyNote: document.getElementById('party-note'),
     search: document.getElementById('filter-search'),
     reset: document.getElementById('filter-reset'),
+    print: document.getElementById('print-ballot'),
+    printHeader: document.getElementById('print-header'),
     lastUpdated: document.getElementById('last-updated'),
     lookupForm: document.getElementById('lookup-form'),
     lookupAddress: document.getElementById('lookup-address'),
@@ -397,6 +399,27 @@
     els.partyNote.textContent = text;
   }
 
+  // The print sheet drops the hero, so it needs its own heading — and, when a
+  // lookup is active, the precinct and matched address that explain why the
+  // list on the paper is shorter than the list on the site.
+  function renderPrintHeader(raceCount) {
+    var header = els.printHeader;
+    header.innerHTML = '';
+    header.appendChild(el('p', 'print-title', 'Texas Voter Guide \u2014 Tarrant County'));
+
+    if (state.ballotActive && state.ballot) {
+      header.appendChild(el('p', 'print-meta',
+        'Voting precinct ' + state.ballot.precinct));
+      if (state.ballot.matchedAddress) {
+        header.appendChild(el('p', 'print-meta',
+          'Matched to ' + state.ballot.matchedAddress));
+      }
+    }
+
+    header.appendChild(el('p', 'print-meta',
+      raceCount + ' race' + (raceCount === 1 ? '' : 's')));
+  }
+
   function render() {
     var filtered = applyFilters();
     // Ballot order is one continuous list of races; grouped mode nests the
@@ -429,6 +452,8 @@
       // Only worth counting jurisdictions when they are actually on screen.
       (byBallot ? '' :
         ' · ' + groups.length + ' jurisdiction' + (groups.length === 1 ? '' : 's'));
+
+    renderPrintHeader(races.length);
 
     if (!filtered.length) {
       setStatus(state.ballotActive
@@ -952,6 +977,13 @@
     els.sort.addEventListener('change', function () {
       state.sort = els.sort.value;
       render();
+    });
+
+    // Nothing to prepare: the print stylesheet works off the DOM that is
+    // already on screen, so whatever is filtered and sorted here is what
+    // lands on paper.
+    els.print.addEventListener('click', function () {
+      window.print();
     });
 
     // Resets the dropdowns and returns to the full race list, but keeps any

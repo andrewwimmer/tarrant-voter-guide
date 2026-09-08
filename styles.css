@@ -675,8 +675,44 @@ a:hover { color: var(--red-dark); }
   font-weight: 500;
 }
 
-.result-count {
+/* Count on the left, the print action on the right: the button belongs next
+   to the number it will put on paper, not up in the filter bar. */
+.result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   margin: 14px 2px 30px;
+}
+
+.print-button {
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.print-button:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+/* Exists only on paper — see the print stylesheet at the end of this file. */
+.print-only { display: none; }
+
+.result-count {
+  margin: 0;
   color: var(--faint);
   font-size: 0.82rem;
   font-weight: 600;
@@ -1116,4 +1152,212 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
+}
+
+
+/* ==========================================================================
+   Print — the ballot, and nothing else.
+
+   Paper gets one job: the races currently on screen, in the order they are
+   currently in, with each race's candidates, party, and unopposed marker.
+   Everything that exists to help someone navigate the site — hero, filters,
+   signup, banner, footer, and the sourced detail behind each candidate row —
+   is furniture here, so it comes off. Single column, black on white, no
+   shadows and no tinted panels: it has to survive a cheap printer.
+   ========================================================================== */
+
+@media print {
+  /* Sized to be read, not just to fit: 10pt base with 11pt race names. Two
+     columns on the ballot buy back the width that larger type costs, so a
+     60-race ballot still lands on about two sheets. Margins are the narrowest
+     most consumer printers will render without clipping. */
+  @page {
+    margin: 11mm;
+  }
+
+  /* One sweep to flatten every tinted panel, chip, and shadow the screen
+     design leans on. Structure below is then rebuilt in plain black. */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    font-size: 10pt;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  /* Everything that is not the ballot. */
+  .site-header,
+  .panel,
+  .controls,
+  .filter-note,
+  .result-bar,
+  .sourcing,
+  .site-footer {
+    display: none !important;
+  }
+
+  .print-only { display: block; }
+
+  .wrap,
+  .page {
+    max-width: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------- Print header ---------- */
+
+  .print-header {
+    margin: 0 0 6pt;
+    padding: 0 0 3pt;
+    border-bottom: 0.75pt solid #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-title {
+    margin: 0 0 1pt;
+    font-family: var(--serif);
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .print-meta {
+    margin: 0;
+    font-size: 7pt;
+    line-height: 1.25;
+  }
+
+  /* ---------- Races ---------- */
+
+  /* Two columns: at 10pt a single full-width measure would run to four or five
+     sheets, and a race line is short enough that half the page is a generous
+     measure for it. Every race already carries break-inside: avoid, which the
+     column breaker honours the same way the page breaker does. */
+  #results {
+    column-count: 2;
+    column-gap: 14pt;
+  }
+
+  .jurisdiction {
+    margin: 0 0 7pt;
+  }
+
+  .jurisdiction-head {
+    margin: 0 0 2pt;
+    padding: 0;
+    border: 0;
+    border-bottom: 0.5pt solid #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .jurisdiction-head h2 {
+    font-size: 9pt;
+    line-height: 1.15;
+  }
+
+  .badge { display: none !important; }
+
+  /* A race is a single block on paper: never split a race name from its
+     candidates across a page break. */
+  .race {
+    margin: 0 0 6pt;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .race-head {
+    display: block;
+    margin: 0;
+  }
+
+  /* The race name is the only thing separating one block from the next, so it
+     keeps its weight as well as its size. */
+  .race-head h3 {
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  /* One election, printed once in the header — and the party-filter note is
+     about the screen's dimming, which does not exist here. */
+  .election-date,
+  .race-note {
+    display: none !important;
+  }
+
+  /* ---------- Candidate lines ---------- */
+
+  /* Every candidate prints at full strength: the screen dims the ones outside
+     the selected party, but a dimmed name on paper just looks like a bad
+     printer. */
+  .candidate,
+  .candidate-dim {
+    display: block;
+    opacity: 1 !important;
+    border: 0;
+  }
+
+  .candidate + .candidate { border-top: 0; }
+
+  /* Endorsements and donations stay off the sheet, and so does the disclosure
+     arrow that would have opened them. */
+  .candidate-detail { display: none !important; }
+  details.candidate > .candidate-row::after { display: none !important; }
+
+  .candidate-row {
+    display: block;
+    padding: 0 0 0 9pt;
+    font-size: 10pt;
+    line-height: 1.2;
+  }
+
+  .candidate-name {
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  /* Chips become plain running text: "Jane Doe — Republican · Unopposed". */
+  .party,
+  .marker-unopposed {
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Non-breaking spaces: a collapsible space inside generated content is not
+     reliably kept, and these separators must not lose their air. */
+  .party::before { content: "\00a0\2014\00a0"; }
+  .marker-unopposed::before { content: "\00a0\00b7\00a0"; }
+
+  /* The glyph is the party's first letter again, doubled up once the chip is
+     flattened to text. */
+  .party-glyph { display: none !important; }
+
+  /* "No races match the current filters" is worth printing — a blank sheet is
+     not. */
+  .status {
+    padding: 0;
+    font-size: 9pt;
+  }
 }
