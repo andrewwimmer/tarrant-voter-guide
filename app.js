@@ -37,7 +37,11 @@
     // Set once an address resolves to a precinct; ballotActive is the
     // "show only my races" / "show all races" switch over the same result.
     ballot: null,
-    ballotActive: false
+    ballotActive: false,
+    // The race list is not on the page at all until a lookup resolves or the
+    // landing panel's browse button is pressed. Filtering and rendering are
+    // unaffected — this only decides whether the list is on screen.
+    racesRevealed: false
   };
 
   var els = {
@@ -58,7 +62,10 @@
     lookupAddress: document.getElementById('lookup-address'),
     lookupSubmit: document.getElementById('lookup-submit'),
     lookupStatus: document.getElementById('lookup-status'),
-    lookupResult: document.getElementById('lookup-result')
+    lookupResult: document.getElementById('lookup-result'),
+    landingGate: document.getElementById('landing-gate'),
+    browse: document.getElementById('browse'),
+    browseAll: document.getElementById('browse-all')
   };
 
   /* ---------- helpers ---------- */
@@ -435,6 +442,19 @@
     els.printFooter.textContent = state.party === 'all' ? '' :
       'Not every race has a candidate from your selected party. ' +
       'Check the full guide at redvoterguides.org.';
+  }
+
+  // The first load deliberately shows no races: the landing panel stands in
+  // for the list, and this is the only thing that swaps one for the other.
+  // Called when an address resolves, when the browse button is pressed, and on
+  // a data-load failure — the error message lives inside the hidden list, so
+  // hiding it would swallow the error.
+  function revealRaces() {
+    if (state.racesRevealed) return;
+    state.racesRevealed = true;
+    els.browse.hidden = false;
+    els.landingGate.hidden = true;
+    if (els.browseAll) els.browseAll.setAttribute('aria-expanded', 'true');
   }
 
   function render() {
@@ -874,6 +894,7 @@
     state.ballotActive = true;
 
     setLookupStatus('');
+    revealRaces();
     renderBallotPanel();
     populateJurisdictions();
     render();
@@ -918,6 +939,10 @@
             (match.matchedAddress || 'That address') + ' is outside Tarrant County, so none of ' +
             'these races are on its ballot. This guide only covers Tarrant County.',
             'warn');
+          // A lookup that cannot narrow the list must not leave the page empty:
+          // open the full county list rather than stranding the visitor on the
+          // landing panel with nothing to read.
+          revealRaces();
           return;
         }
         applyPrecinct(props, match.matchedAddress);
@@ -925,8 +950,10 @@
         setBusy(false);
         setLookupStatus(
           'Your address was found, but the precinct map could not be loaded (' + err.message +
-          '). Check your connection and try again, or browse all races below.',
+          '). Check your connection and try again — the full list of Tarrant County races is ' +
+          'open below in the meantime.',
           'error');
+        revealRaces();
       });
 
     }, function (err) {
@@ -934,10 +961,13 @@
       setLookupStatus(
         err.message === 'timeout'
           ? 'The Census geocoder did not respond within 15 seconds. It may be down or blocked ' +
-            'by your network — try again in a moment, or browse all races below.'
+            'by your network — try again in a moment. The full list of Tarrant County races is ' +
+            'open below in the meantime.'
           : 'Could not reach the Census geocoder. It may be down or blocked by your network — ' +
-            'try again in a moment, or browse all races below.',
+            'try again in a moment. The full list of Tarrant County races is open below in the ' +
+            'meantime.',
         'error');
+      revealRaces();
     });
   }
 
@@ -967,6 +997,14 @@
   /* ---------- events ---------- */
 
   function wireEvents() {
+    // The landing panel's escape hatch, for anyone who wants the county list
+    // without handing over an address. Focus follows the content it opens.
+    els.browseAll.addEventListener('click', function () {
+      revealRaces();
+      els.browse.focus();
+      els.browse.scrollIntoView({ block: 'start' });
+    });
+
     els.type.addEventListener('change', function () {
       state.type = els.type.value;
       populateJurisdictions();
@@ -1031,6 +1069,7 @@
 
     if (!list.length) {
       setStatus('candidates.json loaded but contains no candidate entries.', true);
+      revealRaces();
       return;
     }
 
@@ -1043,9 +1082,14 @@
     els.sort.value = state.sort;
     populateJurisdictions();
     wireEvents();
-    wireLookup();
     render();
   }
+
+  // Wired before the fetch, not inside start(): the address form talks to the
+  // geocoder and the precinct map, neither of which needs candidates.json. Left
+  // inside start() it was never wired at all when that fetch failed, so the
+  // submit button fell through to a native form submit and reloaded the page.
+  wireLookup();
 
   setStatus('Loading candidates…');
 
@@ -1060,5 +1104,6 @@
         ? ' Opening this page directly from disk blocks the fetch. Serve the folder over HTTP instead, e.g. "python3 -m http.server".'
         : '';
       setStatus('Could not load candidates.json: ' + err.message + '.' + hint, true);
+      revealRaces();
     });
 })();

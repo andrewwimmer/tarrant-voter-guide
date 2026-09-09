@@ -730,6 +730,279 @@ a:hover { color: var(--red-dark); }
 }
 
 /* ==========================================================================
+   Landing page
+
+   Everything between the address field and the race list on a first visit.
+   The list itself is not on the page yet, so these panels carry the whole
+   first screen: what the lookup is for, when to vote, where the data came
+   from, and what is missing from it.
+   ========================================================================== */
+
+/* ---------- First-load gate ----------
+   Stands in the slot the race list will occupy. The red top edge ties it to
+   the lookup above it: same decision, second half of it. */
+
+.gate {
+  background: var(--surface);
+  border-radius: var(--r);
+  border-top: 4px solid var(--red);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.gate h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.gate p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+.gate strong { color: var(--text); }
+
+.gate-action { margin: 18px 0 4px; }
+
+/* A button, not an anchor: it reveals content rather than navigating. Styled
+   as a link so it reads as the quieter second option next to "Find my races",
+   but sized to the 44px touch target every other control on the page keeps. */
+.gate-link {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  min-height: 44px;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  color: var(--red);
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.gate-link:hover {
+  color: var(--red-dark);
+  text-decoration-thickness: 2px;
+}
+
+.gate-hint {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* The revealed list. No display of its own, so [hidden] keeps working. */
+.browse:focus { outline: none; }
+
+/* ---------- Key dates ---------- */
+
+.dates {
+  background: var(--surface);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.dates h2 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+}
+
+.date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.date-list li {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface-sunk);
+  border-radius: var(--r-sm);
+}
+
+/* Fixed-width date column so the two rows line up their titles regardless of
+   how long the date reads. */
+.date-when {
+  flex: 0 0 4.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.date-month {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--faint);
+}
+
+.date-day {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--red);
+}
+
+.date-title {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.date-body {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* The registration deadline is a rule, not a date on the calendar above it,
+   so it sits outside the list and is tinted to say so. */
+.date-note {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  background: var(--red-soft);
+  border-radius: var(--r-sm);
+  color: var(--red-dark);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.date-note strong { color: var(--red-deep); }
+
+/* ---------- Data provenance ---------- */
+
+.provenance {
+  background: var(--surface);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.provenance h2 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+}
+
+.prov-list {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.prov-item {
+  padding: 14px 16px;
+  background: var(--surface-sunk);
+  border-left: 3px solid var(--red-line);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+/* The number is the headline: it is the thing a reader can go and count. */
+.prov-item dt {
+  margin: 0 0 5px;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.prov-item dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.89rem;
+  line-height: 1.55;
+}
+
+.prov-meta {
+  display: block;
+  margin-top: 7px;
+  font-size: 0.83rem;
+  color: var(--faint);
+}
+
+.prov-meta code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  word-break: break-all;
+}
+
+/* ---------- Coverage and gaps ---------- */
+
+.scope {
+  background: var(--surface);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.scope h2 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+}
+
+.scope-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+/* Marker shape carries the meaning as well as the color: a check for what is
+   here, a dash for what is not. */
+.scope-list li {
+  position: relative;
+  padding-left: 32px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.scope-list li::before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.scope-yes::before {
+  content: "\2713";
+  background: var(--grn-bg);
+  color: var(--grn);
+}
+
+.scope-no::before {
+  content: "\2013";
+  background: var(--surface-sunk);
+  color: var(--faint);
+}
+
+.scope-list strong { color: var(--text); }
+
+/* ==========================================================================
    Filter bar
 
    A labelled panel sitting in the normal flow above the results.
@@ -1366,7 +1639,23 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .signup,
   .lookup,
   .contact,
+  .gate,
+  .dates,
+  .provenance,
+  .scope,
   .sourcing { padding: 28px 30px; }
+
+  /* Two dates side by side; the provenance entries pair off the same way. Both
+     lists are exactly two items, so the row always fills. */
+  .date-list,
+  .prov-list { grid-template-columns: 1fr 1fr; }
+
+  .date-list li { padding: 16px 18px; }
+
+  .gate h2,
+  .dates h2,
+  .provenance h2,
+  .scope h2 { font-size: 1.35rem; }
 
   .banner { padding: 20px 24px; font-size: 0.95rem; }
 

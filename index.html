@@ -70,104 +70,199 @@
     <div id="lookup-result" class="lookup-result" hidden></div>
   </section>
 
-  <section class="panel" aria-labelledby="how-title">
-    <p class="eyebrow" id="how-title">How this guide works</p>
-    <ol class="steps">
-      <li>
-        <span class="step-title">Find your ballot</span>
-        <span class="step-body">Filter by federal, state, or county races &mdash; then check which districts you live in.</span>
-      </li>
-      <li>
-        <span class="step-title">Compare the candidates</span>
-        <span class="step-body">Each race card lists its certified candidates and their party.</span>
-      </li>
-      <li>
-        <span class="step-title">Check the source</span>
-        <span class="step-body">Candidate names come from the state&rsquo;s certified ballot report, linked below.</span>
-      </li>
-    </ol>
+  <!-- Stands where the race list will go. Nothing is rendered on first load:
+       the list is opened either by an address resolving or by the browse
+       button below, both of which run revealRaces() in app.js. -->
+  <section class="panel gate" id="landing-gate" aria-labelledby="gate-title">
+    <h2 id="gate-title">Your ballot is not the whole county</h2>
+    <p>No races are listed yet, on purpose. Tarrant County has <strong>85 certified races</strong>
+      for November 3, and no one votes in all of them &mdash; congressional, state legislative,
+      State Board of Education, county commissioner, and justice of the peace seats are drawn by
+      district. Enter your street address above and this page lists the races you are eligible to
+      vote in, and nothing else.</p>
+
+    <p class="gate-action">
+      <button type="button" class="gate-link" id="browse-all"
+        aria-controls="browse" aria-expanded="false">Browse all Tarrant County races</button>
+    </p>
+    <p class="gate-hint">Opens the full county list &mdash; all 85 races and 153 candidates, with
+      filters, search, and printing. It is not a ballot: yours is a subset of it.</p>
   </section>
 
-  <div class="panel banner" role="note">
-    <p class="banner-title">Candidates are real &mdash; endorsements and donations are not loaded yet</p>
-    <p>Every race name, candidate name, and party label below is transcribed from the
-    <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s Ballot
-    Certification Report</a> for the November 3, 2026 general election in Tarrant County. The
-    endorsement and donation sections are empty for every candidate: that data has not been
-    collected yet.</p>
-    <p>This page lists every race certified for the county. <strong>Your ballot will show only a
-    subset of them</strong> &mdash; congressional, state legislative, State Board of Education,
-    county commissioner, and justice of the peace races are drawn by district, so which ones you
-    vote in depends on your address. Use the address lookup above to narrow this page to your
-    own ballot.</p>
-  </div>
+  <section class="panel dates" aria-labelledby="dates-title">
+    <h2 id="dates-title">Key dates</h2>
+    <ul class="date-list">
+      <li>
+        <span class="date-when">
+          <span class="date-month">Oct</span>
+          <span class="date-day">19&ndash;30</span>
+        </span>
+        <span class="date-what">
+          <span class="date-title">Early voting</span>
+          <span class="date-body">Monday, October 19 through Friday, October 30. Any early voting
+            site in Tarrant County will take your ballot, not just the one near your home.</span>
+        </span>
+      </li>
+      <li>
+        <span class="date-when">
+          <span class="date-month">Nov</span>
+          <span class="date-day">3</span>
+        </span>
+        <span class="date-what">
+          <span class="date-title">Election day</span>
+          <span class="date-body">Tuesday, November 3. Polls are open 7 a.m. to 7 p.m.</span>
+        </span>
+      </li>
+    </ul>
 
-  <section class="controls" id="controls" aria-label="Filters">
-    <div class="control">
-      <label for="filter-type">Level</label>
-      <select id="filter-type">
-        <option value="all">All levels</option>
-        <option value="federal">Federal</option>
-        <option value="state">State</option>
-        <option value="county">County &amp; precinct</option>
-      </select>
-    </div>
-
-    <div class="control">
-      <label for="filter-party">Party</label>
-      <select id="filter-party">
-        <option value="all">All parties</option>
-        <option value="REPUBLICAN">Republican</option>
-        <option value="DEMOCRATIC">Democratic</option>
-        <option value="LIBERTARIAN">Libertarian</option>
-        <option value="GREEN">Green</option>
-      </select>
-    </div>
-
-    <div class="control control-wide">
-      <label for="filter-jurisdiction">Jurisdiction</label>
-      <select id="filter-jurisdiction">
-        <option value="all">All jurisdictions</option>
-      </select>
-    </div>
-
-    <div class="control control-wide">
-      <label for="filter-sort">Order</label>
-      <select id="filter-sort">
-        <option value="ballot">Ballot order</option>
-        <option value="jurisdiction">Grouped by jurisdiction</option>
-      </select>
-    </div>
-
-    <div class="control control-wide control-search">
-      <label for="filter-search">Search</label>
-      <input type="search" id="filter-search" placeholder="Candidate, race, donor, endorser&hellip;" autocomplete="off">
-    </div>
-
-    <div class="control control-wide control-reset">
-      <label for="filter-reset">Filters</label>
-      <button type="button" id="filter-reset">Reset filters</button>
-    </div>
+    <p class="date-note"><strong>The last day to register is 30 days before the election.</strong>
+      For November 3 that is October 4, which falls on a Sunday, so registrations are accepted
+      through the next business day &mdash; Monday, October 5. Check your registration status at
+      <a href="https://www.votetexas.gov/register-to-vote/">votetexas.gov</a>.</p>
   </section>
 
-  <p class="filter-note" id="party-note" hidden></p>
+  <!-- Hidden on first load; revealed by revealRaces() in app.js once an address
+       resolves or the browse button is pressed. -->
+  <div id="browse" class="browse" tabindex="-1" hidden>
 
-  <div class="result-bar">
-    <p class="result-count" id="result-count" aria-live="polite"></p>
-    <button type="button" id="print-ballot" class="print-button">Print my ballot</button>
-  </div>
+    <section class="panel" aria-labelledby="how-title">
+      <p class="eyebrow" id="how-title">How this guide works</p>
+      <ol class="steps">
+        <li>
+          <span class="step-title">Find your ballot</span>
+          <span class="step-body">Filter by federal, state, or county races &mdash; then check which districts you live in.</span>
+        </li>
+        <li>
+          <span class="step-title">Compare the candidates</span>
+          <span class="step-body">Each race card lists its certified candidates and their party.</span>
+        </li>
+        <li>
+          <span class="step-title">Check the source</span>
+          <span class="step-body">Candidate names come from the state&rsquo;s certified ballot report, linked below.</span>
+        </li>
+      </ol>
+    </section>
 
-  <!-- Screen-hidden, print-only: the printed sheet has no hero to identify it,
-       so it carries its own heading and, when an address has resolved, the
-       precinct and matched address the list was narrowed to. -->
-  <div class="print-only print-header" id="print-header"></div>
+    <div class="panel banner" role="note">
+      <p class="banner-title">Candidates are real &mdash; endorsements and donations are not loaded yet</p>
+      <p>Every race name, candidate name, and party label below is transcribed from the
+      <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s Ballot
+      Certification Report</a> for the November 3, 2026 general election in Tarrant County. The
+      endorsement and donation sections are empty for every candidate: that data has not been
+      collected yet.</p>
+      <p>This page lists every race certified for the county. <strong>Your ballot will show only a
+      subset of them</strong> &mdash; congressional, state legislative, State Board of Education,
+      county commissioner, and justice of the peace races are drawn by district, so which ones you
+      vote in depends on your address. Use the address lookup above to narrow this page to your
+      own ballot.</p>
+    </div>
 
-  <main id="results" aria-label="Races by jurisdiction"></main>
+    <section class="controls" id="controls" aria-label="Filters">
+      <div class="control">
+        <label for="filter-type">Level</label>
+        <select id="filter-type">
+          <option value="all">All levels</option>
+          <option value="federal">Federal</option>
+          <option value="state">State</option>
+          <option value="county">County &amp; precinct</option>
+        </select>
+      </div>
 
-  <!-- Screen-hidden, print-only: filled in only for a slate print, where races
-       with no candidate from the selected party are the reason the sheet has
-       gaps in it. -->
-  <div class="print-only print-footer" id="print-footer"></div>
+      <div class="control">
+        <label for="filter-party">Party</label>
+        <select id="filter-party">
+          <option value="all">All parties</option>
+          <option value="REPUBLICAN">Republican</option>
+          <option value="DEMOCRATIC">Democratic</option>
+          <option value="LIBERTARIAN">Libertarian</option>
+          <option value="GREEN">Green</option>
+        </select>
+      </div>
+
+      <div class="control control-wide">
+        <label for="filter-jurisdiction">Jurisdiction</label>
+        <select id="filter-jurisdiction">
+          <option value="all">All jurisdictions</option>
+        </select>
+      </div>
+
+      <div class="control control-wide">
+        <label for="filter-sort">Order</label>
+        <select id="filter-sort">
+          <option value="ballot">Ballot order</option>
+          <option value="jurisdiction">Grouped by jurisdiction</option>
+        </select>
+      </div>
+
+      <div class="control control-wide control-search">
+        <label for="filter-search">Search</label>
+        <input type="search" id="filter-search" placeholder="Candidate, race, donor, endorser&hellip;" autocomplete="off">
+      </div>
+
+      <div class="control control-wide control-reset">
+        <label for="filter-reset">Filters</label>
+        <button type="button" id="filter-reset">Reset filters</button>
+      </div>
+    </section>
+
+    <p class="filter-note" id="party-note" hidden></p>
+
+    <div class="result-bar">
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+      <button type="button" id="print-ballot" class="print-button">Print my ballot</button>
+    </div>
+
+    <!-- Screen-hidden, print-only: the printed sheet has no hero to identify it,
+         so it carries its own heading and, when an address has resolved, the
+         precinct and matched address the list was narrowed to. -->
+    <div class="print-only print-header" id="print-header"></div>
+
+    <main id="results" aria-label="Races by jurisdiction"></main>
+
+    <!-- Screen-hidden, print-only: filled in only for a slate print, where races
+         with no candidate from the selected party are the reason the sheet has
+         gaps in it. -->
+    <div class="print-only print-footer" id="print-footer"></div>
+
+  </div><!-- /#browse -->
+
+  <section class="panel provenance" aria-labelledby="provenance-title">
+    <h2 id="provenance-title">Where this data comes from</h2>
+    <dl class="prov-list">
+      <div class="prov-item">
+        <dt>153 candidates across 85 races</dt>
+        <dd>Taken from the Texas Secretary of State&rsquo;s certified ballot report for the
+          November 3, 2026 general election in Tarrant County, dated September 7, 2026. Race
+          names, candidate names, and party labels are as printed in that report.
+          <span class="prov-meta"><a href="sources/ballot-certification-2026-11-03.pdf">Open the
+          PDF</a> &mdash; it is checked into this site at
+          <code>sources/ballot-certification-2026-11-03.pdf</code>.</span></dd>
+      </div>
+      <div class="prov-item">
+        <dt>707 voting precincts</dt>
+        <dd>Precinct boundaries, and the congressional, legislative, SBOE, commissioner, and JP
+          districts attached to each one, come from Tarrant County&rsquo;s public GIS. The address
+          lookup tests your coordinate against these polygons in your own browser.
+          <span class="prov-meta"><a href="https://data-tarrantcounty.opendata.arcgis.com/datasets/voting-precincts">Voting
+          Precincts, Tarrant County Open Data Portal</a> &mdash; the copy this page reads is
+          <a href="data/precincts.geojson">data/precincts.geojson</a>.</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="panel scope" aria-labelledby="scope-title">
+    <h2 id="scope-title">What this covers &mdash; and what it doesn&rsquo;t</h2>
+    <ul class="scope-list">
+      <li class="scope-yes"><strong>Every race on the Tarrant County ballot.</strong> All 85
+        certified races, from U.S. Senate down to justice of the peace, with every candidate and
+        party as certified.</li>
+      <li class="scope-no"><strong>No endorsement or campaign finance data yet.</strong> Those
+        sections are empty for every candidate. Nothing is added until it can carry a link to the
+        record it came from.</li>
+      <li class="scope-no"><strong>One county so far.</strong> Tarrant is the only ballot loaded.
+        An address anywhere else in Texas will not match a precinct.</li>
+    </ul>
+  </section>
 
   <section class="panel signup" aria-labelledby="signup-title">
     <h2 id="signup-title">Get an email before early voting starts</h2>
