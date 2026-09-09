@@ -15,7 +15,22 @@
 
 <header class="site-header">
   <div class="wrap">
-    <p class="eyebrow">Texas &mdash; 2026 general election</p>
+    <div class="masthead">
+      <p class="eyebrow">Texas &mdash; 2026 general election</p>
+      <button type="button" class="nav-toggle" id="nav-toggle"
+        aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-bars" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html" aria-current="page">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
     <h1>Texas Voter Guide</h1>
     <p class="mission">A guide to Texas ballots in which every candidate, endorsement, and donation is tied to a public record you can open and read yourself.</p>
 
@@ -27,17 +42,32 @@
 
 <div class="wrap page">
 
-  <section class="panel signup" aria-labelledby="signup-title">
-    <h2 id="signup-title">Get an email before early voting starts</h2>
-    <p class="signup-intro">One email before early voting opens, with a link to the races on your
-      ballot. No fundraising, and the list is never shared with anyone.</p>
+  <section class="panel lookup" aria-labelledby="lookup-title">
+    <h2 id="lookup-title">Find the races on your ballot</h2>
+    <p class="lookup-intro">Enter your street address and this page will work out which of the
+      707 Tarrant County voting precincts you live in, then show only the races you are actually
+      eligible to vote in. <strong>This lookup covers Tarrant County only</strong> &mdash; an
+      address anywhere else in Texas will not match a precinct yet.</p>
 
-    <form action="https://buttondown.com/api/emails/embed-subscribe/redvoterguides" method="post" class="embeddable-buttondown-form">
-      <label for="bd-email">Enter your email</label>
-      <input type="email" name="email" id="bd-email" />
-      <input type="submit" value="Subscribe" />
-      <p><a href="https://buttondown.com/refer/redvoterguides" target="_blank">Powered by Buttondown.</a></p>
+    <form id="lookup-form" class="lookup-form" novalidate>
+      <label for="lookup-address">Your street address</label>
+      <div class="lookup-row">
+        <input type="text" id="lookup-address" name="address" autocomplete="street-address"
+          placeholder="100 Main St, Fort Worth, TX 76102" spellcheck="false">
+        <button type="submit" id="lookup-submit">Find my races</button>
+      </div>
+
+      <p class="lookup-privacy">
+        <strong>Your address stays in your browser.</strong> It is sent to exactly one place &mdash;
+        the U.S. Census Bureau&rsquo;s free public geocoder at <code>geocoding.geo.census.gov</code>
+        &mdash; which turns it into a map coordinate and returns it. It is never sent to this site,
+        never stored, and never logged: this site is static files with no server and no database.
+        Matching that coordinate to your precinct happens entirely on your own device.
+      </p>
     </form>
+
+    <div id="lookup-status" class="lookup-status" role="status" aria-live="polite" hidden></div>
+    <div id="lookup-result" class="lookup-result" hidden></div>
   </section>
 
   <section class="panel" aria-labelledby="how-title">
@@ -68,37 +98,9 @@
     <p>This page lists every race certified for the county. <strong>Your ballot will show only a
     subset of them</strong> &mdash; congressional, state legislative, State Board of Education,
     county commissioner, and justice of the peace races are drawn by district, so which ones you
-    vote in depends on your address. Use the address lookup below to narrow this page to your
+    vote in depends on your address. Use the address lookup above to narrow this page to your
     own ballot.</p>
   </div>
-
-  <section class="panel lookup" aria-labelledby="lookup-title">
-    <h2 id="lookup-title">Find the races on your ballot</h2>
-    <p class="lookup-intro">Enter your street address and this page will work out which of the
-      707 Tarrant County voting precincts you live in, then show only the races you are actually
-      eligible to vote in. <strong>This lookup covers Tarrant County only</strong> &mdash; an
-      address anywhere else in Texas will not match a precinct yet.</p>
-
-    <form id="lookup-form" class="lookup-form" novalidate>
-      <label for="lookup-address">Your street address</label>
-      <div class="lookup-row">
-        <input type="text" id="lookup-address" name="address" autocomplete="street-address"
-          placeholder="100 Main St, Fort Worth, TX 76102" spellcheck="false">
-        <button type="submit" id="lookup-submit">Find my races</button>
-      </div>
-
-      <p class="lookup-privacy">
-        <strong>Your address stays in your browser.</strong> It is sent to exactly one place &mdash;
-        the U.S. Census Bureau&rsquo;s free public geocoder at <code>geocoding.geo.census.gov</code>
-        &mdash; which turns it into a map coordinate and returns it. It is never sent to this site,
-        never stored, and never logged: this site is static files with no server and no database.
-        Matching that coordinate to your precinct happens entirely on your own device.
-      </p>
-    </form>
-
-    <div id="lookup-status" class="lookup-status" role="status" aria-live="polite" hidden></div>
-    <div id="lookup-result" class="lookup-result" hidden></div>
-  </section>
 
   <section class="controls" id="controls" aria-label="Filters">
     <div class="control">
@@ -167,6 +169,19 @@
        gaps in it. -->
   <div class="print-only print-footer" id="print-footer"></div>
 
+  <section class="panel signup" aria-labelledby="signup-title">
+    <h2 id="signup-title">Get an email before early voting starts</h2>
+    <p class="signup-intro">One email before early voting opens, with a link to the races on your
+      ballot. No fundraising, and the list is never shared with anyone.</p>
+
+    <form action="https://buttondown.com/api/emails/embed-subscribe/redvoterguides" method="post" class="embeddable-buttondown-form">
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" />
+      <input type="submit" value="Subscribe" />
+      <p><a href="https://buttondown.com/refer/redvoterguides" target="_blank">Powered by Buttondown.</a></p>
+    </form>
+  </section>
+
   <section class="sourcing" aria-labelledby="sourcing-title">
     <h2 id="sourcing-title">How we source this</h2>
     <p>Every claim in this guide links to a public record. Endorsements point to the endorsing
@@ -180,12 +195,21 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <p class="footer-name">Texas Voter Guide</p>
+    <p>Candidate data comes from the Texas Secretary of State&rsquo;s
+      <a href="sources/ballot-certification-2026-11-03.pdf">certified ballot report</a> for the
+      November 3, 2026 general election.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/andrewwimmer/texas-voter-guide">Source on GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
     <p>Static site &mdash; plain HTML, CSS, and vanilla JavaScript. All data lives in
       <a href="candidates.json">candidates.json</a>.</p>
     <p id="last-updated"></p>
   </div>
 </footer>
 
+<script src="nav.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

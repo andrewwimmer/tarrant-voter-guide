@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &mdash; Texas Voter Guide</title>
+<meta name="description" content="Send a correction to the candidate data, ask about a race, or pass on general feedback about the Texas Voter Guide.">
+<meta name="theme-color" content="#8a1518">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-contact">
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="masthead">
+      <p class="eyebrow">Texas &mdash; 2026 general election</p>
+      <button type="button" class="nav-toggle" id="nav-toggle"
+        aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-bars" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html">Guide</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h1>Contact</h1>
+    <p class="mission">Every line in this guide is tied to a public record. If one of them is wrong,
+      the fastest way to fix it is to tell us which one.</p>
+  </div>
+</header>
+
+<div class="wrap page">
+
+  <section class="panel contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Send a message</h2>
+    <p class="contact-intro">What&rsquo;s welcome here: <strong>corrections to the candidate
+      data</strong> &mdash; a misspelled name, a wrong party, a missing candidate &mdash;
+      <strong>questions about a race</strong>, and <strong>general feedback</strong> on the guide.
+      A correction lands fastest if it names the race and points at the record it should match.</p>
+
+    <form class="contact-form" action="https://formspree.io/f/mwkrwwdj" method="post">
+      <div class="field">
+        <label for="contact-name">Your name</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="contact-email">Your email</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required>
+        <p class="field-note">Only used to reply to you.</p>
+      </div>
+
+      <div class="field">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="7" required></textarea>
+      </div>
+
+      <!-- Honeypot: hidden from people, irresistible to bots. Formspree drops
+           any submission that arrives with this field filled in. -->
+      <div class="honeypot" aria-hidden="true">
+        <label for="contact-gotcha">Leave this field empty</label>
+        <input type="text" id="contact-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="contact-submit">Send message</button>
+    </form>
+  </section>
+
+  <!-- Separate ask, separate form. The rule and its label exist so nobody
+       types a correction into the newsletter box, or an email address into
+       the contact form expecting to be subscribed. -->
+  <hr class="section-divider">
+  <p class="section-divider-note">Not a message &mdash; a mailing list.</p>
+
+  <section class="panel signup" aria-labelledby="signup-title">
+    <h2 id="signup-title">Get an email before early voting starts</h2>
+    <p class="signup-intro">One email before early voting opens, with a link to the races on your
+      ballot. No fundraising, and the list is never shared with anyone.</p>
+
+    <form action="https://buttondown.com/api/emails/embed-subscribe/redvoterguides" method="post" class="embeddable-buttondown-form">
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" />
+      <input type="submit" value="Subscribe" />
+      <p><a href="https://buttondown.com/refer/redvoterguides" target="_blank">Powered by Buttondown.</a></p>
+    </form>
+  </section>
+
+  <section class="sourcing" aria-labelledby="sourcing-title">
+    <h2 id="sourcing-title">Before you write about the data</h2>
+    <p>Candidate names, races, and party labels are transcribed from the
+      <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s
+      certified ballot report</a> for the November 3, 2026 general election. If a name here differs
+      from that report, it is our transcription error and worth reporting. If the report itself is
+      wrong, the correction has to go through the county elections office &mdash; this guide follows
+      the record rather than departing from it.</p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-name">Texas Voter Guide</p>
+    <p>Candidate data comes from the Texas Secretary of State&rsquo;s
+      <a href="sources/ballot-certification-2026-11-03.pdf">certified ballot report</a> for the
+      November 3, 2026 general election.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/andrewwimmer/texas-voter-guide">Source on GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>Static site &mdash; plain HTML, CSS, and vanilla JavaScript. All data lives in
+      <a href="candidates.json">candidates.json</a>.</p>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
