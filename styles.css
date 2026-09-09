@@ -1002,6 +1002,61 @@ a:hover { color: var(--red-dark); }
 
 .scope-list strong { color: var(--text); }
 
+/* ---------- Where to find endorsements ---------- */
+
+.endorsements {
+  background: var(--surface);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.endorsements h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.endorsements-intro {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  max-width: 66ch;
+}
+
+.endorsement-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* Each entry names the organization and then its host, so the destination is
+   visible on paper and to anyone who cannot hover the link. */
+.endorsement-list li {
+  padding: 12px 14px;
+  background: var(--surface-sunk);
+  border-radius: var(--r-sm);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.endorsement-host {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint);
+  font-size: 0.86rem;
+}
+
+.endorsements-note {
+  margin: 16px 0 0;
+  color: var(--faint);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  max-width: 66ch;
+}
+
 /* ==========================================================================
    Filter bar
 
@@ -1643,6 +1698,7 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .dates,
   .provenance,
   .scope,
+  .endorsements,
   .sourcing { padding: 28px 30px; }
 
   /* Two dates side by side; the provenance entries pair off the same way. Both
@@ -1655,7 +1711,8 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .gate h2,
   .dates h2,
   .provenance h2,
-  .scope h2 { font-size: 1.35rem; }
+  .scope h2,
+  .endorsements h2 { font-size: 1.35rem; }
 
   .banner { padding: 20px 24px; font-size: 0.95rem; }
 
