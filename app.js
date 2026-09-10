@@ -214,25 +214,41 @@
     var value = c.ballotOrder;
     if (typeof value === 'number') return value;
     if (!value || typeof value !== 'object') return Infinity;
-    var county = (state.ballot && state.ballot.county) || BALLOT_COUNTY;
-    var n = value[county];
+    var n = value[ballotCounty()];
     return typeof n === 'number' ? n : Infinity;
   }
 
+  // A race title is not unique once a second county is in the data. "COUNTY
+  // JUDGE", "DISTRICT CLERK" and "COUNTY COMMISSIONER PRECINCT 2" are each a
+  // different office in Dallas than in Tarrant, printed under the identical
+  // string, so the county joins the key.
+  //
+  // A candidate with no county is statewide and takes NO_COUNTY: a slot no
+  // county name can occupy, so a statewide race groups as itself instead of
+  // folding into whichever county's race happens to share its title.
   function raceKey(c) {
-    return (c.race || 'Unspecified race') + '||' + (c.electionDate || '');
+    var county = (c.county === undefined || c.county === null)
+      ? NO_COUNTY
+      : String(c.county);
+    return (c.race || 'Unspecified race') + '||' + (c.electionDate || '') + '||' + county;
   }
 
+  // The county rides along on the race, not just in its key: two counties can
+  // certify the same race title, and once the group is built the title alone
+  // no longer says which office it is. Absent county is normalized to null so
+  // a statewide race reads the same whether the record omitted the field or
+  // set it null.
   function newRace(c) {
     return {
       race: c.race || 'Unspecified race',
+      county: c.county === undefined ? null : c.county,
       electionDate: c.electionDate || '',
       candidates: []
     };
   }
 
-  // -> [{ race, electionDate, candidates: [...] }] in certified ballot order,
-  // with no jurisdiction grouping: the flat list the ballot itself is.
+  // -> [{ race, county, electionDate, candidates: [...] }] in certified ballot
+  // order, with no jurisdiction grouping: the flat list the ballot itself is.
   function racesInBallotOrder(list) {
     var order = [];
     var byKey = {};
@@ -249,7 +265,7 @@
     return order.map(function (key) { return byKey[key]; });
   }
 
-  // -> [{ name, type, races: [{ race, electionDate, candidates: [...] }] }]
+  // -> [{ name, type, races: [{ race, county, electionDate, candidates }] }]
   function groupByJurisdiction(list) {
     var order = [];
     var byName = {};
@@ -274,11 +290,18 @@
       .map(function (name) {
         var group = byName[name];
         var races = group.raceOrder.map(function (key) { return group.races[key]; });
+        // County is the last tiebreak rather than no tiebreak at all: two
+        // counties certifying one title are two races that tie on every field
+        // above, and leaving them to sort stability makes their order an
+        // accident of insertion. A statewide race carries no county and sorts
+        // ahead of any county's.
         races.sort(function (a, b) {
           if (a.electionDate !== b.electionDate) {
             return a.electionDate < b.electionDate ? -1 : 1;
           }
-          return a.race.localeCompare(b.race);
+          var byRace = a.race.localeCompare(b.race);
+          if (byRace !== 0) return byRace;
+          return String(a.county || '').localeCompare(String(b.county || ''));
         });
         races.forEach(function (r) { r.candidates.sort(byBallotOrder); });
         return { name: group.name, type: group.type, races: races };
@@ -604,6 +627,16 @@
   // precincts load, this becomes a property of the matched feature.
   var BALLOT_COUNTY = 'Tarrant';
 
+  // Stands in for a null county in a race key. Parentheses keep it out of the
+  // space of real county names, so it can never collide with one.
+  var NO_COUNTY = '(statewide)';
+
+  // The county whose ballot is on screen: the looked-up one while a lookup is
+  // active, the single county this guide covers otherwise.
+  function ballotCounty() {
+    return (state.ballot && state.ballot.county) || BALLOT_COUNTY;
+  }
+
   // Each district race in candidates.json is tied to exactly one property on
   // the precinct feature. Anything that matches none of these is a countywide
   // or statewide race that every Tarrant County voter votes in.
@@ -626,7 +659,11 @@
     'statehouse':  'House',
     'sboe':        'Education',
     'commissioner': 'Commish',
-    'jp':          'JP'
+    'jp':          'JP',
+    // Dallas elects a constable per justice-of-the-peace precinct, off the
+    // same precinct boundaries, so both types read the one JP property. No
+    // candidate carries this type yet.
+    'constable':   'JP'
   };
 
   var NO_DISTRICT = { field: null, value: null };
@@ -691,9 +728,18 @@
   // senate, SBOE, and commissioner terms, so a voter can legitimately live in
   // a district with nothing to vote on this cycle — that is worth saying out
   // loud rather than silently showing them one fewer race.
+  //
+  // Only this county's races count toward that. District numbers restart in
+  // every county — Dallas and Tarrant each have a Commissioner Precinct 2 and
+  // a JP Precinct 1 — so counting another county's races here would report a
+  // district as having something on the ballot when nothing in it does. The
+  // county gate is the one matchesBallot applies: a candidate naming no county
+  // is statewide and counts everywhere.
   function districtsOnBallot(field) {
+    var county = ballotCounty();
     var found = Object.create(null);
     state.candidates.forEach(function (c) {
+      if (c.county !== undefined && c.county !== null && c.county !== county) return;
       var rule = districtRule(c.district);
       if (rule.field === field && rule.value) found[rule.value] = true;
     });
@@ -954,11 +1000,13 @@
   function applyPrecinct(props, matchedAddress) {
     var districts = {};
     var onBallot = {};
-    DISTRICT_FIELDS.forEach(function (field) {
-      districts[field.key] = normalizeDistrict(props[field.key]);
-      onBallot[field.key] = districtsOnBallot(field.key);
-    });
 
+    // The ballot is published before its districts are filled in, because
+    // districtsOnBallot reads the county back off it through ballotCounty()
+    // and a district number is only meaningful inside one county. The two
+    // objects are filled by reference below. Nothing observes state.ballot in
+    // between: the loop is synchronous and no render runs until the end of
+    // this function.
     state.ballot = {
       precinct: String(props.Precinct || props.Pct_Char || 'unknown'),
       county: BALLOT_COUNTY,
@@ -966,6 +1014,12 @@
       districts: districts,
       onBallot: onBallot
     };
+
+    DISTRICT_FIELDS.forEach(function (field) {
+      districts[field.key] = normalizeDistrict(props[field.key]);
+      onBallot[field.key] = districtsOnBallot(field.key);
+    });
+
     state.ballotActive = true;
 
     setLookupStatus('');
