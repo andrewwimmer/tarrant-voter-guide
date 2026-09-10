@@ -109,7 +109,7 @@ candidate entry is one candidate in one race:
   "candidate": "KEN PAXTON",
   "party": "REPUBLICAN",
   "unopposed": false,
-  "source": "sources/ballot-certification-2026-11-03.pdf",
+  "sources": ["sources/ballot-certification-2026-11-03.pdf"],
   "endorsements": [],
   "donations": []
 }
@@ -127,7 +127,10 @@ Field notes:
 - `party` is the party name exactly as printed on the certification report:
   `REPUBLICAN`, `DEMOCRATIC`, `LIBERTARIAN`, or `GREEN`.
 - `unopposed` is `true` when the race has only one certified candidate.
-- `source` is the record the candidate entry was extracted from.
+- `sources` is an array of the records the candidate entry was extracted from,
+  one entry per record. It is an array so an entry assembled from more than one
+  certification report can name all of them; today every record carries exactly
+  one. Nothing in the site renders it yet.
 - Candidates are grouped into a race by `race` + `electionDate`, so those two
   values must match exactly across every candidate in the same contest.
 - Dates are `YYYY-MM-DD` and are formatted for display; anything else is printed
