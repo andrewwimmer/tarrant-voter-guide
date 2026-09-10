@@ -469,13 +469,45 @@
     els.partyNote.textContent = text;
   }
 
+  // The county the jurisdiction filter has narrowed to, or null if it has not
+  // narrowed to exactly one. A jurisdiction qualifies only when every record
+  // under it is a county record and they all name the same county, which is
+  // what keeps "Texas" from reading as a county selection: the 5th Court of
+  // Appeals races sit under Texas carrying a Dallas county, and one of those
+  // alone must not be enough to call the whole selection Dallas.
+  function selectedCounty() {
+    if (state.jurisdiction === 'all') return null;
+    var county = null;
+    var single = true;
+    state.candidates.forEach(function (c) {
+      if (jurisdictionName(c) !== state.jurisdiction) return;
+      if (jurisdictionType(c) !== 'county' || !c.county) { single = false; return; }
+      if (county === null) county = c.county;
+      else if (county !== c.county) single = false;
+    });
+    return single ? county : null;
+  }
+
+  // Which county the printed sheet is for, or null to print no county at all.
+  // A lookup answers it outright. Without one, a jurisdiction filter narrowed
+  // to a single county answers it. Nothing else does: a sheet spanning two
+  // counties has no one county, and naming one anyway would put the wrong
+  // county's name on a voter's ballot, which is worse than a heading that
+  // says less. There is deliberately no fallback.
+  function printCounty() {
+    if (state.ballotActive && state.ballot) return state.ballot.county || null;
+    return selectedCounty();
+  }
+
   // The print sheet drops the hero, so it needs its own heading — and, when a
   // lookup is active, the precinct and matched address that explain why the
   // list on the paper is shorter than the list on the site.
   function renderPrintHeader(raceCount) {
     var header = els.printHeader;
+    var county = printCounty();
     header.innerHTML = '';
-    header.appendChild(el('p', 'print-title', 'Texas Voter Guide \u2014 Tarrant County'));
+    header.appendChild(el('p', 'print-title',
+      'Texas Voter Guide' + (county ? ' \u2014 ' + county + ' County' : '')));
 
     // A slate sheet carries one name per race, so it has to say out loud whose
     // slate it is. Without this line the paper reads as the whole field.
