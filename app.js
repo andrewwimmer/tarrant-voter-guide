@@ -181,12 +181,42 @@
   // so it orders races against each other and candidates within a race in the
   // one sequence a voter actually meets at the polls. Candidates are never
   // sorted by name: on a ballot, name order is not the order.
+  //
+  // A candidate with a real position always precedes one without, which is why
+  // the two Infinity cases are tested outright rather than inferred from the
+  // subtraction: finite - Infinity is -Infinity, which would read as "sorts
+  // first" from the wrong side of the pair.
+  //
+  // The id tiebreak applies only to genuinely equal positions — including two
+  // that are both Infinity, where the subtraction would be NaN and a NaN
+  // comparator leaves the order undefined per spec.
   function byBallotOrder(a, b) {
-    return ballotOrder(a) - ballotOrder(b);
+    var oa = ballotOrder(a);
+    var ob = ballotOrder(b);
+    if (oa !== ob) {
+      if (oa === Infinity) return 1;
+      if (ob === Infinity) return -1;
+      return oa - ob;
+    }
+    return idOf(a).localeCompare(idOf(b));
   }
 
+  function idOf(c) {
+    return String(c.id === undefined || c.id === null ? '' : c.id);
+  }
+
+  // The position is keyed by county, because the same statewide candidate sits
+  // at a different place on each county's ballot. Which county that is follows
+  // the lookup when one is active and falls back to the one county this guide
+  // covers otherwise. A bare number is still honored, so a record written
+  // against the older shape keeps working.
   function ballotOrder(c) {
-    return typeof c.ballotOrder === 'number' ? c.ballotOrder : Infinity;
+    var value = c.ballotOrder;
+    if (typeof value === 'number') return value;
+    if (!value || typeof value !== 'object') return Infinity;
+    var county = (state.ballot && state.ballot.county) || BALLOT_COUNTY;
+    var n = value[county];
+    return typeof n === 'number' ? n : Infinity;
   }
 
   function raceKey(c) {

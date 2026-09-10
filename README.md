@@ -102,7 +102,7 @@ candidate entry is one candidate in one race:
 ```json
 {
   "id": "tc-2026-11-001",
-  "ballotOrder": 1,
+  "ballotOrder": { "Tarrant": 1 },
   "race": "U. S. SENATOR",
   "jurisdiction": { "name": "United States", "type": "federal" },
   "electionDate": "2026-11-03",
@@ -117,11 +117,14 @@ candidate entry is one candidate in one race:
 
 Field notes:
 
-- `ballotOrder` is the entry's 1-based position in the certification report,
-  numbered straight through the whole ballot. It orders races against each other
-  and candidates within a race, and it is the only ordering the default view
-  uses — candidates are never re-sorted by name, because on a ballot name order
-  is not the order.
+- `ballotOrder` is an object keyed by county name, whose value is the entry's
+  1-based position in that county's certification report, numbered straight
+  through the whole ballot. It is keyed by county because the same statewide
+  candidate sits at a different position on each county's ballot. It orders
+  races against each other and candidates within a race, and it is the only
+  ordering the default view uses — candidates are never re-sorted by name,
+  because on a ballot name order is not the order. A candidate with no entry
+  for the county in view sorts last, after every candidate that has one.
 - `jurisdiction.type` must be `"federal"`, `"state"`, or `"county"` — the type
   filter and the jurisdiction badge both key off it.
 - `party` is the party name exactly as printed on the certification report:
