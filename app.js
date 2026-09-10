@@ -666,39 +666,107 @@
   /* ============================================================
      Address lookup → precinct → personal ballot
 
-     Three steps, all driven from the form at the top of the page:
+     Four steps, all driven from the form at the top of the page:
        1. The typed address goes to the U.S. Census Bureau geocoder,
           which returns a lat/lon. That is the only network call that
           ever sees the address.
-       2. data/precincts.geojson (4.7 MB) is fetched lazily and tested
-          point-in-polygon, on this device, to find the precinct.
-       3. The precinct's district numbers filter candidates.json down
-          to the races this voter is actually eligible to vote in.
+       2. That point is tested against the COUNTIES bounding boxes to
+          decide which counties could hold it. A point in none of them
+          is answered without fetching anything.
+       3. Each candidate county's precinct file is fetched lazily, one
+          at a time until one matches, and tested point-in-polygon on
+          this device. Each county has its own file and its own cache;
+          the first real precinct match wins.
+       4. The matched precinct's county and district numbers filter
+          candidates.json down to the races this voter is actually
+          eligible to vote in.
      ============================================================ */
 
   var GEOCODER_URL = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress';
-  var PRECINCTS_URL = 'data/precincts.geojson';
   var GEOCODE_TIMEOUT_MS = 15000;
 
-  // The county a matched precinct belongs to. Hardcoded alongside the single
-  // precinct file above: this guide covers one county, and a lookup that finds
-  // no precinct is reported as "outside Tarrant County". When a second county's
-  // precincts load, this becomes a property of the matched feature.
-  var BALLOT_COUNTY = 'Tarrant';
+  // One entry per county whose precincts this guide can look up, searched in
+  // this order. The box is the envelope of every ring in that county's file,
+  // COMPUTED FROM THE FILE and rounded outward to six decimals (~0.1 m), so a
+  // point inside any precinct is always inside the box.
+  //
+  // The boxes are a cheap first pass, never the answer. Two adjacent counties'
+  // boxes overlap in a strip along their shared line — these two overlap by
+  // about 0.0077 deg of longitude, roughly 680 m — so a point in that strip is
+  // a candidate for both, and only findPrecinct settles which.
+  //
+  // ---- Where these files come from, and what a re-pull costs ---------------
+  //
+  // Tarrant — data/precincts.geojson, 707 features. Used as published.
+  //   https://mapit.tarrantcounty.com/arcgis/rest/services/Dynamic/VotingPrecinct/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=geojson
+  //
+  // Dallas — data/dallas-precincts.geojson, 791 features. NOT usable as
+  // published: two transformations were applied and must be redone on any
+  // re-pull.
+  //   https://services3.arcgis.com/zqe2kwz79KUqUvxC/ArcGIS/rest/services/PRCNT_791_20260729/FeatureServer/7/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=geojson
+  //   The layer id is 7, not 0 — layer 3 has no district fields.
+  //     1. Rename the district fields:
+  //          FIRST_DIST02_USC -> Congress     FIRST_DIST03_STS -> Senate
+  //          FIRST_DIST04_STR -> House        FIRST_DIST05_COM -> Commish
+  //          FIRST_DIST21_JP  -> JP           FIRST_DIST23_STB -> Education
+  //     2. Strip leading zeros from those six values. Congress, Senate and
+  //        Education carried them; House, Commish and JP did not.
+  //
+  // RE-PULLING EITHER FILE MEANS UPDATING THREE THINGS:
+  //   - that county's bounding box above, recomputed from the new file;
+  //   - for Dallas, both transformations above;
+  //   - the 1,498 / 707 / 791 figures in index.html's precinct provenance
+  //     item, which are transcribed because they cannot be derived in the
+  //     browser without downloading both files.
+  //
+  // None of it is checked at runtime and each part fails silently, so skipping
+  // a step produces wrong results rather than an error.
+  // -------------------------------------------------------------------------
+  var COUNTIES = [
+    { name: 'Tarrant', url: 'data/precincts.geojson',
+      minLon: -97.552987, minLat: 32.548662, maxLon: -97.031007, maxLat: 32.994003 },
+    { name: 'Dallas', url: 'data/dallas-precincts.geojson',
+      minLon: -97.038685, minLat: 32.545222, maxLon: -96.516877, maxLat: 32.989692 }
+  ];
+
+  // The county assumed when no lookup is active — it decides which county's
+  // ballotOrder sorts the list and which county the printed sheet names. It is
+  // not a statement about coverage: COUNTIES above is that.
+  var DEFAULT_COUNTY = 'Tarrant';
 
   // Stands in for a null county in a race key. Parentheses keep it out of the
   // space of real county names, so it can never collide with one.
   var NO_COUNTY = '(statewide)';
 
   // The county whose ballot is on screen: the looked-up one while a lookup is
-  // active, the single county this guide covers otherwise.
+  // active, the default otherwise.
   function ballotCounty() {
-    return (state.ballot && state.ballot.county) || BALLOT_COUNTY;
+    return (state.ballot && state.ballot.county) || DEFAULT_COUNTY;
+  }
+
+  // The counties whose bounding box contains this point, in COUNTIES order.
+  // Empty means no covered county can possibly hold it, which is worth knowing
+  // before any 4 MB file is fetched.
+  function countiesAt(lon, lat) {
+    return COUNTIES.filter(function (c) {
+      return lon >= c.minLon && lon <= c.maxLon && lat >= c.minLat && lat <= c.maxLat;
+    });
+  }
+
+  // "Tarrant County" / "Tarrant and Dallas counties" / "Tarrant, Dallas and
+  // Collin counties". The noun is part of the phrase so no caller can pair a
+  // two-county list with a singular "County", and no copy needs a count
+  // written beside it that a third county would quietly falsify.
+  function countyPhrase(counties) {
+    var names = counties.map(function (c) { return c.name; });
+    if (names.length === 1) return names[0] + ' County';
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] + ' counties';
   }
 
   // Each district race in candidates.json is tied to exactly one property on
   // the precinct feature. Anything that matches none of these is a countywide
-  // or statewide race that every Tarrant County voter votes in.
+  // or statewide race, which every voter in that county votes in. Both
+  // counties' precinct files use these same six property names.
   var DISTRICT_FIELDS = [
     { key: 'Congress',  label: 'U.S. House',                  describe: function (v) { return 'Congressional District ' + v; } },
     { key: 'Senate',    label: 'Texas Senate',                describe: function (v) { return 'State Senate District ' + v; } },
@@ -834,12 +902,21 @@
 
   /* ---------- lazy precinct index ---------- */
 
-  var precinctsPromise = null;
+  // county name -> promise of that county's index. Per county, not one shared
+  // promise, so each file is fetched and indexed at most once and a county
+  // that fails to load does not poison another.
+  var precinctIndexes = Object.create(null);
 
   // Precompute each feature's bounding box once so a lookup rejects ~706 of
   // the 707 precincts with four numeric comparisons instead of walking their
   // rings. Only outer rings contribute to the box; a hole is inside its own.
-  function indexPrecincts(geo) {
+  //
+  // The county is stamped on at index time from the COUNTIES entry that named
+  // the file. It is deliberately not read off the feature: the Tarrant file
+  // carries a County property and the Dallas file has none, and inventing one
+  // would mean editing published GIS data to carry a fact this code already
+  // knows.
+  function indexPrecincts(geo, countyName) {
     var features = (geo && geo.features) || [];
     var index = [];
 
@@ -868,31 +945,61 @@
       index.push({
         minX: minX, minY: minY, maxX: maxX, maxY: maxY,
         polys: polys,
+        county: countyName,
         props: features[i].properties || {}
       });
     }
 
-    if (!index.length) throw new Error('precinct file contained no usable polygons');
+    if (!index.length) {
+      throw new Error('precinct file for ' + countyName + ' contained no usable polygons');
+    }
     return index;
   }
 
-  // Fetched on first use only — the file is 4.7 MB and most visitors never
-  // touch the lookup. A failure clears the cached promise so a retry re-fetches
-  // instead of replaying the same rejection forever.
-  function loadPrecincts() {
-    if (!precinctsPromise) {
-      precinctsPromise = fetch(PRECINCTS_URL, { cache: 'force-cache' })
+  // Fetched on first use only — each file is over 4 MB and most visitors never
+  // touch the lookup. A failure clears that county's cached promise so a retry
+  // re-fetches instead of replaying the same rejection forever.
+  function loadPrecincts(county) {
+    if (!precinctIndexes[county.name]) {
+      precinctIndexes[county.name] = fetch(county.url, { cache: 'force-cache' })
         .then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
+          if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching ' + county.url);
           return res.json();
         })
-        .then(indexPrecincts)
+        .then(function (geo) { return indexPrecincts(geo, county.name); })
         .catch(function (err) {
-          precinctsPromise = null;
+          precinctIndexes[county.name] = null;
           throw err;
         });
     }
-    return precinctsPromise;
+    return precinctIndexes[county.name];
+  }
+
+  // Walks the candidate counties in order and resolves with the first real
+  // precinct hit as { props, county }, or null when none of them contains the
+  // point. Each county's file is loaded only once the ones before it have
+  // missed, so the common case — a point in exactly one county's box — fetches
+  // exactly one file.
+  //
+  // A county whose file fails to load rejects the whole search rather than
+  // being skipped: "we could not read Dallas" is a different answer from "you
+  // are not in Dallas", and silently downgrading the first to the second would
+  // tell a Dallas voter they have no ballot.
+  // onCounty, when given, is called with each county's name just before its
+  // file is loaded, so the status line can name the county actually being
+  // fetched instead of announcing one download and then quietly doing another.
+  function findPrecinctIn(counties, lon, lat, onCounty) {
+    var i = 0;
+    function step() {
+      if (i >= counties.length) return Promise.resolve(null);
+      var county = counties[i++];
+      if (onCounty) onCounty(county.name);
+      return loadPrecincts(county).then(function (index) {
+        var props = findPrecinct(index, lon, lat);
+        return props ? { props: props, county: county.name } : step();
+      });
+    }
+    return step();
   }
 
   function findPrecinct(index, lon, lat) {
@@ -1056,7 +1163,7 @@
     els.lookupResult.appendChild(actions);
   }
 
-  function applyPrecinct(props, matchedAddress) {
+  function applyPrecinct(props, matchedAddress, county) {
     var districts = {};
     var onBallot = {};
 
@@ -1066,9 +1173,13 @@
     // objects are filled by reference below. Nothing observes state.ballot in
     // between: the loop is synchronous and no render runs until the end of
     // this function.
+    //
+    // The county is the one whose polygons actually contained the point, not a
+    // constant: a Dallas address must not be filed under Tarrant's precinct
+    // numbering, where Commissioner Precinct 2 is a different office.
     state.ballot = {
       precinct: String(props.Precinct || props.Pct_Char || 'unknown'),
-      county: BALLOT_COUNTY,
+      county: county,
       matchedAddress: matchedAddress,
       districts: districts,
       onBallot: onBallot
@@ -1093,13 +1204,10 @@
     setBusy(true);
     setLookupStatus('Sending your address to the Census geocoder…');
 
-    // Kick the precinct download off in parallel with the geocode — the two do
-    // not depend on each other and the file is the slower of the two.
-    var precincts = loadPrecincts();
-    // Claim the rejection now: if the geocode fails below, nothing else ever
-    // consumes this promise, and an unhandled rejection would hit the console.
-    precincts.catch(function () {});
-
+    // No precinct file is fetched in parallel with the geocode any more: which
+    // county's file to fetch is not known until the point comes back. The cost
+    // is that the download no longer overlaps the geocode; the benefit is that
+    // a lookup pulls one county's file instead of every county's.
     geocode(address, function (payload) {
       var match;
       try {
@@ -1117,17 +1225,29 @@
         return;
       }
 
-      setLookupStatus('Address found. Loading the precinct map (4.7 MB) …');
-
-      precincts.then(function (index) {
+      // Box test first, so an address in a county this guide does not carry
+      // costs nothing: no file is fetched at all.
+      var candidates = countiesAt(match.lon, match.lat);
+      if (!candidates.length) {
         setBusy(false);
-        var props = findPrecinct(index, match.lon, match.lat);
-        if (!props) {
+        setLookupStatus(
+          (match.matchedAddress || 'That address') + ' is not in a county this guide covers. ' +
+          'Address lookup covers ' + countyPhrase(COUNTIES) + '; more are being added.',
+          'warn');
+        revealRaces();
+        return;
+      }
+
+      findPrecinctIn(candidates, match.lon, match.lat, function (name) {
+        setLookupStatus('Address found. Loading the ' + name + ' County precinct map…');
+      }).then(function (hit) {
+        setBusy(false);
+        if (!hit) {
           setLookupStatus(
-            (match.matchedAddress || 'That address') + ' did not match a precinct. Address ' +
-            'lookup currently covers Tarrant County only. Dallas County races are loaded and ' +
-            'browsable below, but cannot be narrowed to a ballot by address yet, and no other ' +
-            'Texas county is loaded.',
+            (match.matchedAddress || 'That address') + ' did not match a precinct in ' +
+            countyPhrase(candidates) + '. It may sit just outside the county line, or be ' +
+            'missing from the precinct map this guide uses. Every race in ' +
+            countyPhrase(COUNTIES) + ' is open below.',
             'warn');
           // A lookup that cannot narrow the list must not leave the page empty:
           // open the full list rather than stranding the visitor on the landing
@@ -1135,7 +1255,7 @@
           revealRaces();
           return;
         }
-        applyPrecinct(props, match.matchedAddress);
+        applyPrecinct(hit.props, match.matchedAddress, hit.county);
       }, function (err) {
         setBusy(false);
         setLookupStatus(
@@ -1162,16 +1282,17 @@
   }
 
   function wireLookup() {
-    // Warm the 4.7 MB precinct file the moment someone engages the field, so
-    // it is usually cached by the time the geocode returns. Still never on page
-    // load — a visitor who ignores the lookup never downloads it.
-    var warmed = false;
-    els.lookupAddress.addEventListener('focus', function () {
-      if (warmed) return;
-      warmed = true;
-      loadPrecincts().catch(function () { /* surfaced on submit instead */ });
-    });
-
+    // The focus warm-up is gone. It prefetched the one precinct file on the
+    // theory that there was only one to want; with a county per file, focus
+    // cannot know which. The two ways to keep it are both worse than dropping
+    // it: warming every county pulls 8.8 MB for a field the visitor may only
+    // have tabbed through, and warming DEFAULT_COUNTY alone is a coin flip
+    // that costs a Dallas voter a wasted 4.6 MB before their real file starts.
+    //
+    // The cost is real — the download no longer overlaps the geocode, so a
+    // first lookup is slower by roughly one file fetch. Worth revisiting if
+    // the files get smaller or a coarse county lookup lands that could pick
+    // the right file from the typed ZIP before the geocoder answers.
     els.lookupForm.addEventListener('submit', function (event) {
       event.preventDefault();
       var address = els.lookupAddress.value.trim();

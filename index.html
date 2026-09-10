@@ -45,10 +45,10 @@
 
   <section class="panel lookup" aria-labelledby="lookup-title">
     <h2 id="lookup-title">Find the races on your ballot</h2>
-    <p class="lookup-intro">Enter your street address and this page will work out which of the
-      707 Tarrant County voting precincts you live in, then show only the races you are actually
-      eligible to vote in. <strong>This lookup covers Tarrant County only</strong> &mdash; an
-      address anywhere else in Texas will not match a precinct yet.</p>
+    <p class="lookup-intro">Enter your street address and this page will work out which voting
+      precinct you live in, then show only the races you are actually eligible to vote in.
+      <strong>This lookup covers Tarrant and Dallas counties</strong> &mdash; an address anywhere
+      else in Texas will not match a precinct yet.</p>
 
     <form id="lookup-form" class="lookup-form" novalidate>
       <label for="lookup-address">Your street address</label>
@@ -248,13 +248,20 @@
           &mdash; both are checked into this site under <code>sources/</code>.</span></dd>
       </div>
       <div class="prov-item">
-        <dt>707 voting precincts</dt>
-        <dd>Precinct boundaries, and the congressional, legislative, SBOE, commissioner, and JP
-          districts attached to each one, come from Tarrant County&rsquo;s public GIS. The address
-          lookup tests your coordinate against these polygons in your own browser.
-          <span class="prov-meta"><a href="https://mapit.tarrantcounty.com/arcgis/rest/services/Dynamic/VotingPrecinct/MapServer">Tarrant
-          County GIS, Voting Precinct service</a> &mdash; the copy this page reads is
-          <a href="data/precincts.geojson">data/precincts.geojson</a>.</span></dd>
+        <dt>1,498 voting precincts</dt>
+        <dd>707 in Tarrant County and 791 in Dallas County. Precinct boundaries, and the
+          congressional, legislative, SBOE, commissioner, and JP districts attached to each one,
+          come from each county&rsquo;s precinct layer. The address lookup tests your coordinate
+          against these polygons in your own browser, one county&rsquo;s file at a time.
+          <span class="prov-meta">Tarrant &mdash;
+          <a href="https://mapit.tarrantcounty.com/arcgis/rest/services/Dynamic/VotingPrecinct/MapServer">Tarrant
+          County GIS, Voting Precinct service</a>, read here as
+          <a href="data/precincts.geojson">data/precincts.geojson</a>. Dallas &mdash; the
+          <a href="https://services3.arcgis.com/zqe2kwz79KUqUvxC/ArcGIS/rest/services/PRCNT_791_20260729/FeatureServer/7">PRCNT_791
+          precinct layer</a> this file was pulled from, read here as
+          <a href="data/dallas-precincts.geojson">data/dallas-precincts.geojson</a>; its
+          <code>FIRST_DIST*</code> district fields were renamed to match Tarrant&rsquo;s so one
+          lookup can read both.</span></dd>
       </div>
     </dl>
   </section>
@@ -269,8 +276,7 @@
         sections are empty for every candidate. Nothing is added until it can carry a link to the
         record it came from.</li>
       <li class="scope-no"><strong>Two counties so far.</strong> Tarrant and Dallas are the only
-        ballots loaded. An address outside them will not match a precinct, and the address lookup
-        itself still covers Tarrant County only.</li>
+        ballots loaded. An address outside them will not match a precinct.</li>
     </ul>
   </section>
 
