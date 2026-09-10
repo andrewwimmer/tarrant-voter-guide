@@ -129,11 +129,20 @@
     return haystack.indexOf(needle) !== -1;
   }
 
-  // True when this race is on the looked-up voter's ballot: countywide and
-  // statewide races always are, district races only when the number matches.
+  // True when this race is on the looked-up voter's ballot. Two independent
+  // gates, both read off the candidate record rather than its race title:
+  // county (a candidate naming a county appears only for a voter in that
+  // county) and district (a candidate carrying a district appears only when
+  // the number matches the precinct's). A candidate null on a field is not
+  // gated by it — that is what carries statewide races onto every ballot.
   function matchesBallot(c) {
     if (!state.ballotActive || !state.ballot) return true;
-    var rule = raceRule(c.race);
+
+    if (c.county !== undefined && c.county !== null && c.county !== state.ballot.county) {
+      return false;
+    }
+
+    var rule = districtRule(c.district);
     if (!rule.field) return true;
     return rule.value !== null && rule.value === state.ballot.districts[rule.field];
   }
@@ -559,6 +568,12 @@
   var PRECINCTS_URL = 'data/precincts.geojson';
   var GEOCODE_TIMEOUT_MS = 15000;
 
+  // The county a matched precinct belongs to. Hardcoded alongside the single
+  // precinct file above: this guide covers one county, and a lookup that finds
+  // no precinct is reported as "outside Tarrant County". When a second county's
+  // precincts load, this becomes a property of the matched feature.
+  var BALLOT_COUNTY = 'Tarrant';
+
   // Each district race in candidates.json is tied to exactly one property on
   // the precinct feature. Anything that matches none of these is a countywide
   // or statewide race that every Tarrant County voter votes in.
@@ -570,6 +585,35 @@
     { key: 'Commish',   label: 'County Commissioner',         describe: function (v) { return 'Commissioner Precinct ' + v; } },
     { key: 'JP',        label: 'Justice of the Peace',        describe: function (v) { return 'JP Precinct ' + v; } }
   ];
+
+  // candidates.json district.type -> the precinct property that gates it.
+  // A type absent from this map leaves the candidate ungated rather than
+  // hidden, so a new district kind in the data cannot silently drop a race
+  // off someone's ballot before this map learns about it.
+  var DISTRICT_TYPE_FIELDS = {
+    'ushouse':     'Congress',
+    'statesenate': 'Senate',
+    'statehouse':  'House',
+    'sboe':        'Education',
+    'commissioner': 'Commish',
+    'jp':          'JP'
+  };
+
+  var NO_DISTRICT = { field: null, value: null };
+
+  // { type: 'ushouse', number: 6 } -> { field: 'Congress', value: '6' };
+  // null district, or an unrecognized type -> { field: null }.
+  function districtRule(district) {
+    if (!district) return NO_DISTRICT;
+    var field = DISTRICT_TYPE_FIELDS[district.type];
+    if (!field) return NO_DISTRICT;
+    return { field: field, value: normalizeDistrict(district.number) };
+  }
+
+  /* RACE_PATTERNS and raceRule below are the previous title-parsing path.
+     Ballot filtering no longer calls them — it reads c.district and c.county
+     instead — but they are kept deliberately as the reference for how each
+     race title maps to a district, and as a cross-check on the data. */
 
   // Race title -> which precinct property gates it. Order matters only in that
   // each pattern is specific enough not to catch another race's title; the
@@ -620,7 +664,7 @@
   function districtsOnBallot(field) {
     var found = Object.create(null);
     state.candidates.forEach(function (c) {
-      var rule = raceRule(c.race);
+      var rule = districtRule(c.district);
       if (rule.field === field && rule.value) found[rule.value] = true;
     });
     return found;
@@ -887,6 +931,7 @@
 
     state.ballot = {
       precinct: String(props.Precinct || props.Pct_Char || 'unknown'),
+      county: BALLOT_COUNTY,
       matchedAddress: matchedAddress,
       districts: districts,
       onBallot: onBallot
