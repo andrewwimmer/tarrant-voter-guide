@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Texas Voter Guide</title>
-<meta name="description" content="A static voter guide for Texas: races, candidates, endorsements, and donations, each with a source link. Tarrant County is the only county covered so far; more are on the way.">
+<meta name="description" content="A static voter guide for Texas: races, candidates, endorsements, and donations, each with a source link. Tarrant and Dallas counties are covered so far; more are on the way.">
 <meta name="theme-color" content="#8a1518">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,9 +35,9 @@
     <h1>Texas Voter Guide</h1>
     <p class="mission">A guide to Texas ballots in which every candidate, endorsement, and donation is tied to a public record you can open and read yourself.</p>
 
-    <p class="coverage"><strong>Tarrant County is the only county covered so far.</strong> It is the
-      one county with a ballot loaded today, and more Texas counties are being added. Until then,
-      nothing on this page describes a ballot outside Tarrant County.</p>
+    <p class="coverage"><strong>Tarrant and Dallas counties are covered so far.</strong> They are the
+      two counties with ballots loaded today, and more Texas counties are being added. Until then,
+      nothing on this page describes a ballot outside those two.</p>
   </div>
 </header>
 
@@ -76,7 +76,8 @@
        button below, both of which run revealRaces() in app.js. -->
   <section class="panel gate" id="landing-gate" aria-labelledby="gate-title">
     <h2 id="gate-title">Your ballot is not the whole county</h2>
-    <p>No races are listed yet, on purpose. Tarrant County has <strong>85 certified races</strong>
+    <p>No races are listed yet, on purpose. Tarrant and Dallas counties have
+      <strong><span data-count="races">&hellip;</span> certified races</strong> between them
       for November 3, and no one votes in all of them &mdash; congressional, state legislative,
       State Board of Education, county commissioner, and justice of the peace seats are drawn by
       district. Enter your street address above and this page lists the races you are eligible to
@@ -84,9 +85,10 @@
 
     <p class="gate-action">
       <button type="button" class="gate-link" id="browse-all"
-        aria-controls="browse" aria-expanded="false">Browse all Tarrant County races</button>
+        aria-controls="browse" aria-expanded="false">Browse all races</button>
     </p>
-    <p class="gate-hint">Opens the full county list &mdash; all 85 races and 153 candidates, with
+    <p class="gate-hint">Opens the full list &mdash; all <span data-count="races">&hellip;</span>
+      races and <span data-count="candidates">&hellip;</span> candidates, with
       filters, search, and printing. It is not a ballot: yours is a subset of it.</p>
   </section>
 
@@ -100,8 +102,10 @@
         </span>
         <span class="date-what">
           <span class="date-title">Early voting</span>
-          <span class="date-body">Monday, October 19 through Friday, October 30. Any early voting
-            site in Tarrant County will take your ballot, not just the one near your home.</span>
+          <span class="date-body">Monday, October 19 through Friday, October 30. In Tarrant County,
+            any early voting site in the county will take your ballot, not just the one near your
+            home; other counties set their own rule, so check with your county elections
+            office.</span>
         </span>
       </li>
       <li>
@@ -146,12 +150,13 @@
 
     <div class="panel banner" role="note">
       <p class="banner-title">Candidates are real &mdash; endorsements and donations are not loaded yet</p>
-      <p>Every race name, candidate name, and party label below is transcribed from the
-      <a href="sources/ballot-certification-2026-11-03.pdf">Texas Secretary of State&rsquo;s Ballot
-      Certification Report</a> for the November 3, 2026 general election in Tarrant County. The
+      <p>Every race name, candidate name, and party label below is transcribed from the Texas
+      Secretary of State&rsquo;s Ballot Certification Reports for the November 3, 2026 general
+      election in <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County</a> and
+      <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County</a>. The
       endorsement and donation sections are empty for every candidate: that data has not been
       collected yet.</p>
-      <p>This page lists every race certified for the county. <strong>Your ballot will show only a
+      <p>This page lists every race certified in both counties. <strong>Your ballot will show only a
       subset of them</strong> &mdash; congressional, state legislative, State Board of Education,
       county commissioner, and justice of the peace races are drawn by district, so which ones you
       vote in depends on your address. Use the address lookup above to narrow this page to your
@@ -231,13 +236,16 @@
     <h2 id="provenance-title">Where this data comes from</h2>
     <dl class="prov-list">
       <div class="prov-item">
-        <dt>153 candidates across 85 races</dt>
-        <dd>Taken from the Texas Secretary of State&rsquo;s certified ballot report for the
-          November 3, 2026 general election in Tarrant County, dated September 7, 2026. Race
-          names, candidate names, and party labels are as printed in that report.
-          <span class="prov-meta"><a href="sources/ballot-certification-2026-11-03.pdf">Open the
-          PDF</a> &mdash; it is checked into this site at
-          <code>sources/ballot-certification-2026-11-03.pdf</code>.</span></dd>
+        <dt><span data-count="candidates">&hellip;</span> candidates across
+          <span data-count="races">&hellip;</span> races</dt>
+        <dd>Taken from the Texas Secretary of State&rsquo;s certified ballot reports for the
+          November 3, 2026 general election in Tarrant County, dated September 7, 2026, and in
+          Dallas County, dated September 9, 2026. Race names, candidate names, and party labels
+          are as printed in those reports.
+          <span class="prov-meta">Open the
+          <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County PDF</a> or the
+          <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County PDF</a>
+          &mdash; both are checked into this site under <code>sources/</code>.</span></dd>
       </div>
       <div class="prov-item">
         <dt>707 voting precincts</dt>
@@ -254,21 +262,23 @@
   <section class="panel scope" aria-labelledby="scope-title">
     <h2 id="scope-title">What this covers &mdash; and what it doesn&rsquo;t</h2>
     <ul class="scope-list">
-      <li class="scope-yes"><strong>Every race on the Tarrant County ballot.</strong> All 85
-        certified races, from U.S. Senate down to justice of the peace, with every candidate and
-        party as certified.</li>
+      <li class="scope-yes"><strong>Every race on the Tarrant and Dallas County ballots.</strong>
+        All <span data-count="races">&hellip;</span> certified races, from U.S. Senate down to
+        justice of the peace, with every candidate and party as certified.</li>
       <li class="scope-no"><strong>No endorsement or campaign finance data yet.</strong> Those
         sections are empty for every candidate. Nothing is added until it can carry a link to the
         record it came from.</li>
-      <li class="scope-no"><strong>One county so far.</strong> Tarrant is the only ballot loaded.
-        An address anywhere else in Texas will not match a precinct.</li>
+      <li class="scope-no"><strong>Two counties so far.</strong> Tarrant and Dallas are the only
+        ballots loaded. An address outside them will not match a precinct, and the address lookup
+        itself still covers Tarrant County only.</li>
     </ul>
   </section>
 
   <section class="panel endorsements" aria-labelledby="endorsements-title">
     <h2 id="endorsements-title">Where to find endorsements</h2>
     <p class="endorsements-intro">This guide does not carry endorsement data yet &mdash; these
-      organizations publish their own for Tarrant County races.</p>
+      organizations publish their own for Tarrant County races. No Dallas County equivalent is
+      listed here yet.</p>
     <ul class="endorsement-list">
       <li>
         <a href="https://tarrantgop.org" target="_blank" rel="noopener noreferrer">Tarrant County
@@ -307,9 +317,10 @@
 <footer class="site-footer">
   <div class="wrap">
     <p class="footer-name">Texas Voter Guide</p>
-    <p>Candidate data comes from the Texas Secretary of State&rsquo;s
-      <a href="sources/ballot-certification-2026-11-03.pdf">certified ballot report</a> for the
-      November 3, 2026 general election.</p>
+    <p>Candidate data comes from the Texas Secretary of State&rsquo;s certified ballot reports for
+      the November 3, 2026 general election in
+      <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County</a> and
+      <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County</a>.</p>
     <ul class="footer-links">
       <li><a href="https://github.com/andrewwimmer/texas-voter-guide">Source on GitHub</a></li>
       <li><a href="contact.html">Contact</a></li>

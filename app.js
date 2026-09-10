@@ -1,4 +1,4 @@
-/* Tarrant County Voter Guide — vanilla JS, no dependencies.
+/* Texas Voter Guide — vanilla JS, no dependencies.
    Reads candidates.json, lists races in certified ballot order (or grouped by
    jurisdiction), and renders every endorsement and donation with a clickable
    source link. */
@@ -58,6 +58,7 @@
     printHeader: document.getElementById('print-header'),
     printFooter: document.getElementById('print-footer'),
     lastUpdated: document.getElementById('last-updated'),
+    counts: document.querySelectorAll('[data-count]'),
     lookupForm: document.getElementById('lookup-form'),
     lookupAddress: document.getElementById('lookup-address'),
     lookupSubmit: document.getElementById('lookup-submit'),
@@ -306,6 +307,32 @@
         races.forEach(function (r) { r.candidates.sort(byBallotOrder); });
         return { name: group.name, type: group.type, races: races };
       });
+  }
+
+  // The landing copy quotes how many races and candidates this guide holds.
+  // Both are counted off the loaded data rather than written into the markup,
+  // so importing another county cannot leave the page describing the last one.
+  // Races are counted by raceKey, the same identity the list itself groups on,
+  // which is why two counties' identically titled offices count as two.
+  //
+  // Every [data-count] node is filled, so one number can appear in several
+  // sentences. A node whose name is not a total is left alone rather than
+  // blanked: an unrecognized name is a typo in the markup, and the visible
+  // placeholder says so more clearly than an empty gap.
+  function fillCounts() {
+    var seen = Object.create(null);
+    var raceCount = 0;
+    state.candidates.forEach(function (c) {
+      var key = raceKey(c);
+      if (!seen[key]) { seen[key] = true; raceCount++; }
+    });
+
+    var totals = { races: raceCount, candidates: state.candidates.length };
+    for (var i = 0; i < els.counts.length; i++) {
+      var node = els.counts[i];
+      var value = totals[node.getAttribute('data-count')];
+      if (value !== undefined) node.textContent = String(value);
+    }
   }
 
   /* ---------- rendering ---------- */
@@ -1097,12 +1124,14 @@
         var props = findPrecinct(index, match.lon, match.lat);
         if (!props) {
           setLookupStatus(
-            (match.matchedAddress || 'That address') + ' is outside Tarrant County, so none of ' +
-            'these races are on its ballot. This guide only covers Tarrant County.',
+            (match.matchedAddress || 'That address') + ' did not match a precinct. Address ' +
+            'lookup currently covers Tarrant County only. Dallas County races are loaded and ' +
+            'browsable below, but cannot be narrowed to a ballot by address yet, and no other ' +
+            'Texas county is loaded.',
             'warn');
           // A lookup that cannot narrow the list must not leave the page empty:
-          // open the full county list rather than stranding the visitor on the
-          // landing panel with nothing to read.
+          // open the full list rather than stranding the visitor on the landing
+          // panel with nothing to read.
           revealRaces();
           return;
         }
@@ -1111,7 +1140,7 @@
         setBusy(false);
         setLookupStatus(
           'Your address was found, but the precinct map could not be loaded (' + err.message +
-          '). Check your connection and try again — the full list of Tarrant County races is ' +
+          '). Check your connection and try again — the full list of races is ' +
           'open below in the meantime.',
           'error');
         revealRaces();
@@ -1122,10 +1151,10 @@
       setLookupStatus(
         err.message === 'timeout'
           ? 'The Census geocoder did not respond within 15 seconds. It may be down or blocked ' +
-            'by your network — try again in a moment. The full list of Tarrant County races is ' +
+            'by your network — try again in a moment. The full list of races is ' +
             'open below in the meantime.'
           : 'Could not reach the Census geocoder. It may be down or blocked by your network — ' +
-            'try again in a moment. The full list of Tarrant County races is open below in the ' +
+            'try again in a moment. The full list of races is open below in the ' +
             'meantime.',
         'error');
       revealRaces();
@@ -1239,6 +1268,8 @@
     if (data && data.meta && data.meta.lastUpdated) {
       els.lastUpdated.textContent = 'Data last updated: ' + data.meta.lastUpdated;
     }
+
+    fillCounts();
 
     els.sort.value = state.sort;
     populateJurisdictions();
