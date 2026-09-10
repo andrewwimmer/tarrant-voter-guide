@@ -15,6 +15,7 @@
         "type": "federal"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KEN PAXTON",
       "party": "REPUBLICAN",
@@ -32,6 +33,7 @@
         "type": "federal"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JAMES TALARICO",
       "party": "DEMOCRATIC",
@@ -49,6 +51,7 @@
         "type": "federal"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TED BROWN",
       "party": "LIBERTARIAN",
@@ -66,6 +69,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 6
+      },
       "electionDate": "2026-11-03",
       "candidate": "JAKE ELLZEY",
       "party": "REPUBLICAN",
@@ -83,6 +90,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 6
+      },
       "electionDate": "2026-11-03",
       "candidate": "DANNY MINTON",
       "party": "DEMOCRATIC",
@@ -100,6 +111,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 12
+      },
       "electionDate": "2026-11-03",
       "candidate": "CRAIG GOLDMAN",
       "party": "REPUBLICAN",
@@ -117,6 +132,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 12
+      },
       "electionDate": "2026-11-03",
       "candidate": "ANGELA \"HELI\" RODRIGUEZ PRILLIMAN",
       "party": "DEMOCRATIC",
@@ -134,6 +153,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 24
+      },
       "electionDate": "2026-11-03",
       "candidate": "BETH VAN DUYNE",
       "party": "REPUBLICAN",
@@ -151,6 +174,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 24
+      },
       "electionDate": "2026-11-03",
       "candidate": "KEVIN BURGE",
       "party": "DEMOCRATIC",
@@ -168,6 +195,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 25
+      },
       "electionDate": "2026-11-03",
       "candidate": "ROGER WILLIAMS",
       "party": "REPUBLICAN",
@@ -185,6 +216,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 25
+      },
       "electionDate": "2026-11-03",
       "candidate": "DIONE SIMS",
       "party": "DEMOCRATIC",
@@ -202,6 +237,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 30
+      },
       "electionDate": "2026-11-03",
       "candidate": "EVERETT JACKSON",
       "party": "REPUBLICAN",
@@ -219,6 +258,10 @@
         "type": "federal"
       },
       "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 30
+      },
       "electionDate": "2026-11-03",
       "candidate": "FREDERICK D. HAYNES III",
       "party": "DEMOCRATIC",
@@ -236,6 +279,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "GREG ABBOTT",
       "party": "REPUBLICAN",
@@ -253,6 +297,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "GINA HINOJOSA",
       "party": "DEMOCRATIC",
@@ -270,6 +315,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "PAT DIXON",
       "party": "LIBERTARIAN",
@@ -287,6 +333,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DAN PATRICK",
       "party": "REPUBLICAN",
@@ -304,6 +351,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "VIKKI GOODWIN",
       "party": "DEMOCRATIC",
@@ -321,6 +369,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ANTHONY CRISTO",
       "party": "LIBERTARIAN",
@@ -338,6 +387,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KEVIN MCCORMICK",
       "party": "GREEN",
@@ -355,6 +405,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MAYES MIDDLETON",
       "party": "REPUBLICAN",
@@ -372,6 +423,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "NATHAN JOHNSON",
       "party": "DEMOCRATIC",
@@ -389,6 +441,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TOM OXFORD",
       "party": "LIBERTARIAN",
@@ -406,6 +459,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DON HUFFINES",
       "party": "REPUBLICAN",
@@ -423,6 +477,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "SARAH ECKHARDT",
       "party": "DEMOCRATIC",
@@ -440,6 +495,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "V. ALONZO ECHAVARRIA-GARZA",
       "party": "LIBERTARIAN",
@@ -457,6 +513,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "SHEHLA FAIZI",
       "party": "GREEN",
@@ -474,6 +531,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DAWN BUCKINGHAM",
       "party": "REPUBLICAN",
@@ -491,6 +549,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BENJAMIN FLORES",
       "party": "DEMOCRATIC",
@@ -508,6 +567,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "NEILL SNIDER",
       "party": "LIBERTARIAN",
@@ -525,6 +585,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "NATE SHEETS",
       "party": "REPUBLICAN",
@@ -542,6 +603,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CLAYTON TUCKER",
       "party": "DEMOCRATIC",
@@ -559,6 +621,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "AUSTIN R. KELLY",
       "party": "LIBERTARIAN",
@@ -576,6 +639,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BO FRENCH",
       "party": "REPUBLICAN",
@@ -593,6 +657,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JON ROSENTHAL",
       "party": "DEMOCRATIC",
@@ -610,6 +675,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ARTHUR DIBIANCA",
       "party": "LIBERTARIAN",
@@ -627,6 +693,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JIMMY BLACKLOCK",
       "party": "REPUBLICAN",
@@ -644,6 +711,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MAGGIE ELLIS",
       "party": "DEMOCRATIC",
@@ -661,6 +729,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JAMES P. SULLIVAN",
       "party": "REPUBLICAN",
@@ -678,6 +747,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CHARI KELLY",
       "party": "DEMOCRATIC",
@@ -695,6 +765,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KYLE HAWKINS",
       "party": "REPUBLICAN",
@@ -712,6 +783,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KRISTEN HAWKINS",
       "party": "DEMOCRATIC",
@@ -729,6 +801,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRETT BUSBY",
       "party": "REPUBLICAN",
@@ -746,6 +819,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "GISELA D. TRIANA",
       "party": "DEMOCRATIC",
@@ -763,6 +837,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "THOMAS SMITH",
       "party": "REPUBLICAN",
@@ -780,6 +855,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "OKEY ANYIAM",
       "party": "DEMOCRATIC",
@@ -797,6 +873,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MARK ASH",
       "party": "LIBERTARIAN",
@@ -814,6 +891,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KEVIN PATRICK YEARY",
       "party": "REPUBLICAN",
@@ -831,6 +909,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "AUDRA RILEY",
       "party": "DEMOCRATIC",
@@ -848,6 +927,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JOHN MESSINGER",
       "party": "REPUBLICAN",
@@ -865,6 +945,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "HOLLY TAYLOR",
       "party": "DEMOCRATIC",
@@ -882,6 +963,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 13
+      },
       "electionDate": "2026-11-03",
       "candidate": "CARLOS (CHARLIE) GARZA",
       "party": "REPUBLICAN",
@@ -899,6 +984,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 13
+      },
       "electionDate": "2026-11-03",
       "candidate": "TIFFANY CLARK",
       "party": "DEMOCRATIC",
@@ -916,6 +1005,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 9
+      },
       "electionDate": "2026-11-03",
       "candidate": "LEIGH WAMBSGANSS",
       "party": "REPUBLICAN",
@@ -933,6 +1026,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 9
+      },
       "electionDate": "2026-11-03",
       "candidate": "TAYLOR REHMET",
       "party": "DEMOCRATIC",
@@ -950,6 +1047,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 22
+      },
       "electionDate": "2026-11-03",
       "candidate": "DAVID COOK",
       "party": "REPUBLICAN",
@@ -967,6 +1068,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 22
+      },
       "electionDate": "2026-11-03",
       "candidate": "AMY MARTINEZ-SALAS",
       "party": "DEMOCRATIC",
@@ -984,6 +1089,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 90
+      },
       "electionDate": "2026-11-03",
       "candidate": "RAMON ROMERO, JR",
       "party": "DEMOCRATIC",
@@ -1001,6 +1110,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 91
+      },
       "electionDate": "2026-11-03",
       "candidate": "DAVID LOWE",
       "party": "REPUBLICAN",
@@ -1018,6 +1131,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 91
+      },
       "electionDate": "2026-11-03",
       "candidate": "YISAK WORKU",
       "party": "DEMOCRATIC",
@@ -1035,6 +1152,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 92
+      },
       "electionDate": "2026-11-03",
       "candidate": "JP WOODRUFF",
       "party": "REPUBLICAN",
@@ -1052,6 +1173,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 92
+      },
       "electionDate": "2026-11-03",
       "candidate": "SALMAN BHOJANI",
       "party": "DEMOCRATIC",
@@ -1069,6 +1194,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 93
+      },
       "electionDate": "2026-11-03",
       "candidate": "ALAN BLAYLOCK",
       "party": "REPUBLICAN",
@@ -1086,6 +1215,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 93
+      },
       "electionDate": "2026-11-03",
       "candidate": "ERICKA LOMICK",
       "party": "DEMOCRATIC",
@@ -1103,6 +1236,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 94
+      },
       "electionDate": "2026-11-03",
       "candidate": "CHERYL BEAN",
       "party": "REPUBLICAN",
@@ -1120,6 +1257,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 94
+      },
       "electionDate": "2026-11-03",
       "candidate": "KATIE O'BRIEN DUZAN",
       "party": "DEMOCRATIC",
@@ -1137,6 +1278,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 95
+      },
       "electionDate": "2026-11-03",
       "candidate": "NICOLE COLLIER",
       "party": "DEMOCRATIC",
@@ -1154,6 +1299,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 96
+      },
       "electionDate": "2026-11-03",
       "candidate": "ELLEN FLEISCHMANN",
       "party": "REPUBLICAN",
@@ -1171,6 +1320,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 96
+      },
       "electionDate": "2026-11-03",
       "candidate": "EBONY M. TURNER",
       "party": "DEMOCRATIC",
@@ -1188,6 +1341,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 97
+      },
       "electionDate": "2026-11-03",
       "candidate": "JOHN W. MCQUEENEY",
       "party": "REPUBLICAN",
@@ -1205,6 +1362,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 97
+      },
       "electionDate": "2026-11-03",
       "candidate": "BETH LLEWELLYN MCLAUGHLIN",
       "party": "DEMOCRATIC",
@@ -1222,6 +1383,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 98
+      },
       "electionDate": "2026-11-03",
       "candidate": "ARMIN MIZANI",
       "party": "REPUBLICAN",
@@ -1239,6 +1404,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 98
+      },
       "electionDate": "2026-11-03",
       "candidate": "CATE BRENNAN",
       "party": "DEMOCRATIC",
@@ -1256,6 +1425,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 99
+      },
       "electionDate": "2026-11-03",
       "candidate": "CHARLIE GEREN",
       "party": "REPUBLICAN",
@@ -1273,6 +1446,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 99
+      },
       "electionDate": "2026-11-03",
       "candidate": "MICHELLE WINDER",
       "party": "DEMOCRATIC",
@@ -1290,6 +1467,10 @@
         "type": "state"
       },
       "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 101
+      },
       "electionDate": "2026-11-03",
       "candidate": "JUNIOR EZEONU",
       "party": "DEMOCRATIC",
@@ -1307,6 +1488,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "SCOTT BRISTER",
       "party": "REPUBLICAN",
@@ -1324,6 +1506,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JERRY ZIMMERER",
       "party": "DEMOCRATIC",
@@ -1341,6 +1524,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "SCOTT K. FIELD",
       "party": "REPUBLICAN",
@@ -1358,6 +1542,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TOM BAKER",
       "party": "DEMOCRATIC",
@@ -1375,6 +1560,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "APRIL FARRIS",
       "party": "REPUBLICAN",
@@ -1392,6 +1578,7 @@
         "type": "state"
       },
       "county": null,
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MARC M. MEYER",
       "party": "DEMOCRATIC",
@@ -1408,7 +1595,8 @@
         "name": "Texas",
         "type": "state"
       },
-      "county": null,
+      "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CHRIS TAYLOR",
       "party": "REPUBLICAN",
@@ -1425,7 +1613,8 @@
         "name": "Texas",
         "type": "state"
       },
-      "county": null,
+      "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRIAN WALKER",
       "party": "REPUBLICAN",
@@ -1443,6 +1632,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JOHN P. CHUPP",
       "party": "REPUBLICAN",
@@ -1460,6 +1650,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MICHAEL FERRY",
       "party": "REPUBLICAN",
@@ -1477,6 +1668,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ARTHURINE \"ANHTHU\" KAMPHAUS",
       "party": "DEMOCRATIC",
@@ -1494,6 +1686,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "LESLIE BARROWS",
       "party": "REPUBLICAN",
@@ -1511,6 +1704,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "LYNDSAY NEWELL",
       "party": "DEMOCRATIC",
@@ -1528,6 +1722,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KENNETH E. NEWELL",
       "party": "REPUBLICAN",
@@ -1545,6 +1740,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DUSTY FILLMORE",
       "party": "REPUBLICAN",
@@ -1562,6 +1758,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "KATHERINE \"KATE\" KIM",
       "party": "DEMOCRATIC",
@@ -1579,6 +1776,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "AMY ALLIN",
       "party": "REPUBLICAN",
@@ -1596,6 +1794,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "FRED HOWEY",
       "party": "DEMOCRATIC",
@@ -1613,6 +1812,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JAMES B. MUNFORD",
       "party": "REPUBLICAN",
@@ -1630,6 +1830,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ALEX KIM",
       "party": "REPUBLICAN",
@@ -1647,6 +1848,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRIAN WILLETT",
       "party": "DEMOCRATIC",
@@ -1664,6 +1866,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ANDY HSU",
       "party": "REPUBLICAN",
@@ -1681,6 +1884,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CRYSTAL GAYDEN",
       "party": "DEMOCRATIC",
@@ -1698,6 +1902,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CYNTHIA TERRY",
       "party": "REPUBLICAN",
@@ -1715,6 +1920,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ANDY GRIFFIN",
       "party": "DEMOCRATIC",
@@ -1732,6 +1938,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "RYAN HILL",
       "party": "REPUBLICAN",
@@ -1749,6 +1956,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MARQUETTA \"MARQ\" CLAYTON",
       "party": "DEMOCRATIC",
@@ -1766,6 +1974,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JULIE LUGO",
       "party": "REPUBLICAN",
@@ -1783,6 +1992,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "LEE SORRELLS",
       "party": "REPUBLICAN",
@@ -1800,6 +2010,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "COURTNEY MILLER",
       "party": "DEMOCRATIC",
@@ -1817,6 +2028,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "STEVEN JUMES",
       "party": "REPUBLICAN",
@@ -1834,6 +2046,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "SHERRI WAGNER",
       "party": "REPUBLICAN",
@@ -1851,6 +2064,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CINDY STORMER",
       "party": "DEMOCRATIC",
@@ -1868,6 +2082,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DOUGLAS ALLEN",
       "party": "REPUBLICAN",
@@ -1885,6 +2100,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ANDY PORTER",
       "party": "REPUBLICAN",
@@ -1902,6 +2118,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JOHN BRENDER",
       "party": "DEMOCRATIC",
@@ -1919,6 +2136,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "PHIL SORRELLS",
       "party": "REPUBLICAN",
@@ -1936,6 +2154,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TIFFANY BURKS",
       "party": "DEMOCRATIC",
@@ -1953,6 +2172,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TIM O'HARE",
       "party": "REPUBLICAN",
@@ -1970,6 +2190,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ALISA SIMMONS",
       "party": "DEMOCRATIC",
@@ -1987,6 +2208,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRYAN KIDD",
       "party": "GREEN",
@@ -2004,6 +2226,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DON PIERSON",
       "party": "REPUBLICAN",
@@ -2021,6 +2244,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JENNIFER RYMELL",
       "party": "REPUBLICAN",
@@ -2038,6 +2262,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MIKE HRABAL",
       "party": "REPUBLICAN",
@@ -2055,6 +2280,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DAVID COOK",
       "party": "REPUBLICAN",
@@ -2072,6 +2298,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CAREY WALKER",
       "party": "REPUBLICAN",
@@ -2089,6 +2316,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BOB MCCOY",
       "party": "REPUBLICAN",
@@ -2106,6 +2334,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "DEBORAH NEKHOM",
       "party": "REPUBLICAN",
@@ -2123,6 +2352,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRAD CLARK",
       "party": "REPUBLICAN",
@@ -2140,6 +2370,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "JULYA \"JUJUBILL\" BILLHYMER",
       "party": "DEMOCRATIC",
@@ -2157,6 +2388,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "RANDI HARTIN",
       "party": "REPUBLICAN",
@@ -2174,6 +2406,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "ERIC STARNES",
       "party": "REPUBLICAN",
@@ -2191,6 +2424,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "CHARLES L. \"CHUCK\" VANOVER",
       "party": "REPUBLICAN",
@@ -2208,6 +2442,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BRIAN BOLTON",
       "party": "REPUBLICAN",
@@ -2225,6 +2460,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "LESA PAMPLIN",
       "party": "DEMOCRATIC",
@@ -2242,6 +2478,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TRENT LOFTIN",
       "party": "REPUBLICAN",
@@ -2259,6 +2496,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "PATRICIA BURNS",
       "party": "REPUBLICAN",
@@ -2276,6 +2514,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "BROOK BELL",
       "party": "REPUBLICAN",
@@ -2293,6 +2532,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "TOM WILDER",
       "party": "REPUBLICAN",
@@ -2310,6 +2550,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "NATHAN SMITH",
       "party": "DEMOCRATIC",
@@ -2327,6 +2568,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "MARY LOUISE NICHOLSON",
       "party": "REPUBLICAN",
@@ -2344,6 +2586,7 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": null,
       "electionDate": "2026-11-03",
       "candidate": "LYDIA BEAN",
       "party": "DEMOCRATIC",
@@ -2361,6 +2604,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "commissioner",
+        "number": 2
+      },
       "electionDate": "2026-11-03",
       "candidate": "TONY TINDERHOLT",
       "party": "REPUBLICAN",
@@ -2378,6 +2625,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "commissioner",
+        "number": 2
+      },
       "electionDate": "2026-11-03",
       "candidate": "JARED WILLIAMS",
       "party": "DEMOCRATIC",
@@ -2395,6 +2646,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "commissioner",
+        "number": 4
+      },
       "electionDate": "2026-11-03",
       "candidate": "MANNY RAMIREZ",
       "party": "REPUBLICAN",
@@ -2412,6 +2667,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "commissioner",
+        "number": 4
+      },
       "electionDate": "2026-11-03",
       "candidate": "NYDIA CARDENAS",
       "party": "DEMOCRATIC",
@@ -2429,6 +2688,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 1
+      },
       "electionDate": "2026-11-03",
       "candidate": "RICKY RODRIGUEZ",
       "party": "REPUBLICAN",
@@ -2446,6 +2709,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
       "electionDate": "2026-11-03",
       "candidate": "MARY TOM CRAVENS CURNUTT",
       "party": "REPUBLICAN",
@@ -2463,6 +2730,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
       "electionDate": "2026-11-03",
       "candidate": "CELINA VASQUEZ",
       "party": "DEMOCRATIC",
@@ -2480,6 +2751,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
       "electionDate": "2026-11-03",
       "candidate": "WILLIAM P. \"BILL\" BRANDT",
       "party": "REPUBLICAN",
@@ -2497,6 +2772,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
       "electionDate": "2026-11-03",
       "candidate": "CHRISTOPHER \"CHRIS\" GREGORY",
       "party": "REPUBLICAN",
@@ -2514,6 +2793,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
       "electionDate": "2026-11-03",
       "candidate": "RODNEY LEE",
       "party": "DEMOCRATIC",
@@ -2531,6 +2814,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 5
+      },
       "electionDate": "2026-11-03",
       "candidate": "SERGIO L. DE LEON",
       "party": "DEMOCRATIC",
@@ -2548,6 +2835,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 6
+      },
       "electionDate": "2026-11-03",
       "candidate": "JASON M. CHARBONNET",
       "party": "REPUBLICAN",
@@ -2565,6 +2856,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 7
+      },
       "electionDate": "2026-11-03",
       "candidate": "PAIGE PAYNE - NEAL",
       "party": "REPUBLICAN",
@@ -2582,6 +2877,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 7
+      },
       "electionDate": "2026-11-03",
       "candidate": "KENNETH D. SANDERS",
       "party": "DEMOCRATIC",
@@ -2599,6 +2898,10 @@
         "type": "county"
       },
       "county": "Tarrant",
+      "district": {
+        "type": "jp",
+        "number": 8
+      },
       "electionDate": "2026-11-03",
       "candidate": "LISA WOODARD",
       "party": "DEMOCRATIC",
