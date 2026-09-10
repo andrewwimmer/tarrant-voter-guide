@@ -1,17 +1,19 @@
 {
   "meta": {
-    "title": "Tarrant County Voter Guide",
-    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Report for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate. Each entry carries a ballotOrder keyed by county name: its 1-based position in that county's certification report, which is the order the races and the candidates within each race appear on that county's printed ballot.",
+    "title": "Tarrant and Dallas County Voter Guide",
+    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Reports for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf) and Dallas County (sources/ballot-certification-dallas-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate. Each entry carries a ballotOrder keyed by county name: its 1-based position in that county's certification report, which is the order the races and the candidates within each race appear on that county's printed ballot. A statewide or shared-district race certified by both counties is a single record carrying a position for each. A race title the two counties both use for different offices - COUNTY JUDGE, DISTRICT CLERK, COUNTY COMMISSIONER PRECINCT 2 - is separate records per county, told apart by the county field.",
     "sources": [
-      "sources/ballot-certification-2026-11-03.pdf"
+      "sources/ballot-certification-2026-11-03.pdf",
+      "sources/ballot-certification-dallas-2026-11-03.pdf"
     ],
-    "lastUpdated": "2026-09-07"
+    "lastUpdated": "2026-09-10"
   },
   "candidates": [
     {
       "id": "tc-2026-11-001",
       "ballotOrder": {
-        "Tarrant": 1
+        "Tarrant": 1,
+        "Dallas": 1
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -25,7 +27,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -33,7 +36,8 @@
     {
       "id": "tc-2026-11-002",
       "ballotOrder": {
-        "Tarrant": 2
+        "Tarrant": 2,
+        "Dallas": 2
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -47,7 +51,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -55,7 +60,8 @@
     {
       "id": "tc-2026-11-003",
       "ballotOrder": {
-        "Tarrant": 3
+        "Tarrant": 3,
+        "Dallas": 3
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -69,7 +75,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -77,7 +84,8 @@
     {
       "id": "tc-2026-11-004",
       "ballotOrder": {
-        "Tarrant": 4
+        "Tarrant": 4,
+        "Dallas": 6
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 6",
       "jurisdiction": {
@@ -94,7 +102,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -102,7 +111,8 @@
     {
       "id": "tc-2026-11-005",
       "ballotOrder": {
-        "Tarrant": 5
+        "Tarrant": 5,
+        "Dallas": 7
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 6",
       "jurisdiction": {
@@ -119,7 +129,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -177,7 +188,8 @@
     {
       "id": "tc-2026-11-008",
       "ballotOrder": {
-        "Tarrant": 8
+        "Tarrant": 8,
+        "Dallas": 8
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 24",
       "jurisdiction": {
@@ -194,7 +206,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -202,7 +215,8 @@
     {
       "id": "tc-2026-11-009",
       "ballotOrder": {
-        "Tarrant": 9
+        "Tarrant": 9,
+        "Dallas": 9
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 24",
       "jurisdiction": {
@@ -219,7 +233,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -277,7 +292,8 @@
     {
       "id": "tc-2026-11-012",
       "ballotOrder": {
-        "Tarrant": 12
+        "Tarrant": 12,
+        "Dallas": 10
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 30",
       "jurisdiction": {
@@ -294,7 +310,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -302,7 +319,8 @@
     {
       "id": "tc-2026-11-013",
       "ballotOrder": {
-        "Tarrant": 13
+        "Tarrant": 13,
+        "Dallas": 11
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 30",
       "jurisdiction": {
@@ -319,7 +337,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -327,7 +346,8 @@
     {
       "id": "tc-2026-11-014",
       "ballotOrder": {
-        "Tarrant": 14
+        "Tarrant": 14,
+        "Dallas": 16
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -341,7 +361,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -349,7 +370,8 @@
     {
       "id": "tc-2026-11-015",
       "ballotOrder": {
-        "Tarrant": 15
+        "Tarrant": 15,
+        "Dallas": 17
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -363,7 +385,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -371,7 +394,8 @@
     {
       "id": "tc-2026-11-016",
       "ballotOrder": {
-        "Tarrant": 16
+        "Tarrant": 16,
+        "Dallas": 18
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -385,7 +409,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -393,7 +418,8 @@
     {
       "id": "tc-2026-11-017",
       "ballotOrder": {
-        "Tarrant": 17
+        "Tarrant": 17,
+        "Dallas": 19
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -407,7 +433,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -415,7 +442,8 @@
     {
       "id": "tc-2026-11-018",
       "ballotOrder": {
-        "Tarrant": 18
+        "Tarrant": 18,
+        "Dallas": 20
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -429,7 +457,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -437,7 +466,8 @@
     {
       "id": "tc-2026-11-019",
       "ballotOrder": {
-        "Tarrant": 19
+        "Tarrant": 19,
+        "Dallas": 21
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -451,7 +481,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -459,7 +490,8 @@
     {
       "id": "tc-2026-11-020",
       "ballotOrder": {
-        "Tarrant": 20
+        "Tarrant": 20,
+        "Dallas": 22
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -473,7 +505,8 @@
       "party": "GREEN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -481,7 +514,8 @@
     {
       "id": "tc-2026-11-021",
       "ballotOrder": {
-        "Tarrant": 21
+        "Tarrant": 21,
+        "Dallas": 23
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -495,7 +529,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -503,7 +538,8 @@
     {
       "id": "tc-2026-11-022",
       "ballotOrder": {
-        "Tarrant": 22
+        "Tarrant": 22,
+        "Dallas": 24
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -517,7 +553,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -525,7 +562,8 @@
     {
       "id": "tc-2026-11-023",
       "ballotOrder": {
-        "Tarrant": 23
+        "Tarrant": 23,
+        "Dallas": 25
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -539,7 +577,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -547,7 +586,8 @@
     {
       "id": "tc-2026-11-024",
       "ballotOrder": {
-        "Tarrant": 24
+        "Tarrant": 24,
+        "Dallas": 26
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -561,7 +601,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -569,7 +610,8 @@
     {
       "id": "tc-2026-11-025",
       "ballotOrder": {
-        "Tarrant": 25
+        "Tarrant": 25,
+        "Dallas": 27
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -583,7 +625,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -591,7 +634,8 @@
     {
       "id": "tc-2026-11-026",
       "ballotOrder": {
-        "Tarrant": 26
+        "Tarrant": 26,
+        "Dallas": 28
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -605,7 +649,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -613,7 +658,8 @@
     {
       "id": "tc-2026-11-027",
       "ballotOrder": {
-        "Tarrant": 27
+        "Tarrant": 27,
+        "Dallas": 29
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -627,7 +673,8 @@
       "party": "GREEN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -635,7 +682,8 @@
     {
       "id": "tc-2026-11-028",
       "ballotOrder": {
-        "Tarrant": 28
+        "Tarrant": 28,
+        "Dallas": 30
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -649,7 +697,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -657,7 +706,8 @@
     {
       "id": "tc-2026-11-029",
       "ballotOrder": {
-        "Tarrant": 29
+        "Tarrant": 29,
+        "Dallas": 31
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -671,7 +721,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -679,7 +730,8 @@
     {
       "id": "tc-2026-11-030",
       "ballotOrder": {
-        "Tarrant": 30
+        "Tarrant": 30,
+        "Dallas": 32
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -693,7 +745,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -701,7 +754,8 @@
     {
       "id": "tc-2026-11-031",
       "ballotOrder": {
-        "Tarrant": 31
+        "Tarrant": 31,
+        "Dallas": 33
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -715,7 +769,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -723,7 +778,8 @@
     {
       "id": "tc-2026-11-032",
       "ballotOrder": {
-        "Tarrant": 32
+        "Tarrant": 32,
+        "Dallas": 34
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -737,7 +793,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -745,7 +802,8 @@
     {
       "id": "tc-2026-11-033",
       "ballotOrder": {
-        "Tarrant": 33
+        "Tarrant": 33,
+        "Dallas": 35
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -759,7 +817,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -767,7 +826,8 @@
     {
       "id": "tc-2026-11-034",
       "ballotOrder": {
-        "Tarrant": 34
+        "Tarrant": 34,
+        "Dallas": 36
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -781,7 +841,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -789,7 +850,8 @@
     {
       "id": "tc-2026-11-035",
       "ballotOrder": {
-        "Tarrant": 35
+        "Tarrant": 35,
+        "Dallas": 37
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -803,7 +865,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -811,7 +874,8 @@
     {
       "id": "tc-2026-11-036",
       "ballotOrder": {
-        "Tarrant": 36
+        "Tarrant": 36,
+        "Dallas": 38
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -825,7 +889,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -833,7 +898,8 @@
     {
       "id": "tc-2026-11-037",
       "ballotOrder": {
-        "Tarrant": 37
+        "Tarrant": 37,
+        "Dallas": 39
       },
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
@@ -847,7 +913,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -855,7 +922,8 @@
     {
       "id": "tc-2026-11-038",
       "ballotOrder": {
-        "Tarrant": 38
+        "Tarrant": 38,
+        "Dallas": 40
       },
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
@@ -869,7 +937,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -877,7 +946,8 @@
     {
       "id": "tc-2026-11-039",
       "ballotOrder": {
-        "Tarrant": 39
+        "Tarrant": 39,
+        "Dallas": 41
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
@@ -891,7 +961,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -899,7 +970,8 @@
     {
       "id": "tc-2026-11-040",
       "ballotOrder": {
-        "Tarrant": 40
+        "Tarrant": 40,
+        "Dallas": 42
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
@@ -913,7 +985,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -921,7 +994,8 @@
     {
       "id": "tc-2026-11-041",
       "ballotOrder": {
-        "Tarrant": 41
+        "Tarrant": 41,
+        "Dallas": 43
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
@@ -935,7 +1009,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -943,7 +1018,8 @@
     {
       "id": "tc-2026-11-042",
       "ballotOrder": {
-        "Tarrant": 42
+        "Tarrant": 42,
+        "Dallas": 44
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
@@ -957,7 +1033,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -965,7 +1042,8 @@
     {
       "id": "tc-2026-11-043",
       "ballotOrder": {
-        "Tarrant": 43
+        "Tarrant": 43,
+        "Dallas": 45
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
@@ -979,7 +1057,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -987,7 +1066,8 @@
     {
       "id": "tc-2026-11-044",
       "ballotOrder": {
-        "Tarrant": 44
+        "Tarrant": 44,
+        "Dallas": 46
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
@@ -1001,7 +1081,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1009,7 +1090,8 @@
     {
       "id": "tc-2026-11-045",
       "ballotOrder": {
-        "Tarrant": 45
+        "Tarrant": 45,
+        "Dallas": 47
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1023,7 +1105,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1031,7 +1114,8 @@
     {
       "id": "tc-2026-11-046",
       "ballotOrder": {
-        "Tarrant": 46
+        "Tarrant": 46,
+        "Dallas": 48
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1045,7 +1129,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1053,7 +1138,8 @@
     {
       "id": "tc-2026-11-047",
       "ballotOrder": {
-        "Tarrant": 47
+        "Tarrant": 47,
+        "Dallas": 49
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1067,7 +1153,8 @@
       "party": "LIBERTARIAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1075,7 +1162,8 @@
     {
       "id": "tc-2026-11-048",
       "ballotOrder": {
-        "Tarrant": 48
+        "Tarrant": 48,
+        "Dallas": 50
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
@@ -1089,7 +1177,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1097,7 +1186,8 @@
     {
       "id": "tc-2026-11-049",
       "ballotOrder": {
-        "Tarrant": 49
+        "Tarrant": 49,
+        "Dallas": 51
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
@@ -1111,7 +1201,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1119,7 +1210,8 @@
     {
       "id": "tc-2026-11-050",
       "ballotOrder": {
-        "Tarrant": 50
+        "Tarrant": 50,
+        "Dallas": 52
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
@@ -1133,7 +1225,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1141,7 +1234,8 @@
     {
       "id": "tc-2026-11-051",
       "ballotOrder": {
-        "Tarrant": 51
+        "Tarrant": 51,
+        "Dallas": 53
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
@@ -1155,7 +1249,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1163,7 +1258,8 @@
     {
       "id": "tc-2026-11-052",
       "ballotOrder": {
-        "Tarrant": 52
+        "Tarrant": 52,
+        "Dallas": 56
       },
       "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
       "jurisdiction": {
@@ -1180,7 +1276,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1188,7 +1285,8 @@
     {
       "id": "tc-2026-11-053",
       "ballotOrder": {
-        "Tarrant": 53
+        "Tarrant": 53,
+        "Dallas": 57
       },
       "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 13",
       "jurisdiction": {
@@ -1205,7 +1303,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1788,7 +1887,8 @@
     {
       "id": "tc-2026-11-077",
       "ballotOrder": {
-        "Tarrant": 77
+        "Tarrant": 77,
+        "Dallas": 85
       },
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
@@ -1802,7 +1902,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1810,7 +1911,8 @@
     {
       "id": "tc-2026-11-078",
       "ballotOrder": {
-        "Tarrant": 78
+        "Tarrant": 78,
+        "Dallas": 86
       },
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
@@ -1824,7 +1926,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1832,7 +1935,8 @@
     {
       "id": "tc-2026-11-079",
       "ballotOrder": {
-        "Tarrant": 79
+        "Tarrant": 79,
+        "Dallas": 87
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
@@ -1846,7 +1950,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1854,7 +1959,8 @@
     {
       "id": "tc-2026-11-080",
       "ballotOrder": {
-        "Tarrant": 80
+        "Tarrant": 80,
+        "Dallas": 88
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
@@ -1868,7 +1974,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1876,7 +1983,8 @@
     {
       "id": "tc-2026-11-081",
       "ballotOrder": {
-        "Tarrant": 81
+        "Tarrant": 81,
+        "Dallas": 89
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -1890,7 +1998,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1898,7 +2007,8 @@
     {
       "id": "tc-2026-11-082",
       "ballotOrder": {
-        "Tarrant": 82
+        "Tarrant": 82,
+        "Dallas": 90
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -1912,7 +2022,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-2026-11-03.pdf"
+        "sources/ballot-certification-2026-11-03.pdf",
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -3520,6 +3631,3021 @@
       "unopposed": true,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-001",
+      "ballotOrder": {
+        "Dallas": 4
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 5",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 5
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LANCE GOODEN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-002",
+      "ballotOrder": {
+        "Dallas": 5
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 5",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 5
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHELSEY HOCKETT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-003",
+      "ballotOrder": {
+        "Dallas": 12
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 32",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 32
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JACE YARBROUGH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-004",
+      "ballotOrder": {
+        "Dallas": 13
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 32",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 32
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DAN BARRIOS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-005",
+      "ballotOrder": {
+        "Dallas": 14
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 33",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 33
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PATRICK DAVID GILLESPIE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-006",
+      "ballotOrder": {
+        "Dallas": 15
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 33",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 33
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "COLIN ALLRED",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-007",
+      "ballotOrder": {
+        "Dallas": 54
+      },
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 9
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KASON HUDDLESTON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-008",
+      "ballotOrder": {
+        "Dallas": 55
+      },
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 9",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 9
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ERICKA LEDFERD",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-009",
+      "ballotOrder": {
+        "Dallas": 58
+      },
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 14",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 14
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MINDY BUMGARNER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-010",
+      "ballotOrder": {
+        "Dallas": 59
+      },
+      "race": "MEMBER, STATE BOARD OF EDUCATION, DISTRICT 14",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "sboe",
+        "number": 14
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AMY TAYLOR",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-011",
+      "ballotOrder": {
+        "Dallas": 60
+      },
+      "race": "STATE SENATOR, DISTRICT 2",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BOB HALL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-012",
+      "ballotOrder": {
+        "Dallas": 61
+      },
+      "race": "STATE SENATOR, DISTRICT 2",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statesenate",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEENEN COLBERT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-013",
+      "ballotOrder": {
+        "Dallas": 62
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 100",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 100
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JORDAN SCOTT HOFFNAGLE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-014",
+      "ballotOrder": {
+        "Dallas": 63
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 100",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 100
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "VENTON JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-015",
+      "ballotOrder": {
+        "Dallas": 64
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 102",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 102
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BONNIE ABADIE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-016",
+      "ballotOrder": {
+        "Dallas": 65
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 102",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 102
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANA-MARIA RODRIGUEZ RAMOS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-017",
+      "ballotOrder": {
+        "Dallas": 66
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 103",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 103
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MELANIE MEDLEY-THOMAS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-018",
+      "ballotOrder": {
+        "Dallas": 67
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 103",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 103
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RAFAEL ANCHIA",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-019",
+      "ballotOrder": {
+        "Dallas": 68
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 104",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 104
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JESSICA GONZALEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-020",
+      "ballotOrder": {
+        "Dallas": 69
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 105",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 105
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TERRY MEZA",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-021",
+      "ballotOrder": {
+        "Dallas": 70
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 107",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 107
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LINDA GARCIA",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-022",
+      "ballotOrder": {
+        "Dallas": 71
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 108",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 108
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MORGAN MEYER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-023",
+      "ballotOrder": {
+        "Dallas": 72
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 108",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 108
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ALLISON MITCHELL",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-024",
+      "ballotOrder": {
+        "Dallas": 73
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 109",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 109
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "WILL CAMPBELL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-025",
+      "ballotOrder": {
+        "Dallas": 74
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 109",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 109
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "AICHA DAVIS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-026",
+      "ballotOrder": {
+        "Dallas": 75
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 110",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 110
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TONI ROSE",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-027",
+      "ballotOrder": {
+        "Dallas": 76
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 111",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 111
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "YVONNE DAVIS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-028",
+      "ballotOrder": {
+        "Dallas": 77
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 112",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 112
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANGIE CHEN BUTTON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-029",
+      "ballotOrder": {
+        "Dallas": 78
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 112",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 112
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ZACH HERBERT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-030",
+      "ballotOrder": {
+        "Dallas": 79
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 113",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 113
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "STEPHEN W. STANLEY",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-031",
+      "ballotOrder": {
+        "Dallas": 80
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 113",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 113
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "RHETTA ANDREWS BOWERS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-032",
+      "ballotOrder": {
+        "Dallas": 81
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 114",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 114
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TIM MCDONOUGH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-033",
+      "ballotOrder": {
+        "Dallas": 82
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 114",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 114
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN BRYANT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-034",
+      "ballotOrder": {
+        "Dallas": 83
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 115",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 115
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DANNY ROSELLINI",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-035",
+      "ballotOrder": {
+        "Dallas": 84
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 115",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 115
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CASSANDRA HERNANDEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-036",
+      "ballotOrder": {
+        "Dallas": 91
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MATTHEW KOLODOSKI",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-037",
+      "ballotOrder": {
+        "Dallas": 92
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 3",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "AMANDA REICHEK",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-038",
+      "ballotOrder": {
+        "Dallas": 93
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 6",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "BEN SMITH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-039",
+      "ballotOrder": {
+        "Dallas": 94
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 6",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MONICA PURDY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-040",
+      "ballotOrder": {
+        "Dallas": 95
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 8",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ASHLEY WYSOCKI",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-041",
+      "ballotOrder": {
+        "Dallas": 96
+      },
+      "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 8",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ANDREA D. PLUMLEE",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-042",
+      "ballotOrder": {
+        "Dallas": 97
+      },
+      "race": "DISTRICT JUDGE, 44TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "VERETTA FRAZIER",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-043",
+      "ballotOrder": {
+        "Dallas": 98
+      },
+      "race": "DISTRICT JUDGE, 68TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MARTIN HOFFMAN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-044",
+      "ballotOrder": {
+        "Dallas": 99
+      },
+      "race": "DISTRICT JUDGE, 101ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "STACI WILLIAMS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-045",
+      "ballotOrder": {
+        "Dallas": 100
+      },
+      "race": "DISTRICT JUDGE, 116TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "TONYA PARKER",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-046",
+      "ballotOrder": {
+        "Dallas": 101
+      },
+      "race": "DISTRICT JUDGE, 134TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DALE TILLERY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-047",
+      "ballotOrder": {
+        "Dallas": 102
+      },
+      "race": "DISTRICT JUDGE, 160TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "AIESHA REDMOND",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-048",
+      "ballotOrder": {
+        "Dallas": 103
+      },
+      "race": "DISTRICT JUDGE, 191ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ELIZABETH GINSBERG",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-049",
+      "ballotOrder": {
+        "Dallas": 104
+      },
+      "race": "DISTRICT JUDGE, 192ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MARIA ACEVES",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-050",
+      "ballotOrder": {
+        "Dallas": 105
+      },
+      "race": "DISTRICT JUDGE, 193RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "BRIDGETT WHITMORE",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-051",
+      "ballotOrder": {
+        "Dallas": 106
+      },
+      "race": "DISTRICT JUDGE, 194TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "KIM COOKS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-052",
+      "ballotOrder": {
+        "Dallas": 107
+      },
+      "race": "DISTRICT JUDGE, 195TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ETTA JEANETTE MULLIN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-053",
+      "ballotOrder": {
+        "Dallas": 108
+      },
+      "race": "DISTRICT JUDGE, 203RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "RAQUEL \"ROCKY\" JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-054",
+      "ballotOrder": {
+        "Dallas": 109
+      },
+      "race": "DISTRICT JUDGE, 204TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "TAMMY KEMP",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-055",
+      "ballotOrder": {
+        "Dallas": 110
+      },
+      "race": "DISTRICT JUDGE, 254TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "KIM BROWN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-056",
+      "ballotOrder": {
+        "Dallas": 111
+      },
+      "race": "DISTRICT JUDGE, 255TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "VONDA BAILEY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-057",
+      "ballotOrder": {
+        "Dallas": 112
+      },
+      "race": "DISTRICT JUDGE, 256TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "HEATHER NICOLE JOHNSON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-058",
+      "ballotOrder": {
+        "Dallas": 113
+      },
+      "race": "DISTRICT JUDGE, 265TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JENNIFER BENNETT",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-059",
+      "ballotOrder": {
+        "Dallas": 114
+      },
+      "race": "DISTRICT JUDGE, 282ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ALISON GRINTER ALLEN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-060",
+      "ballotOrder": {
+        "Dallas": 115
+      },
+      "race": "DISTRICT JUDGE, 283RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "LELA LAWRENCE MAYS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-061",
+      "ballotOrder": {
+        "Dallas": 116
+      },
+      "race": "DISTRICT JUDGE, 291ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "STEPHANIE N MITCHELL HUFF",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-062",
+      "ballotOrder": {
+        "Dallas": 117
+      },
+      "race": "DISTRICT JUDGE, 292ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "BRANDON BIRMINGHAM",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-063",
+      "ballotOrder": {
+        "Dallas": 118
+      },
+      "race": "DISTRICT JUDGE, 298TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CLARK B. WILL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-064",
+      "ballotOrder": {
+        "Dallas": 119
+      },
+      "race": "DISTRICT JUDGE, 298TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ASHLEY SMITH",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-065",
+      "ballotOrder": {
+        "Dallas": 120
+      },
+      "race": "DISTRICT JUDGE, 301ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DANIELLE CLARK",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-066",
+      "ballotOrder": {
+        "Dallas": 121
+      },
+      "race": "DISTRICT JUDGE, 302ND JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "SANDRA JACKSON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-067",
+      "ballotOrder": {
+        "Dallas": 122
+      },
+      "race": "DISTRICT JUDGE, 303RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "LADEITRA ADKINS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-068",
+      "ballotOrder": {
+        "Dallas": 123
+      },
+      "race": "DISTRICT JUDGE, 304TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ANDREA MARTIN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-069",
+      "ballotOrder": {
+        "Dallas": 124
+      },
+      "race": "DISTRICT JUDGE, 305TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CHERYL LEE SHANNON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-070",
+      "ballotOrder": {
+        "Dallas": 125
+      },
+      "race": "DISTRICT JUDGE, 330TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "TAMIKA JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-071",
+      "ballotOrder": {
+        "Dallas": 126
+      },
+      "race": "DISTRICT JUDGE, 363RD JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CYNTHIA GARZA",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-072",
+      "ballotOrder": {
+        "Dallas": 127
+      },
+      "race": "CRIMINAL DISTRICT JUDGE DALLAS COUNTY NUMBER 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "STEPHANIE HUDSON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-073",
+      "ballotOrder": {
+        "Dallas": 128
+      },
+      "race": "CRIMINAL DISTRICT JUDGE, DALLAS COUNTY NUMBER 5",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "LAKESHA SMITH",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-074",
+      "ballotOrder": {
+        "Dallas": 129
+      },
+      "race": "CRIMINAL DISTRICT JUDGE, DALLAS COUNTY NUMBER 6",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "NANCY MULDER",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-075",
+      "ballotOrder": {
+        "Dallas": 130
+      },
+      "race": "CRIMINAL DISTRICT JUDGE, DALLAS COUNTY NUMBER 7",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CHIKA ANYIAM",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-076",
+      "ballotOrder": {
+        "Dallas": 131
+      },
+      "race": "CRIMINAL DISTRICT ATTORNEY DALLAS COUNTY",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "AMBER GIVENS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-077",
+      "ballotOrder": {
+        "Dallas": 132
+      },
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MIKE IMMLER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-078",
+      "ballotOrder": {
+        "Dallas": 133
+      },
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CLAY JENKINS",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-079",
+      "ballotOrder": {
+        "Dallas": 134
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ERIN NOWELL",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-080",
+      "ballotOrder": {
+        "Dallas": 135
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MELISSA J. BELLAN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-081",
+      "ballotOrder": {
+        "Dallas": 136
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 3",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "SALLY MONTGOMERY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-082",
+      "ballotOrder": {
+        "Dallas": 137
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 4",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DIANNE JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-083",
+      "ballotOrder": {
+        "Dallas": 138
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 5",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "NICOLE TAYLOR",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-084",
+      "ballotOrder": {
+        "Dallas": 139
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT OF APPEALS NO. 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ALEXANDRA GUIO",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-085",
+      "ballotOrder": {
+        "Dallas": 140
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT OF APPEALS NO. 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CHERYL WILLIAMS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-086",
+      "ballotOrder": {
+        "Dallas": 141
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "TIFANEE BAKER",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-087",
+      "ballotOrder": {
+        "Dallas": 142
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JULIA HAYES",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-088",
+      "ballotOrder": {
+        "Dallas": 143
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 3",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "AUDREY FAYE MOOREHEAD",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-089",
+      "ballotOrder": {
+        "Dallas": 144
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 4",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DOMINIQUE TORRES WILLIAMS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-090",
+      "ballotOrder": {
+        "Dallas": 145
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 5",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "LISA GREEN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-091",
+      "ballotOrder": {
+        "Dallas": 146
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 6",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "ANGELA M KING",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-092",
+      "ballotOrder": {
+        "Dallas": 147
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 7",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "REMEKO TRANISHA EDWARDS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-093",
+      "ballotOrder": {
+        "Dallas": 148
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 8",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CARMEN WHITE",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-094",
+      "ballotOrder": {
+        "Dallas": 149
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 9",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CARRIE SINGLETON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-095",
+      "ballotOrder": {
+        "Dallas": 150
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 10",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MONIQUE J BRACEY HUFF",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-096",
+      "ballotOrder": {
+        "Dallas": 151
+      },
+      "race": "JUDGE, COUNTY CRIMINAL COURT AT LAW NO. 11",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "SHEQUITTA D KELLY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-097",
+      "ballotOrder": {
+        "Dallas": 152
+      },
+      "race": "JUDGE, PROBATE COURT NO. 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JULIA MALVEAUX",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-098",
+      "ballotOrder": {
+        "Dallas": 153
+      },
+      "race": "JUDGE, PROBATE COURT NO. 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "INGRID MICHELLE WARREN",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-099",
+      "ballotOrder": {
+        "Dallas": 154
+      },
+      "race": "JUDGE, PROBATE COURT NO. 3",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MARGARET JONES-JOHNSON",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-100",
+      "ballotOrder": {
+        "Dallas": 155
+      },
+      "race": "DISTRICT CLERK",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DAVE MUEHLHAEUSLER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-101",
+      "ballotOrder": {
+        "Dallas": 156
+      },
+      "race": "DISTRICT CLERK",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "FELICIA PITRE",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-102",
+      "ballotOrder": {
+        "Dallas": 157
+      },
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "SKYE GARCIA",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-103",
+      "ballotOrder": {
+        "Dallas": 158
+      },
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DAMARCUS L OFFORD",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-104",
+      "ballotOrder": {
+        "Dallas": 159
+      },
+      "race": "COUNTY TREASURER",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CORSANDRA BRIGHAM PHELPS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-105",
+      "ballotOrder": {
+        "Dallas": 160
+      },
+      "race": "COUNTY TREASURER",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "PAULINE MEDRANO",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-106",
+      "ballotOrder": {
+        "Dallas": 161
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "commissioner",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BARRY WERNICK",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-107",
+      "ballotOrder": {
+        "Dallas": 162
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "commissioner",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANDY SOMMERMAN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-108",
+      "ballotOrder": {
+        "Dallas": 163
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 4",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "commissioner",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ELBA GARCIA",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-109",
+      "ballotOrder": {
+        "Dallas": 164
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 1, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 1
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LIZBETH DIAZ",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-110",
+      "ballotOrder": {
+        "Dallas": 165
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 1, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 1
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "THOMAS G. JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-111",
+      "ballotOrder": {
+        "Dallas": 166
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 1, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 1
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "VALENCIA NASH",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-112",
+      "ballotOrder": {
+        "Dallas": 167
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 2, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "VICKIE WHITESIDE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-113",
+      "ballotOrder": {
+        "Dallas": 168
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 2, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MARGARET O'BRIEN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-114",
+      "ballotOrder": {
+        "Dallas": 169
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 2, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANTOINETTE N HARRIS",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-115",
+      "ballotOrder": {
+        "Dallas": 170
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "LYNN A. BENEDETTO",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-116",
+      "ballotOrder": {
+        "Dallas": 171
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ADAM M. SWARTZ",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-117",
+      "ballotOrder": {
+        "Dallas": 172
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MICHAEL L. GELLER",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-118",
+      "ballotOrder": {
+        "Dallas": 173
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PAULA M ROSALES",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-119",
+      "ballotOrder": {
+        "Dallas": 174
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 4, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "FRED VAN LIEW",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-120",
+      "ballotOrder": {
+        "Dallas": 175
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 4, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MIKE JONES",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-121",
+      "ballotOrder": {
+        "Dallas": 176
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 4, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SASHA MORENO",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-122",
+      "ballotOrder": {
+        "Dallas": 177
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 5, PLACE 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 5
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SARA MARTINEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-123",
+      "ballotOrder": {
+        "Dallas": 178
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 5, PLACE 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "jp",
+        "number": 5
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "OMAR NARVAEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-124",
+      "ballotOrder": {
+        "Dallas": 179
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 1",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 1
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "TRACEY GULLEY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-125",
+      "ballotOrder": {
+        "Dallas": 180
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CHAD CALVERT",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-126",
+      "ballotOrder": {
+        "Dallas": 181
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DEANNA HAMMOND",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-127",
+      "ballotOrder": {
+        "Dallas": 182
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 3",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "HENRY CURRY",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-128",
+      "ballotOrder": {
+        "Dallas": 183
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 4",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "EDDIE BROWN, JR",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "dc-2026-11-129",
+      "ballotOrder": {
+        "Dallas": 184
+      },
+      "race": "COUNTY CONSTABLE PRECINCT 5",
+      "jurisdiction": {
+        "name": "Dallas County",
+        "type": "county"
+      },
+      "county": "Dallas",
+      "district": {
+        "type": "constable",
+        "number": 5
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MICHAEL OROZCO",
+      "party": "DEMOCRATIC",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-dallas-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
