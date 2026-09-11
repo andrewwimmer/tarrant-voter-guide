@@ -219,8 +219,8 @@
 
   // The position is keyed by county, because the same statewide candidate sits
   // at a different place on each county's ballot. Which county that is follows
-  // the lookup when one is active and falls back to the one county this guide
-  // covers otherwise. A bare number is still honored, so a record written
+  // the lookup when one is active and falls back to DEFAULT_COUNTY otherwise.
+  // A bare number is still honored, so a record written
   // against the older shape keeps working.
   function ballotOrder(c) {
     var value = c.ballotOrder;
@@ -705,9 +705,11 @@
   // point inside any precinct is always inside the box.
   //
   // The boxes are a cheap first pass, never the answer. Two adjacent counties'
-  // boxes overlap in a strip along their shared line — these two overlap by
-  // about 0.0077 deg of longitude, roughly 680 m — so a point in that strip is
-  // a candidate for both, and only findPrecinct settles which.
+  // boxes overlap in a strip along their shared line, so a point in that strip
+  // is a candidate for both, and only findPrecinct settles which. Tarrant and
+  // Dallas overlap by about 0.0077 deg of longitude, roughly 680 m; Dallas and
+  // Collin by about 0.0082 deg of latitude, roughly 910 m; Tarrant and Collin
+  // not at all, so no point is in all three boxes.
   //
   // ---- Where these files come from, and what a re-pull costs ---------------
   //
@@ -726,12 +728,30 @@
   //     2. Strip leading zeros from those six values. Congress, Senate and
   //        Education carried them; House, Commish and JP did not.
   //
-  // RE-PULLING EITHER FILE MEANS UPDATING THREE THINGS:
+  // Collin — data/collin-precincts.geojson, 273 features. NOT usable as
+  // published: three transformations were applied and must be redone on any
+  // re-pull.
+  //   https://services1.arcgis.com/fdWXd5OobWR1E3er/arcgis/rest/services/Voting_Precincts/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=geojson
+  //   Do not use the county's own maps.collincountytx.gov Election_Department
+  //   layer 0: precinct and geometry only, no district fields.
+  //     1. Rename the fields:
+  //          PRECINCT -> Precinct (keep integer)
+  //          CONG     -> Congress     SEN     -> Senate
+  //          SHR      -> House        SED     -> Education
+  //          COMMISH  -> Commish      JPC     -> JP
+  //     2. Convert those six district values to strings.
+  //     3. Drop every other property. They include stale officeholder names.
+  //   Congress values checked Sep 11, 2026 against the county's published
+  //   Plan C2333 list of 51 precincts whose congressional district changed;
+  //   all 51 carry the new district. Precinct set is the 273 effective
+  //   Jan 1, 2026.
+  //
+  // RE-PULLING ANY FILE MEANS UPDATING THREE THINGS:
   //   - that county's bounding box above, recomputed from the new file;
-  //   - for Dallas, both transformations above;
-  //   - the 1,498 / 707 / 791 figures in index.html's precinct provenance
-  //     item, which are transcribed because they cannot be derived in the
-  //     browser without downloading both files.
+  //   - for Dallas and Collin, that county's transformations above;
+  //   - the 1,771 / 707 / 791 / 273 figures in index.html's precinct
+  //     provenance item, which are transcribed because they cannot be derived
+  //     in the browser without downloading every file.
   //
   // None of it is checked at runtime and each part fails silently, so skipping
   // a step produces wrong results rather than an error.
@@ -740,7 +760,9 @@
     { name: 'Tarrant', url: 'data/precincts.geojson',
       minLon: -97.552987, minLat: 32.548662, maxLon: -97.031007, maxLat: 32.994003 },
     { name: 'Dallas', url: 'data/dallas-precincts.geojson',
-      minLon: -97.038685, minLat: 32.545222, maxLon: -96.516877, maxLat: 32.989692 }
+      minLon: -97.038685, minLat: 32.545222, maxLon: -96.516877, maxLat: 32.989692 },
+    { name: 'Collin', url: 'data/collin-precincts.geojson',
+      minLon: -96.844130, minLat: 32.981495, maxLon: -96.295064, maxLat: 33.405510 }
   ];
 
   // The county assumed when no lookup is active — it decides which county's
@@ -760,7 +782,7 @@
 
   // The counties whose bounding box contains this point, in COUNTIES order.
   // Empty means no covered county can possibly hold it, which is worth knowing
-  // before any 4 MB file is fetched.
+  // before any multi-megabyte precinct file is fetched.
   function countiesAt(lon, lat) {
     return COUNTIES.filter(function (c) {
       return lon >= c.minLon && lon <= c.maxLon && lat >= c.minLat && lat <= c.maxLat;
@@ -779,8 +801,9 @@
 
   // Each district race in candidates.json is tied to exactly one property on
   // the precinct feature. Anything that matches none of these is a countywide
-  // or statewide race, which every voter in that county votes in. Both
-  // counties' precinct files use these same six property names.
+  // or statewide race, which every voter in that county votes in. Every
+  // county's precinct file uses these same six property names; Dallas's and
+  // Collin's were renamed to them at import (see COUNTIES).
   var DISTRICT_FIELDS = [
     { key: 'Congress',  label: 'U.S. House',                  describe: function (v) { return 'Congressional District ' + v; } },
     { key: 'Senate',    label: 'Texas Senate',                describe: function (v) { return 'State Senate District ' + v; } },
@@ -921,15 +944,16 @@
   // that fails to load does not poison another.
   var precinctIndexes = Object.create(null);
 
-  // Precompute each feature's bounding box once so a lookup rejects ~706 of
-  // the 707 precincts with four numeric comparisons instead of walking their
-  // rings. Only outer rings contribute to the box; a hole is inside its own.
+  // Precompute each feature's bounding box once so a lookup rejects nearly
+  // all of a county's precincts (707 in Tarrant, 791 in Dallas, 273 in
+  // Collin) with four numeric comparisons instead of walking their rings.
+  // Only outer rings contribute to the box; a hole is inside its own.
   //
   // The county is stamped on at index time from the COUNTIES entry that named
   // the file. It is deliberately not read off the feature: the Tarrant file
-  // carries a County property and the Dallas file has none, and inventing one
-  // would mean editing published GIS data to carry a fact this code already
-  // knows.
+  // carries a County property and the Dallas and Collin files have none, and
+  // inventing one would mean editing published GIS data to carry a fact this
+  // code already knows.
   function indexPrecincts(geo, countyName) {
     var features = (geo && geo.features) || [];
     var index = [];
@@ -970,8 +994,8 @@
     return index;
   }
 
-  // Fetched on first use only — each file is over 4 MB and most visitors never
-  // touch the lookup. A failure clears that county's cached promise so a retry
+  // Fetched on first use only — the files run 2.9 to 4.6 MB and most visitors
+  // never touch the lookup. A failure clears that county's cached promise so a retry
   // re-fetches instead of replaying the same rejection forever.
   function loadPrecincts(county) {
     if (!precinctIndexes[county.name]) {
@@ -1299,9 +1323,10 @@
     // The focus warm-up is gone. It prefetched the one precinct file on the
     // theory that there was only one to want; with a county per file, focus
     // cannot know which. The two ways to keep it are both worse than dropping
-    // it: warming every county pulls 8.8 MB for a field the visitor may only
-    // have tabbed through, and warming DEFAULT_COUNTY alone is a coin flip
-    // that costs a Dallas voter a wasted 4.6 MB before their real file starts.
+    // it: warming every county pulls 11.7 MB for a field the visitor may only
+    // have tabbed through, and warming DEFAULT_COUNTY alone is a guess that
+    // costs a Dallas or Collin voter a wasted 4.6 MB before their real file
+    // starts.
     //
     // The cost is real — the download no longer overlaps the geocode, so a
     // first lookup is slower by roughly one file fetch. Worth revisiting if

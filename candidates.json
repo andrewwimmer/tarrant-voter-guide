@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "Tarrant and Dallas County Voter Guide",
-    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Reports for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf) and Dallas County (sources/ballot-certification-dallas-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate. Each entry carries a ballotOrder keyed by county name: its 1-based position in that county's certification report, which is the order the races and the candidates within each race appear on that county's printed ballot. A statewide or shared-district race certified by both counties is a single record carrying a position for each. A race title the two counties both use for different offices - COUNTY JUDGE, DISTRICT CLERK, COUNTY COMMISSIONER PRECINCT 2 - is separate records per county, told apart by the county field.",
+    "title": "Tarrant, Dallas, and Collin County Voter Guide",
+    "note": "Race names, candidate names, and party labels are transcribed from the Texas Secretary of State Ballot Certification Reports for the November 3, 2026 general election in Tarrant County (sources/ballot-certification-2026-11-03.pdf), Dallas County (sources/ballot-certification-dallas-2026-11-03.pdf), and Collin County (sources/ballot-certification-collin-2026-11-03.pdf). Endorsement and donation data has not been collected yet; those arrays are empty for every candidate. Each entry carries a ballotOrder keyed by county name: its 1-based position in that county's certification report, which is the order the races and the candidates within each race appear on that county's printed ballot. A statewide or shared-district race certified by more than one county is a single record carrying a position for each. A race title more than one county uses for different offices - COUNTY JUDGE, DISTRICT CLERK, COUNTY COMMISSIONER PRECINCT 2 - is separate records per county, told apart by the county field.",
     "sources": [
       "sources/ballot-certification-2026-11-03.pdf",
-      "sources/ballot-certification-dallas-2026-11-03.pdf"
+      "sources/ballot-certification-dallas-2026-11-03.pdf",
+      "sources/ballot-certification-collin-2026-11-03.pdf"
     ],
-    "lastUpdated": "2026-09-10"
+    "lastUpdated": "2026-09-11"
   },
   "candidates": [
     {
       "id": "tc-2026-11-001",
       "ballotOrder": {
         "Tarrant": 1,
-        "Dallas": 1
+        "Dallas": 1,
+        "Collin": 1
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -28,7 +30,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -37,7 +40,8 @@
       "id": "tc-2026-11-002",
       "ballotOrder": {
         "Tarrant": 2,
-        "Dallas": 2
+        "Dallas": 2,
+        "Collin": 2
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -52,7 +56,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -61,7 +66,8 @@
       "id": "tc-2026-11-003",
       "ballotOrder": {
         "Tarrant": 3,
-        "Dallas": 3
+        "Dallas": 3,
+        "Collin": 3
       },
       "race": "U. S. SENATOR",
       "jurisdiction": {
@@ -76,7 +82,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -347,7 +354,8 @@
       "id": "tc-2026-11-014",
       "ballotOrder": {
         "Tarrant": 14,
-        "Dallas": 16
+        "Dallas": 16,
+        "Collin": 10
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -362,7 +370,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -371,7 +380,8 @@
       "id": "tc-2026-11-015",
       "ballotOrder": {
         "Tarrant": 15,
-        "Dallas": 17
+        "Dallas": 17,
+        "Collin": 11
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -386,7 +396,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -395,7 +406,8 @@
       "id": "tc-2026-11-016",
       "ballotOrder": {
         "Tarrant": 16,
-        "Dallas": 18
+        "Dallas": 18,
+        "Collin": 12
       },
       "race": "GOVERNOR",
       "jurisdiction": {
@@ -410,7 +422,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -419,7 +432,8 @@
       "id": "tc-2026-11-017",
       "ballotOrder": {
         "Tarrant": 17,
-        "Dallas": 19
+        "Dallas": 19,
+        "Collin": 13
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -434,7 +448,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -443,7 +458,8 @@
       "id": "tc-2026-11-018",
       "ballotOrder": {
         "Tarrant": 18,
-        "Dallas": 20
+        "Dallas": 20,
+        "Collin": 14
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -458,7 +474,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -467,7 +484,8 @@
       "id": "tc-2026-11-019",
       "ballotOrder": {
         "Tarrant": 19,
-        "Dallas": 21
+        "Dallas": 21,
+        "Collin": 15
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -482,7 +500,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -491,7 +510,8 @@
       "id": "tc-2026-11-020",
       "ballotOrder": {
         "Tarrant": 20,
-        "Dallas": 22
+        "Dallas": 22,
+        "Collin": 16
       },
       "race": "LIEUTENANT GOVERNOR",
       "jurisdiction": {
@@ -506,7 +526,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -515,7 +536,8 @@
       "id": "tc-2026-11-021",
       "ballotOrder": {
         "Tarrant": 21,
-        "Dallas": 23
+        "Dallas": 23,
+        "Collin": 17
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -530,7 +552,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -539,7 +562,8 @@
       "id": "tc-2026-11-022",
       "ballotOrder": {
         "Tarrant": 22,
-        "Dallas": 24
+        "Dallas": 24,
+        "Collin": 18
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -554,7 +578,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -563,7 +588,8 @@
       "id": "tc-2026-11-023",
       "ballotOrder": {
         "Tarrant": 23,
-        "Dallas": 25
+        "Dallas": 25,
+        "Collin": 19
       },
       "race": "ATTORNEY GENERAL",
       "jurisdiction": {
@@ -578,7 +604,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -587,7 +614,8 @@
       "id": "tc-2026-11-024",
       "ballotOrder": {
         "Tarrant": 24,
-        "Dallas": 26
+        "Dallas": 26,
+        "Collin": 20
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -602,7 +630,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -611,7 +640,8 @@
       "id": "tc-2026-11-025",
       "ballotOrder": {
         "Tarrant": 25,
-        "Dallas": 27
+        "Dallas": 27,
+        "Collin": 21
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -626,7 +656,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -635,7 +666,8 @@
       "id": "tc-2026-11-026",
       "ballotOrder": {
         "Tarrant": 26,
-        "Dallas": 28
+        "Dallas": 28,
+        "Collin": 22
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -650,7 +682,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -659,7 +692,8 @@
       "id": "tc-2026-11-027",
       "ballotOrder": {
         "Tarrant": 27,
-        "Dallas": 29
+        "Dallas": 29,
+        "Collin": 23
       },
       "race": "COMPTROLLER OF PUBLIC ACCOUNTS",
       "jurisdiction": {
@@ -674,7 +708,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -683,7 +718,8 @@
       "id": "tc-2026-11-028",
       "ballotOrder": {
         "Tarrant": 28,
-        "Dallas": 30
+        "Dallas": 30,
+        "Collin": 24
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -698,7 +734,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -707,7 +744,8 @@
       "id": "tc-2026-11-029",
       "ballotOrder": {
         "Tarrant": 29,
-        "Dallas": 31
+        "Dallas": 31,
+        "Collin": 25
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -722,7 +760,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -731,7 +770,8 @@
       "id": "tc-2026-11-030",
       "ballotOrder": {
         "Tarrant": 30,
-        "Dallas": 32
+        "Dallas": 32,
+        "Collin": 26
       },
       "race": "COMMISSIONER OF THE GENERAL LAND OFFICE",
       "jurisdiction": {
@@ -746,7 +786,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -755,7 +796,8 @@
       "id": "tc-2026-11-031",
       "ballotOrder": {
         "Tarrant": 31,
-        "Dallas": 33
+        "Dallas": 33,
+        "Collin": 27
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -770,7 +812,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -779,7 +822,8 @@
       "id": "tc-2026-11-032",
       "ballotOrder": {
         "Tarrant": 32,
-        "Dallas": 34
+        "Dallas": 34,
+        "Collin": 28
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -794,7 +838,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -803,7 +848,8 @@
       "id": "tc-2026-11-033",
       "ballotOrder": {
         "Tarrant": 33,
-        "Dallas": 35
+        "Dallas": 35,
+        "Collin": 29
       },
       "race": "COMMISSIONER OF AGRICULTURE",
       "jurisdiction": {
@@ -818,7 +864,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -827,7 +874,8 @@
       "id": "tc-2026-11-034",
       "ballotOrder": {
         "Tarrant": 34,
-        "Dallas": 36
+        "Dallas": 36,
+        "Collin": 30
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -842,7 +890,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -851,7 +900,8 @@
       "id": "tc-2026-11-035",
       "ballotOrder": {
         "Tarrant": 35,
-        "Dallas": 37
+        "Dallas": 37,
+        "Collin": 31
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -866,7 +916,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -875,7 +926,8 @@
       "id": "tc-2026-11-036",
       "ballotOrder": {
         "Tarrant": 36,
-        "Dallas": 38
+        "Dallas": 38,
+        "Collin": 32
       },
       "race": "RAILROAD COMMISSIONER",
       "jurisdiction": {
@@ -890,7 +942,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -899,7 +952,8 @@
       "id": "tc-2026-11-037",
       "ballotOrder": {
         "Tarrant": 37,
-        "Dallas": 39
+        "Dallas": 39,
+        "Collin": 33
       },
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
@@ -914,7 +968,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -923,7 +978,8 @@
       "id": "tc-2026-11-038",
       "ballotOrder": {
         "Tarrant": 38,
-        "Dallas": 40
+        "Dallas": 40,
+        "Collin": 34
       },
       "race": "CHIEF JUSTICE, SUPREME COURT",
       "jurisdiction": {
@@ -938,7 +994,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -947,7 +1004,8 @@
       "id": "tc-2026-11-039",
       "ballotOrder": {
         "Tarrant": 39,
-        "Dallas": 41
+        "Dallas": 41,
+        "Collin": 35
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
@@ -962,7 +1020,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -971,7 +1030,8 @@
       "id": "tc-2026-11-040",
       "ballotOrder": {
         "Tarrant": 40,
-        "Dallas": 42
+        "Dallas": 42,
+        "Collin": 36
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 2 - UNEXPIRED TERM",
       "jurisdiction": {
@@ -986,7 +1046,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -995,7 +1056,8 @@
       "id": "tc-2026-11-041",
       "ballotOrder": {
         "Tarrant": 41,
-        "Dallas": 43
+        "Dallas": 43,
+        "Collin": 37
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
@@ -1010,7 +1072,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1019,7 +1082,8 @@
       "id": "tc-2026-11-042",
       "ballotOrder": {
         "Tarrant": 42,
-        "Dallas": 44
+        "Dallas": 44,
+        "Collin": 38
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 7",
       "jurisdiction": {
@@ -1034,7 +1098,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1043,7 +1108,8 @@
       "id": "tc-2026-11-043",
       "ballotOrder": {
         "Tarrant": 43,
-        "Dallas": 45
+        "Dallas": 45,
+        "Collin": 39
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
@@ -1058,7 +1124,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1067,7 +1134,8 @@
       "id": "tc-2026-11-044",
       "ballotOrder": {
         "Tarrant": 44,
-        "Dallas": 46
+        "Dallas": 46,
+        "Collin": 40
       },
       "race": "JUSTICE, SUPREME COURT, PLACE 8",
       "jurisdiction": {
@@ -1082,7 +1150,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1091,7 +1160,8 @@
       "id": "tc-2026-11-045",
       "ballotOrder": {
         "Tarrant": 45,
-        "Dallas": 47
+        "Dallas": 47,
+        "Collin": 41
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1106,7 +1176,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1115,7 +1186,8 @@
       "id": "tc-2026-11-046",
       "ballotOrder": {
         "Tarrant": 46,
-        "Dallas": 48
+        "Dallas": 48,
+        "Collin": 42
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1130,7 +1202,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1139,7 +1212,8 @@
       "id": "tc-2026-11-047",
       "ballotOrder": {
         "Tarrant": 47,
-        "Dallas": 49
+        "Dallas": 49,
+        "Collin": 43
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 3",
       "jurisdiction": {
@@ -1154,7 +1228,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1163,7 +1238,8 @@
       "id": "tc-2026-11-048",
       "ballotOrder": {
         "Tarrant": 48,
-        "Dallas": 50
+        "Dallas": 50,
+        "Collin": 44
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
@@ -1178,7 +1254,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1187,7 +1264,8 @@
       "id": "tc-2026-11-049",
       "ballotOrder": {
         "Tarrant": 49,
-        "Dallas": 51
+        "Dallas": 51,
+        "Collin": 45
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 4",
       "jurisdiction": {
@@ -1202,7 +1280,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1211,7 +1290,8 @@
       "id": "tc-2026-11-050",
       "ballotOrder": {
         "Tarrant": 50,
-        "Dallas": 52
+        "Dallas": 52,
+        "Collin": 46
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
@@ -1226,7 +1306,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1235,7 +1316,8 @@
       "id": "tc-2026-11-051",
       "ballotOrder": {
         "Tarrant": 51,
-        "Dallas": 53
+        "Dallas": 53,
+        "Collin": 47
       },
       "race": "JUDGE, COURT OF CRIMINAL APPEALS, PLACE 9",
       "jurisdiction": {
@@ -1250,7 +1332,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1888,7 +1971,8 @@
       "id": "tc-2026-11-077",
       "ballotOrder": {
         "Tarrant": 77,
-        "Dallas": 85
+        "Dallas": 85,
+        "Collin": 63
       },
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
@@ -1903,7 +1987,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1912,7 +1997,8 @@
       "id": "tc-2026-11-078",
       "ballotOrder": {
         "Tarrant": 78,
-        "Dallas": 86
+        "Dallas": 86,
+        "Collin": 64
       },
       "race": "CHIEF JUSTICE, 15TH COURT OF APPEALS DISTRICT",
       "jurisdiction": {
@@ -1927,7 +2013,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1936,7 +2023,8 @@
       "id": "tc-2026-11-079",
       "ballotOrder": {
         "Tarrant": 79,
-        "Dallas": 87
+        "Dallas": 87,
+        "Collin": 65
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
@@ -1951,7 +2039,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1960,7 +2049,8 @@
       "id": "tc-2026-11-080",
       "ballotOrder": {
         "Tarrant": 80,
-        "Dallas": 88
+        "Dallas": 88,
+        "Collin": 66
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 2",
       "jurisdiction": {
@@ -1975,7 +2065,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -1984,7 +2075,8 @@
       "id": "tc-2026-11-081",
       "ballotOrder": {
         "Tarrant": 81,
-        "Dallas": 89
+        "Dallas": 89,
+        "Collin": 67
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -1999,7 +2091,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -2008,7 +2101,8 @@
       "id": "tc-2026-11-082",
       "ballotOrder": {
         "Tarrant": 82,
-        "Dallas": 90
+        "Dallas": 90,
+        "Collin": 68
       },
       "race": "JUSTICE, 15TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -2023,7 +2117,8 @@
       "unopposed": false,
       "sources": [
         "sources/ballot-certification-2026-11-03.pdf",
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -3688,7 +3783,8 @@
     {
       "id": "dc-2026-11-003",
       "ballotOrder": {
-        "Dallas": 12
+        "Dallas": 12,
+        "Collin": 8
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 32",
       "jurisdiction": {
@@ -3705,7 +3801,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -3713,7 +3810,8 @@
     {
       "id": "dc-2026-11-004",
       "ballotOrder": {
-        "Dallas": 13
+        "Dallas": 13,
+        "Collin": 9
       },
       "race": "U. S. REPRESENTATIVE DISTRICT 32",
       "jurisdiction": {
@@ -3730,7 +3828,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -3888,7 +3987,8 @@
     {
       "id": "dc-2026-11-011",
       "ballotOrder": {
-        "Dallas": 60
+        "Dallas": 60,
+        "Collin": 48
       },
       "race": "STATE SENATOR, DISTRICT 2",
       "jurisdiction": {
@@ -3905,7 +4005,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -3913,7 +4014,8 @@
     {
       "id": "dc-2026-11-012",
       "ballotOrder": {
-        "Dallas": 61
+        "Dallas": 61,
+        "Collin": 49
       },
       "race": "STATE SENATOR, DISTRICT 2",
       "jurisdiction": {
@@ -3930,7 +4032,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4513,7 +4616,8 @@
     {
       "id": "dc-2026-11-036",
       "ballotOrder": {
-        "Dallas": 91
+        "Dallas": 91,
+        "Collin": 69
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -4530,7 +4634,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4538,7 +4643,8 @@
     {
       "id": "dc-2026-11-037",
       "ballotOrder": {
-        "Dallas": 92
+        "Dallas": 92,
+        "Collin": 70
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 3",
       "jurisdiction": {
@@ -4555,7 +4661,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4563,7 +4670,8 @@
     {
       "id": "dc-2026-11-038",
       "ballotOrder": {
-        "Dallas": 93
+        "Dallas": 93,
+        "Collin": 71
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 6",
       "jurisdiction": {
@@ -4580,7 +4688,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4588,7 +4697,8 @@
     {
       "id": "dc-2026-11-039",
       "ballotOrder": {
-        "Dallas": 94
+        "Dallas": 94,
+        "Collin": 72
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 6",
       "jurisdiction": {
@@ -4605,7 +4715,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4613,7 +4724,8 @@
     {
       "id": "dc-2026-11-040",
       "ballotOrder": {
-        "Dallas": 95
+        "Dallas": 95,
+        "Collin": 73
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 8",
       "jurisdiction": {
@@ -4630,7 +4742,8 @@
       "party": "REPUBLICAN",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -4638,7 +4751,8 @@
     {
       "id": "dc-2026-11-041",
       "ballotOrder": {
-        "Dallas": 96
+        "Dallas": 96,
+        "Collin": 74
       },
       "race": "JUSTICE, 5TH COURT OF APPEALS DISTRICT, PLACE 8",
       "jurisdiction": {
@@ -4655,7 +4769,8 @@
       "party": "DEMOCRATIC",
       "unopposed": false,
       "sources": [
-        "sources/ballot-certification-dallas-2026-11-03.pdf"
+        "sources/ballot-certification-dallas-2026-11-03.pdf",
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
@@ -6664,6 +6779,1143 @@
       "unopposed": true,
       "sources": [
         "sources/ballot-certification-dallas-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-001",
+      "ballotOrder": {
+        "Collin": 4
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 3",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KEITH SELF",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-002",
+      "ballotOrder": {
+        "Collin": 5
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 3",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "EVAN HUNT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-003",
+      "ballotOrder": {
+        "Collin": 6
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 4",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PAT FALLON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-004",
+      "ballotOrder": {
+        "Collin": 7
+      },
+      "race": "U. S. REPRESENTATIVE DISTRICT 4",
+      "jurisdiction": {
+        "name": "United States",
+        "type": "federal"
+      },
+      "county": null,
+      "district": {
+        "type": "ushouse",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JASON PEARCE",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-005",
+      "ballotOrder": {
+        "Collin": 50
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 33",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 33
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KATRINA PIERSON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-006",
+      "ballotOrder": {
+        "Collin": 51
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 33",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 33
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ORLANDO LOPEZ",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-007",
+      "ballotOrder": {
+        "Collin": 52
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 61",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 61
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "KERESA RICHARDSON",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-008",
+      "ballotOrder": {
+        "Collin": 53
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 61",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 61
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "BRITTANY BLACK",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-009",
+      "ballotOrder": {
+        "Collin": 54
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 61",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 61
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANISSA CHILMERAN",
+      "party": "GREEN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-010",
+      "ballotOrder": {
+        "Collin": 55
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 66",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 66
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MATT SHAHEEN",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-011",
+      "ballotOrder": {
+        "Collin": 56
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 66",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 66
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SANDEEP SRIVASTAVA",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-012",
+      "ballotOrder": {
+        "Collin": 57
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 67",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 67
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JEFF LEACH",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-013",
+      "ballotOrder": {
+        "Collin": 58
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 67",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 67
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JORDAN WHEATLEY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-014",
+      "ballotOrder": {
+        "Collin": 59
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 70",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 70
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "GEORGE FLINT",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-015",
+      "ballotOrder": {
+        "Collin": 60
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 70",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 70
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MIHAELA ELIZABETH PLESA",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-016",
+      "ballotOrder": {
+        "Collin": 61
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 89",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 89
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "CANDY NOBLE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-017",
+      "ballotOrder": {
+        "Collin": 62
+      },
+      "race": "STATE REPRESENTATIVE DISTRICT 89",
+      "jurisdiction": {
+        "name": "Texas",
+        "type": "state"
+      },
+      "county": null,
+      "district": {
+        "type": "statehouse",
+        "number": 89
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ANGIE CARRAWAY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-018",
+      "ballotOrder": {
+        "Collin": 75
+      },
+      "race": "DISTRICT JUDGE, 219TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JENNIFER EDGEWORTH",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-019",
+      "ballotOrder": {
+        "Collin": 76
+      },
+      "race": "DISTRICT JUDGE, 296TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "PIPER MCCRAW",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-020",
+      "ballotOrder": {
+        "Collin": 77
+      },
+      "race": "DISTRICT JUDGE, 366TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "TOM NOWAK",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-021",
+      "ballotOrder": {
+        "Collin": 78
+      },
+      "race": "DISTRICT JUDGE, 417TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CYNDI MCCRANN WHELESS",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-022",
+      "ballotOrder": {
+        "Collin": 79
+      },
+      "race": "DISTRICT JUDGE, 429TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JILL WILLIS",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-023",
+      "ballotOrder": {
+        "Collin": 80
+      },
+      "race": "DISTRICT JUDGE, 471ST JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "BRYAN GANTT",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-024",
+      "ballotOrder": {
+        "Collin": 81
+      },
+      "race": "DISTRICT JUDGE, 494TH JUDICIAL DISTRICT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "KATHRYN PRUITT",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-025",
+      "ballotOrder": {
+        "Collin": 82
+      },
+      "race": "CRIMINAL DISTRICT ATTORNEY COLLIN COUNTY",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "GREG WILLIS",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-026",
+      "ballotOrder": {
+        "Collin": 83
+      },
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CHRIS HILL",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-027",
+      "ballotOrder": {
+        "Collin": 84
+      },
+      "race": "COUNTY JUDGE",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN R. BUSTER BROWN",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-028",
+      "ballotOrder": {
+        "Collin": 85
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 1",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "CORINNE MASON",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-029",
+      "ballotOrder": {
+        "Collin": 86
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 2",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "BARNETT WALKER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-030",
+      "ballotOrder": {
+        "Collin": 87
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 3",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "LANCE S. BAXTER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-031",
+      "ballotOrder": {
+        "Collin": 88
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 4",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DAVID RIPPEL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-032",
+      "ballotOrder": {
+        "Collin": 89
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 5",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "RANDY JOHNSON",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-033",
+      "ballotOrder": {
+        "Collin": 90
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 6",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JAY A. BENDER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-034",
+      "ballotOrder": {
+        "Collin": 91
+      },
+      "race": "JUDGE, COUNTY COURT AT LAW NO. 7",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "DAVID WADDILL",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-035",
+      "ballotOrder": {
+        "Collin": 92
+      },
+      "race": "PROBATE COURT",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "SARAH R. DUFF",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-036",
+      "ballotOrder": {
+        "Collin": 93
+      },
+      "race": "DISTRICT CLERK",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "MIKE GOULD",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-037",
+      "ballotOrder": {
+        "Collin": 94
+      },
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "STACEY KEMP",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-038",
+      "ballotOrder": {
+        "Collin": 95
+      },
+      "race": "COUNTY CLERK",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": null,
+      "electionDate": "2026-11-03",
+      "candidate": "JOHN RUSSELL",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-039",
+      "ballotOrder": {
+        "Collin": 96
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 2",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "commissioner",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MICHAEL SLAUGHTER",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-040",
+      "ballotOrder": {
+        "Collin": 97
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 4",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "commissioner",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "SHELBY WILLIAMS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-041",
+      "ballotOrder": {
+        "Collin": 98
+      },
+      "race": "COUNTY COMMISSIONER PRECINCT 4",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "commissioner",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "JULIE HOLMER",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-042",
+      "ballotOrder": {
+        "Collin": 99
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 1",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 1
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "PAUL M. RALEEH",
+      "party": "REPUBLICAN",
+      "unopposed": true,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-043",
+      "ballotOrder": {
+        "Collin": 100
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ELLEN KINNEBREW",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-044",
+      "ballotOrder": {
+        "Collin": 101
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 2",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 2
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "DARSELL E. JOHNSON",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-045",
+      "ballotOrder": {
+        "Collin": 102
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "MIKE MISSILDINE",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-046",
+      "ballotOrder": {
+        "Collin": 103
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 3",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 3
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "IRVIN LYNN BARRETT",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-047",
+      "ballotOrder": {
+        "Collin": 104
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 4",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "STEPHEN KALLAS",
+      "party": "REPUBLICAN",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
+      ],
+      "endorsements": [],
+      "donations": []
+    },
+    {
+      "id": "cc-2026-11-048",
+      "ballotOrder": {
+        "Collin": 105
+      },
+      "race": "JUSTICE OF THE PEACE PRECINCT 4",
+      "jurisdiction": {
+        "name": "Collin County",
+        "type": "county"
+      },
+      "county": "Collin",
+      "district": {
+        "type": "jp",
+        "number": 4
+      },
+      "electionDate": "2026-11-03",
+      "candidate": "ELI WORTHY",
+      "party": "DEMOCRATIC",
+      "unopposed": false,
+      "sources": [
+        "sources/ballot-certification-collin-2026-11-03.pdf"
       ],
       "endorsements": [],
       "donations": []
