@@ -127,6 +127,19 @@ Field notes:
   for the county in view sorts last, after every candidate that has one.
 - `jurisdiction.type` must be `"federal"`, `"state"`, or `"county"` — the type
   filter and the jurisdiction badge both key off it.
+- `county` says which county's voters see the race:
+  - A county name for county-level races, and for commissioner, justice of
+    the peace, and constable races, because those district numbers restart in
+    every county.
+  - `null` for statewide races and for state and federal district races
+    (U.S. House, state senate, state house, SBOE), because those numbers mean
+    the same thing statewide.
+  - A county name on regional court of appeals races, which are stored with
+    jurisdiction `Texas` / `"state"`, because county is the only gate
+    available for them.
+  - A list of county names when a regional court spans more than one loaded
+    county (the 5th Court of Appeals covers Dallas and Collin). Order doesn't
+    matter; the code sorts it.
 - `party` is the party name exactly as printed on the certification report:
   `REPUBLICAN`, `DEMOCRATIC`, `LIBERTARIAN`, or `GREEN`.
 - `unopposed` is `true` when the race has only one certified candidate.
@@ -134,8 +147,9 @@ Field notes:
   one entry per record. It is an array so an entry assembled from more than one
   certification report can name all of them; today every record carries exactly
   one. Nothing in the site renders it yet.
-- Candidates are grouped into a race by `race` + `electionDate`, so those two
-  values must match exactly across every candidate in the same contest.
+- Candidates are grouped into a race by `race` + `electionDate` + `county`, so
+  those three values must match exactly across every candidate in the same
+  contest. Two counties' identically titled offices stay separate races.
 - Dates are `YYYY-MM-DD` and are formatted for display; anything else is printed
   as-is.
 - `sourceUrl` is required on every endorsement and donation. Only `http://` and

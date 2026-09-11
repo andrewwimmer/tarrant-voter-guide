@@ -130,6 +130,16 @@
     return haystack.indexOf(needle) !== -1;
   }
 
+  // The counties a record is gated to, as a list: none for a statewide record
+  // (county null or absent), one for a county record, and several for a
+  // regional court that spans counties. An array comes back as a sorted copy,
+  // so two records naming the same counties in a different order agree.
+  function recordCounties(c) {
+    if (c.county === undefined || c.county === null) return [];
+    if (Array.isArray(c.county)) return c.county.slice().sort();
+    return [c.county];
+  }
+
   // True when this race is on the looked-up voter's ballot. Two independent
   // gates, both read off the candidate record rather than its race title:
   // county (a candidate naming a county appears only for a voter in that
@@ -139,7 +149,8 @@
   function matchesBallot(c) {
     if (!state.ballotActive || !state.ballot) return true;
 
-    if (c.county !== undefined && c.county !== null && c.county !== state.ballot.county) {
+    var counties = recordCounties(c);
+    if (counties.length && counties.indexOf(state.ballot.county) === -1) {
       return false;
     }
 
@@ -228,9 +239,8 @@
   // county name can occupy, so a statewide race groups as itself instead of
   // folding into whichever county's race happens to share its title.
   function raceKey(c) {
-    var county = (c.county === undefined || c.county === null)
-      ? NO_COUNTY
-      : String(c.county);
+    var counties = recordCounties(c);
+    var county = counties.length ? counties.join(',') : NO_COUNTY;
     return (c.race || 'Unspecified race') + '||' + (c.electionDate || '') + '||' + county;
   }
 
@@ -500,15 +510,19 @@
   // narrowed to exactly one. A jurisdiction qualifies only when every record
   // under it is a county record and they all name the same county, which is
   // what keeps "Texas" from reading as a county selection: the 5th Court of
-  // Appeals races sit under Texas carrying a Dallas county, and one of those
-  // alone must not be enough to call the whole selection Dallas.
+  // Appeals races sit under Texas carrying Dallas among their counties, and one
+  // of those alone must not be enough to call the whole selection Dallas. A
+  // record naming several counties names no single one, so it fails outright.
   function selectedCounty() {
     if (state.jurisdiction === 'all') return null;
     var county = null;
     var single = true;
     state.candidates.forEach(function (c) {
       if (jurisdictionName(c) !== state.jurisdiction) return;
-      if (jurisdictionType(c) !== 'county' || !c.county) { single = false; return; }
+      if (jurisdictionType(c) !== 'county' || !c.county || Array.isArray(c.county)) {
+        single = false;
+        return;
+      }
       if (county === null) county = c.county;
       else if (county !== c.county) single = false;
     });
@@ -788,8 +802,7 @@
     'commissioner': 'Commish',
     'jp':          'JP',
     // Dallas elects a constable per justice-of-the-peace precinct, off the
-    // same precinct boundaries, so both types read the one JP property. No
-    // candidate carries this type yet.
+    // same precinct boundaries, so both types read the one JP property.
     'constable':   'JP'
   };
 
@@ -866,7 +879,8 @@
     var county = ballotCounty();
     var found = Object.create(null);
     state.candidates.forEach(function (c) {
-      if (c.county !== undefined && c.county !== null && c.county !== county) return;
+      var counties = recordCounties(c);
+      if (counties.length && counties.indexOf(county) === -1) return;
       var rule = districtRule(c.district);
       if (rule.field === field && rule.value) found[rule.value] = true;
     });
