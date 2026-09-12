@@ -183,10 +183,9 @@ a:hover { color: var(--red-dark); }
 .coverage strong { color: #fff; }
 
 /* ---------- Masthead + navigation ----------
-   A hamburger on a phone, an inline row of links from 620px up. The button is
-   the single source of state (aria-expanded); .is-open on the nav is only ever
-   derived from it, which lets the wide-screen rule reveal the links without JS
-   and the button ever disagreeing. */
+   A hamburger at every width: the links stay collapsed behind the button on
+   desktop as on a phone. The button is the single source of state
+   (aria-expanded); .is-open on the nav is only ever derived from it. */
 
 .masthead {
   display: flex;
@@ -1057,6 +1056,38 @@ a:hover { color: var(--red-dark); }
   max-width: 66ch;
 }
 
+/* ---------- About page prose ----------
+   Also the one-line pointer to the about page that stands in for the moved
+   blocks on the guide. */
+
+.about {
+  background: var(--surface);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.about h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.about p,
+.about ul {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  max-width: 66ch;
+}
+
+.about ul { padding-left: 1.25em; }
+.about li + li { margin-top: 6px; }
+
+.about > :last-child { margin-bottom: 0; }
+
+.about strong { color: var(--text); }
+
 /* ==========================================================================
    Filter bar
 
@@ -1664,22 +1695,6 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
 
   .site-header { padding: 52px 0 54px; }
 
-  /* Enough width for the links to sit out in the open, so the button and the
-     panel it opens both come off. */
-  .nav-toggle { display: none; }
-
-  .site-nav { display: block; }
-
-  .site-nav ul {
-    flex-direction: row;
-    gap: 4px;
-    margin: 14px 0 0;
-    padding: 0;
-    background: none;
-  }
-
-  .site-nav a { padding: 8px 14px; }
-
   .site-header h1 { font-size: 3rem; }
   .mission { font-size: 1.18rem; max-width: 42ch; }
   .coverage { margin-top: 26px; padding: 15px 20px; font-size: 1rem; }
@@ -1699,6 +1714,7 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .provenance,
   .scope,
   .endorsements,
+  .about,
   .sourcing { padding: 28px 30px; }
 
   /* Two dates side by side; the provenance entries pair off the same way. Both
@@ -1712,7 +1728,8 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .dates h2,
   .provenance h2,
   .scope h2,
-  .endorsements h2 { font-size: 1.35rem; }
+  .endorsements h2,
+  .about h2 { font-size: 1.35rem; }
 
   .banner { padding: 20px 24px; font-size: 0.95rem; }
 
@@ -1839,6 +1856,10 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .page-contact .embeddable-buttondown-form,
   .page-contact .section-divider,
   .page-contact .section-divider-note { display: none !important; }
+
+  /* Same for the about page: no ballot, only prose, so give its panels back. */
+  .page-about .panel,
+  .page-about .sourcing { display: block !important; }
 
   .wrap,
   .page {

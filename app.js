@@ -749,7 +749,7 @@
   // RE-PULLING ANY FILE MEANS UPDATING THREE THINGS:
   //   - that county's bounding box above, recomputed from the new file;
   //   - for Dallas and Collin, that county's transformations above;
-  //   - the 1,771 / 707 / 791 / 273 figures in index.html's precinct
+  //   - the 1,771 / 707 / 791 / 273 figures in about.html's precinct
   //     provenance item, which are transcribed because they cannot be derived
   //     in the browser without downloading every file.
   //

@@ -1,13 +1,10 @@
 /* Header navigation — shared by every page.
 
-   The menu is a hamburger only on narrow screens; from 620px up the CSS shows
-   the links inline and hides the button, so nothing here needs to know about
-   width. State lives in one place: aria-expanded on the button. The .is-open
-   class on the nav is derived from it, never set independently, which is why
-   a media query can safely show the nav without JS ever disagreeing.
-
-   Deliberately not using the hidden attribute: hidden cannot be overridden by
-   the wide-screen rule that reveals the links. */
+   The menu is a hamburger at every width: the links stay collapsed behind the
+   button on desktop as on a phone, so nothing here needs to know about width.
+   State lives in one place: aria-expanded on the button. The .is-open class on
+   the nav is derived from it, never set independently, and the CSS shows or
+   hides the nav from that class alone. */
 (function () {
   'use strict';
 
