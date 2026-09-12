@@ -1857,9 +1857,12 @@ details.candidate > .candidate-row:hover .candidate-name { color: var(--red); }
   .page-contact .section-divider,
   .page-contact .section-divider-note { display: none !important; }
 
-  /* Same for the about page: no ballot, only prose, so give its panels back. */
+  /* Same for the about and sources pages: no ballot, only prose, so give their
+     panels back. */
   .page-about .panel,
-  .page-about .sourcing { display: block !important; }
+  .page-about .sourcing,
+  .page-sources .panel,
+  .page-sources .sourcing { display: block !important; }
 
   .wrap,
   .page {

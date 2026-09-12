@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources &mdash; Texas Voter Guide</title>
+<meta name="description" content="Where the Texas Voter Guide's candidate, race, and precinct data comes from, with a link to the public record behind each one.">
+<meta name="theme-color" content="#8a1518">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-sources">
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="masthead">
+      <p class="eyebrow">Texas &mdash; 2026 general election</p>
+      <button type="button" class="nav-toggle" id="nav-toggle"
+        aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-bars" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+
+    <nav class="site-nav" id="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html">Guide</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h1>Sources</h1>
+    <p class="mission">Every candidate, race, and precinct boundary in this guide, and the public
+      record each one came from.</p>
+  </div>
+</header>
+
+<div class="wrap page">
+
+  <section class="panel provenance" aria-labelledby="provenance-title">
+    <h2 id="provenance-title">Where this data comes from</h2>
+    <dl class="prov-list">
+      <div class="prov-item">
+        <dt>Candidates and races as certified</dt>
+        <dd>Taken from the Texas Secretary of State&rsquo;s certified ballot reports for the
+          November 3, 2026 general election in Tarrant County, dated September 7, 2026, in
+          Dallas County, dated September 9, 2026, and in Collin County, dated September 10, 2026.
+          Race names, candidate names, and party labels are as printed in those reports.
+          <span class="prov-meta">Open the
+          <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County PDF</a>, the
+          <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County PDF</a>, or the
+          <a href="sources/ballot-certification-collin-2026-11-03.pdf">Collin County PDF</a>
+          &mdash; all three are checked into this site under <code>sources/</code>.</span></dd>
+      </div>
+      <div class="prov-item">
+        <dt>1,771 voting precincts</dt>
+        <dd>707 in Tarrant County, 791 in Dallas County, and 273 in Collin County. Precinct
+          boundaries, and the
+          congressional, legislative, SBOE, commissioner, and JP districts attached to each one,
+          come from each county&rsquo;s precinct layer. The address lookup tests your coordinate
+          against these polygons in your own browser, one county&rsquo;s file at a time.
+          <span class="prov-meta">Tarrant &mdash;
+          <a href="https://mapit.tarrantcounty.com/arcgis/rest/services/Dynamic/VotingPrecinct/MapServer">Tarrant
+          County GIS, Voting Precinct service</a>, read here as
+          <a href="data/precincts.geojson">data/precincts.geojson</a>. Dallas &mdash; the
+          <a href="https://services3.arcgis.com/zqe2kwz79KUqUvxC/ArcGIS/rest/services/PRCNT_791_20260729/FeatureServer/7">PRCNT_791
+          precinct layer</a> this file was pulled from, read here as
+          <a href="data/dallas-precincts.geojson">data/dallas-precincts.geojson</a>; its
+          <code>FIRST_DIST*</code> district fields were renamed to match Tarrant&rsquo;s. Collin
+          &mdash; the
+          <a href="https://services1.arcgis.com/fdWXd5OobWR1E3er/arcgis/rest/services/Voting_Precincts/FeatureServer/0">Voting_Precincts
+          layer</a> this file was pulled from, read here as
+          <a href="data/collin-precincts.geojson">data/collin-precincts.geojson</a>; its district
+          fields were renamed the same way, so one lookup can read all three.</span></dd>
+      </div>
+    </dl>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-name">Texas Voter Guide</p>
+    <p>Candidate data comes from the Texas Secretary of State&rsquo;s certified ballot reports for
+      the November 3, 2026 general election in
+      <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County</a>,
+      <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County</a>, and
+      <a href="sources/ballot-certification-collin-2026-11-03.pdf">Collin County</a>.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/andrewwimmer/texas-voter-guide">Source on GitHub</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="sources.html">Sources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html#privacy">Privacy</a></li>
+    </ul>
+    <p>Static site &mdash; plain HTML, CSS, and vanilla JavaScript. All data lives in
+      <a href="candidates.json">candidates.json</a>.</p>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "117463850c114cb5905c8908d6b514a8"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

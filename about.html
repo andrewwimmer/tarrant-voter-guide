@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About &amp; Sources &mdash; Texas Voter Guide</title>
-<meta name="description" content="Where the Texas Voter Guide's data comes from, what it covers and what it doesn't, where to find endorsements, and how your address is handled.">
+<title>About &mdash; Texas Voter Guide</title>
+<meta name="description" content="What the Texas Voter Guide covers and what it doesn't, and how your address is handled.">
 <meta name="theme-color" content="#8a1518">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,14 +28,14 @@
     <nav class="site-nav" id="site-nav" aria-label="Site">
       <ul>
         <li><a href="index.html">Guide</a></li>
-        <li><a href="about.html" aria-current="page">About &amp; Sources</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <h1>About &amp; Sources</h1>
-    <p class="mission">Where the data in this guide comes from, what it covers, and what happens to
-      your address when you use the lookup.</p>
+    <h1>About</h1>
+    <p class="mission">What this guide covers, what it doesn't, and what happens to your address
+      when you use the lookup.</p>
   </div>
 </header>
 
@@ -47,45 +47,6 @@
       listed, exactly as printed on the official ballot. Every claim links to a public record you
       can open and read yourself. When endorsements are added, they will be labeled as
       endorsements, with a link to the group that published them.</p>
-  </section>
-
-  <section class="panel provenance" aria-labelledby="provenance-title">
-    <h2 id="provenance-title">Where this data comes from</h2>
-    <dl class="prov-list">
-      <div class="prov-item">
-        <dt>Candidates and races as certified</dt>
-        <dd>Taken from the Texas Secretary of State&rsquo;s certified ballot reports for the
-          November 3, 2026 general election in Tarrant County, dated September 7, 2026, in
-          Dallas County, dated September 9, 2026, and in Collin County, dated September 10, 2026.
-          Race names, candidate names, and party labels are as printed in those reports.
-          <span class="prov-meta">Open the
-          <a href="sources/ballot-certification-2026-11-03.pdf">Tarrant County PDF</a>, the
-          <a href="sources/ballot-certification-dallas-2026-11-03.pdf">Dallas County PDF</a>, or the
-          <a href="sources/ballot-certification-collin-2026-11-03.pdf">Collin County PDF</a>
-          &mdash; all three are checked into this site under <code>sources/</code>.</span></dd>
-      </div>
-      <div class="prov-item">
-        <dt>1,771 voting precincts</dt>
-        <dd>707 in Tarrant County, 791 in Dallas County, and 273 in Collin County. Precinct
-          boundaries, and the
-          congressional, legislative, SBOE, commissioner, and JP districts attached to each one,
-          come from each county&rsquo;s precinct layer. The address lookup tests your coordinate
-          against these polygons in your own browser, one county&rsquo;s file at a time.
-          <span class="prov-meta">Tarrant &mdash;
-          <a href="https://mapit.tarrantcounty.com/arcgis/rest/services/Dynamic/VotingPrecinct/MapServer">Tarrant
-          County GIS, Voting Precinct service</a>, read here as
-          <a href="data/precincts.geojson">data/precincts.geojson</a>. Dallas &mdash; the
-          <a href="https://services3.arcgis.com/zqe2kwz79KUqUvxC/ArcGIS/rest/services/PRCNT_791_20260729/FeatureServer/7">PRCNT_791
-          precinct layer</a> this file was pulled from, read here as
-          <a href="data/dallas-precincts.geojson">data/dallas-precincts.geojson</a>; its
-          <code>FIRST_DIST*</code> district fields were renamed to match Tarrant&rsquo;s. Collin
-          &mdash; the
-          <a href="https://services1.arcgis.com/fdWXd5OobWR1E3er/arcgis/rest/services/Voting_Precincts/FeatureServer/0">Voting_Precincts
-          layer</a> this file was pulled from, read here as
-          <a href="data/collin-precincts.geojson">data/collin-precincts.geojson</a>; its district
-          fields were renamed the same way, so one lookup can read all three.</span></dd>
-      </div>
-    </dl>
   </section>
 
   <section class="panel scope" aria-labelledby="scope-title">
@@ -100,22 +61,6 @@
       <li class="scope-no"><strong>Three counties so far.</strong> Tarrant, Dallas, and Collin are the
         only ballots loaded. An address outside them will not match a precinct.</li>
     </ul>
-  </section>
-
-  <section class="panel endorsements" aria-labelledby="endorsements-title">
-    <h2 id="endorsements-title">Where to find endorsements</h2>
-    <p class="endorsements-intro">This guide does not carry endorsement data yet &mdash; these
-      organizations publish their own for Tarrant County races. No Dallas or Collin County
-      equivalent is listed here yet.</p>
-    <ul class="endorsement-list">
-      <li>
-        <a href="https://tarrantgop.org" target="_blank" rel="noopener noreferrer">Tarrant County
-          Republican Party</a>
-        <span class="endorsement-host">tarrantgop.org</span>
-      </li>
-    </ul>
-    <p class="endorsements-note">These are independent organizations with no affiliation to this
-      site.</p>
   </section>
 
   <section class="panel about" id="privacy" aria-labelledby="privacy-title">
@@ -146,10 +91,6 @@
     </ul>
     <p>Neither form is required to use the guide.</p>
 
-    <p><strong>What this site never does.</strong> No advertising. No tracking across other sites.
-      No selling or renting anything about you. No account, no login, no profile. Your address is
-      never stored, so it cannot be looked up later, by us or by anyone else.</p>
-
     <p>If any of this changes, it gets written here before the change takes effect. Questions go
       through the <a href="contact.html">contact page</a>. Last updated September 11, 2026.</p>
   </section>
@@ -166,7 +107,8 @@
       <a href="sources/ballot-certification-collin-2026-11-03.pdf">Collin County</a>.</p>
     <ul class="footer-links">
       <li><a href="https://github.com/andrewwimmer/texas-voter-guide">Source on GitHub</a></li>
-      <li><a href="about.html">About &amp; Sources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="sources.html">Sources</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="about.html#privacy">Privacy</a></li>
     </ul>
