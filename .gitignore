@@ -1,1 +1,5 @@
 .DS_Store
+# Statewide district layers, downloaded by tools/fetch-districts.sh.
+# Build inputs, not site data - the browser never fetches them, and they are
+# ~55MB. Re-fetch with: sh tools/fetch-districts.sh
+data/tx-*-districts.geojson
